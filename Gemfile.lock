@@ -76,6 +76,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  html-pipeline
   jekyll (~> 3.2.1)
   jekyll-feed
   jekyll-gist
@@ -84,4 +85,4 @@ DEPENDENCIES
   jekyll-sitemap
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
