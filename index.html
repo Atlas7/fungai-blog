@@ -38,7 +38,7 @@ sitemap:
 
 				<!-- Header -->
 					<header id="header">
-						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+						<a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
 					</header>
 
 				<!-- Nav -->
@@ -64,7 +64,7 @@ sitemap:
                     nearly out of the box. Of course... you can always take it further <br />
                     and make it something even more amazing!</p>
 								</header>
-								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></a>
+								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | prepend:site.baseurl }}" alt="" /></a>
                 <p>Regardless of your website's function, the homepage is what brings the user in.
                   If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
                 <p>Your homepage must clearly describe what your site is about.
@@ -83,12 +83,12 @@ sitemap:
   								<article>
   									<header>
   										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
+  										<h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
   									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+  									<a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="" /></a>
   									<p>{{ post.excerpt }}</p>
   									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+  										<li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
   									</ul>
   								</article>
                   {% if mod3 == 0 %}
@@ -106,7 +106,7 @@ sitemap:
 						<!-- Footer -->
 							<footer>
                 <ul class="actions">
-                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">Our Blog</a></li>
+                  <li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">Our Blog</a></li>
                 </ul>
 							</footer>
 
