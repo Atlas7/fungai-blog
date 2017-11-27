@@ -26,15 +26,15 @@ sitemap:
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<div id="intro">
-            <h1>{{site.title}}</h1>
-						<h2>{{site.bio}}</h2>
-						<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
-						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+					<!--<div id="intro">-->
+            <!--<h1>{{site.title}}</h1>-->
+						<!--<h2>{{site.bio}}</h2>-->
+						<!--<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />-->
+						<!--and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>-->
+						<!--<ul class="actions">-->
+							<!--<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>-->
+						<!--</ul>-->
+					<!--</div>-->
 
 				<!-- Header -->
 					<header id="header">
@@ -58,27 +58,15 @@ sitemap:
 					<div id="main">
 						<!-- Featured Post -->
 							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">Massively is a versatile Jekyll theme</a></h2>
-									<p>With only a few edits, you can have a stunningly beautiful website <br />
-                    nearly out of the box. Of course... you can always take it further <br />
-                    and make it something even more amazing!</p>
-								</header>
-								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | prepend:site.baseurl }}" alt="" /></a>
-                <p>Regardless of your website's function, the homepage is what brings the user in.
-                  If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
-                <p>Your homepage must clearly describe what your site is about.
-									Having engaging content will in this manner enable you to offer and it will make your customers more inclined to purchase from you. Content is a way to position your organization in the correct place for your clients to discover you.
-								</p>
-								<p>
-									In this manner, content in itself is a standout amongst the best promoting apparatuses in your whole advertising toolbox! Rather than making your content around your promoting technique, it's limitlessly more productive to fabricate your showcasing around your content.
-								 </p>
-
+								<h2>{{ site.purpose }}</h2>
+								<img class="image main" src="{{ "/images/CW.jpg" | prepend:site.baseurl }}" alt="" />
+								<p>{{ site.description }}</p>
 							</article>
 
 						<!-- Posts -->
+							<h2>Latest News</h2>
 							<section class="posts">
-                {% for post in site.posts limit:3 %}
+                {% for post in site.posts limit:10 %}
                 {% assign mod3 = forloop.index | modulo: 3 %}
   								<article>
   									<header>
@@ -91,14 +79,14 @@ sitemap:
   										<li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
   									</ul>
   								</article>
-                  {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</h2>
-  									</header>
+                  <!--{% if mod3 == 0 %}-->
+                  <!--<article>-->
+  									<!--<header>-->
+  										<!--<h2><a href="#">Sponsored</h2>-->
+  									<!--</header>-->
 
-  								</article>
-                  {% endif %}
+  								<!--</article>-->
+                  <!--{% endif %}-->
                 {% endfor %}
 
 							</section>
@@ -106,7 +94,7 @@ sitemap:
 						<!-- Footer -->
 							<footer>
                 <ul class="actions">
-                  <li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">Our Blog</a></li>
+                  <li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">See more</a></li>
                 </ul>
 							</footer>
 

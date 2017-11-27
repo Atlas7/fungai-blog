@@ -1,8 +1,15 @@
 # Site
-title:              Friends of Russia Dock Woodland
-bio:                Friends of Russia Dock Woodland Bio
-description:        Friends of Russia Dock Woodland Description
-locale:             en_US
+title: Friends of Russia Dock Woodland
+purpose: To protect, enhance, and promote Russia Dock Woodland for the enjoyment of all
+bio: Friends of Russia Dock Woodland Bio
+description: >
+  The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland
+  and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.
+  We address everything from damaged signage and rubbish management to development planning applications which
+  impact on the local ecology.
+
+
+locale: en_US
 baseurl: "/fordworg" # the subpath of your site, e.g. /blog
 url: "https://atlaas7.github.io" # the base hostname & protocol for your site
 
@@ -40,10 +47,18 @@ facebook:           default
 instagram:          default
 github:             default
 
-# personal
-location:           Russia Dock Woodland
-phone:              xxxxxxx
-email:              xxxxxxx
+# This is displayed on website footer
+location: Russia Dock Woodland
+chairman: Steve Cornish
+phone1: +44 20 7237 7586
+phone2: +44 79 4727 5386
+
+# This is displayed on website footer
+email: "fordw.org@gmail.com"
+
+# Messages sent via website message box will send to here (via formspree.io)
+# Reference: https://formspree.io/
+email2: "fordw.org@gmail.com"
 
 # Gems
 gems:

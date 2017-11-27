@@ -22,4 +22,10 @@ Thank you bye.
 
 Johnny
 
+magin auto...
+
 <img src="{{page.image | prepend:site.baseurl }}" alt="" style="display: block; width: 70%; margin: auto" />
+
+image main...
+
+<img class="image main" src="{{page.image | prepend:site.baseurl }}" alt="" />
