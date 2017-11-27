@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Safer Parks Award"
+title:  "Ducklings Lucky Escape"
 date:   2012-03-13 20:00:00
-excerpt: "2012"
+excerpt: "Nine newly hatched ducklings trapped on a floating reed island!"
 image: "/images/blog/duckling.jpg"
 ---
 
