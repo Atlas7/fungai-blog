@@ -21,3 +21,5 @@ Bullets:
 Thank you bye.
 
 Johnny
+
+<img src="{{page.image | prepend:site.baseurl }}" alt="" style="display: block; width: 70%; margin: auto" />

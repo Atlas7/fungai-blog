@@ -1,7 +1,7 @@
 # Site
-title:              Massively
-bio:                'Jekyll version of the Massively theme by HTML5UP'
-description:        "Jekyll version of the Massively theme by HTML5UP"
+title:              Friends of Russia Dock Woodland
+bio:                Friends of Russia Dock Woodland Bio
+description:        Friends of Russia Dock Woodland Description
 locale:             en_US
 baseurl: "/fordworg" # the subpath of your site, e.g. /blog
 url: "https://atlaas7.github.io" # the base hostname & protocol for your site
@@ -41,9 +41,9 @@ instagram:          default
 github:             default
 
 # personal
-location:           Los Angeles, CA
-phone:              310-318-5555
-email:              info@default.com
+location:           Russia Dock Woodland
+phone:              xxxxxxx
+email:              xxxxxxx
 
 # Gems
 gems:
