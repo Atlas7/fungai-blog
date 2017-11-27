@@ -41,11 +41,11 @@ sass:
 disqus_shortname:   default
 
 # Social
-analytics-id:       "default"
-twitter:            default
-facebook:           default
-instagram:          default
-github:             default
+analytics-id: ""
+twitter: jAtlas7
+facebook: johnnychan0302
+instagram: jatlas7
+github: atlas7
 
 # This is displayed on website footer
 location: Russia Dock Woodland
