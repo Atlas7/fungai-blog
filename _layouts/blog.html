@@ -1,82 +1,82 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
   Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+  <head>
     {% include head.html %}
+  </head>
 
-	</head>
-	<body class="is-loading">
+  <body class="is-loading">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- Wrapper -->
+      <div id="wrapper" class="fade-in">
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
-				</header>
+        <!-- Header -->
+        <header id="header">
+          <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
+        </header>
 
-
-				<!-- Nav -->
-					<nav id="nav">
+        <!-- Nav -->
+          <nav id="nav">
             {% include nav.html %}
-						{% include social-media.html className="icons" %}
-					</nav>
+            {% include social-media.html className="icons" %}
+          </nav>
 
-				<!-- Main -->
-				<div id="main">
+        <!-- Main -->
+        <div id="main">
 
           <!--<article class="post featured">-->
-					<article class="">
+          <article class="">
             <!--<header class="major">-->
-						<h2 class="featured">Latest News</h2>
-						<!--</header>-->
-						<p>
-							The best ways of staying in touch with local news and all our activities are to check the blog posts on this website and to join our email forum which acts as a central information distribution service and will keep you up to date with day to day topics.
-						</p>
+            <h2 class="featured">{{ page.title }}</h2>
+            <!--</header>-->
+            <p>{{ page.description }}</p>
           </article>
 
-					<!-- Post -->
-					<section class="posts">
-						{% for post in site.posts %}
-						{% assign mod3 = forloop.index | modulo: 3 %}
-							<article>
-								<header>
-									<span class="date">{{ post.date | date_to_string }}</span>
-									<h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
-								</header>
-								<a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="" /></a>
-								<p>{{ post.excerpt }}</p>
-								<ul class="actions">
-									<li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
-								</ul>
-							</article>
-							<!--{% if mod3 == 0 %}-->
-							<!--<article>-->
-								<!--<header>-->
-									<!--<h2><a href="#">Sponsored</h2>-->
-								<!--</header>-->
+          <!-- Post -->
+          <section class="posts">
+            {% for post in site.posts %}
+            {% assign mod3 = forloop.index | modulo: 3 %}
+              <article>
+                <header>
+                  <span class="date">{{ post.date | date_to_string }}</span>
+                  <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
+                </header>
+                <a href="{{ post.url | prepend:site.baseurl }}" class="image fit">
+                  <img src="{{ post.image | prepend:site.baseurl }}" alt="" />
+                </a>
+                <p>{{ post.excerpt }}</p>
+                <ul class="actions">
+                  <li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
+                </ul>
+              </article>
+              <!--{% if mod3 == 0 %}-->
+              <!--<article>-->
+                <!--<header>-->
+                  <!--<h2><a href="#">Sponsored</h2>-->
+                <!--</header>-->
 
-							<!--</article>-->
-							<!--{% endif %}-->
-						{% endfor %}
+              <!--</article>-->
+              <!--{% endif %}-->
+            {% endfor %}
 
-					</section>
+          </section>
 
-					</div>
+          </div>
 
-				<!-- Footer -->
+        <!-- Footer -->
         {% include foot.html %}
 
-			</div>
+      </div>
+      <!-- Main above -->
 
-			<!-- Scripts -->
-			{% include scripts-main.html %}
-			{% include tracking.html %}
+      <!-- Scripts -->
+      {% include scripts-main.html %}
+      {% include tracking.html %}
 
-	</body>
+  </body>
 </html>

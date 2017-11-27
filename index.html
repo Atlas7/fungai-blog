@@ -1,7 +1,11 @@
 ---
 layout: null
 title: Friends of Russia Dock Woodland
-description: The official homepage of Friends of Russia Dock Woodland.
+description: >
+    The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland
+    and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.
+    We address everything from damaged signage and rubbish management to development planning applications which
+    impact on the local ecology.
 sitemap:
     priority: 1.0
     lastmod: 2017-11-26
@@ -9,98 +13,94 @@ sitemap:
 ---
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
   Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+  <head>
     {% include head.html %}
 
 
-	</head>
-	<body class="is-loading">
+  </head>
+  <body class="is-loading">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- Wrapper -->
+      <div id="wrapper" class="fade-in">
 
-				<!-- Intro -->
-					<!--<div id="intro">-->
+        <!-- Intro -->
+          <!--<div id="intro">-->
             <!--<h1>{{site.title}}</h1>-->
-						<!--<h2>{{site.bio}}</h2>-->
-						<!--<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />-->
-						<!--and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>-->
-						<!--<ul class="actions">-->
-							<!--<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>-->
-						<!--</ul>-->
-					<!--</div>-->
+            <!--<h2>{{site.bio}}</h2>-->
+            <!--<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />-->
+            <!--and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>-->
+            <!--<ul class="actions">-->
+              <!--<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
 
-				<!-- Header -->
-					<header id="header">
-						<a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
-					</header>
+        <!-- Header -->
+          <header id="header">
+            <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
+          </header>
 
-				<!-- Nav -->
-					<nav id="nav">
+        <!-- Nav -->
+          <nav id="nav">
             {% include nav.html %}
-						{% include social-media.html className="icons" %}
-					</nav>
+            {% include social-media.html className="icons" %}
+          </nav>
 
-				<!-- Main -->
-					<div id="main">
-						<!-- Featured Post -->
-							<article class="post featured">
-								<h2>{{ site.purpose }}</h2>
-								<img class="image main" src="{{ "/images/CW.jpg" | prepend:site.baseurl }}" alt="" />
-								<p>{{ site.description }}</p>
-							</article>
+        <!-- Main -->
+          <div id="main">
+            <!-- Featured Post -->
+              <article class="post featured">
+                <h2>{{ site.purpose }}</h2>
+                <img class="image main" src="{{ "/images/CW.jpg" | prepend:site.baseurl }}" alt="" />
+                <p>{{ page.description }}</p>
+              </article>
 
-						<!-- Posts -->
-							<h2>Latest News</h2>
-							<section class="posts">
-                {% for post in site.posts limit:10 %}
+            <!-- Posts -->
+              <h2>Latest News</h2>
+              <section class="posts">
+                {% for post in site.posts limit: site.posts_limits %}
                 {% assign mod3 = forloop.index | modulo: 3 %}
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
-  									</header>
-  									<a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
-  									</ul>
-  								</article>
+                  <article>
+                    <header>
+                      <span class="date">{{ post.date | date_to_string }}</span>
+                      <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
+                    </header>
+                    <a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="" /></a>
+                    <p>{{ post.excerpt }}</p>
+                    <ul class="actions">
+                      <li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
+                    </ul>
+                  </article>
                   <!--{% if mod3 == 0 %}-->
                   <!--<article>-->
-  									<!--<header>-->
-  										<!--<h2><a href="#">Sponsored</h2>-->
-  									<!--</header>-->
+                    <!--<header>-->
+                      <!--<h2><a href="#">Sponsored</h2>-->
+                    <!--</header>-->
 
-  								<!--</article>-->
+                  <!--</article>-->
                   <!--{% endif %}-->
                 {% endfor %}
 
-							</section>
+              </section>
 
-						<!-- Footer -->
-							<footer>
-                <ul class="actions">
-                  <li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">See more</a></li>
-                </ul>
-							</footer>
+            <!-- Footer -->
+            {% include our-blog.html text="See More" %}
 
-					</div>
+          </div>
 
-				<!-- Footer -->
+        <!-- Footer -->
         {% include foot.html %}
 
-			</div>
+      </div>
 
-		<!-- Scripts -->
-		{% include scripts-main.html %}
+    <!-- Scripts -->
+    {% include scripts-main.html %}
     {% include tracking.html %}
 
-	</body>
+  </body>
 </html>

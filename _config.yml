@@ -2,12 +2,16 @@
 title: Friends of Russia Dock Woodland
 purpose: To protect, enhance, and promote Russia Dock Woodland for the enjoyment of all
 bio: Friends of Russia Dock Woodland Bio
-description: >
-  The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland
-  and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.
-  We address everything from damaged signage and rubbish management to development planning applications which
-  impact on the local ecology.
+description: The official homepage of Friends of Russia Dock Woodland.
 
+# index.html - how many posts to display at home page?
+posts_limits: 10
+
+# Credit footer (foot.html) - populate this to form the string at the bottom
+# Further developed by [developer](developer_github) for client
+client: Friends of Russia Dock Woodland
+developer: atlas7
+developer_github: https://github.com/Atlas7
 
 locale: en_US
 baseurl: "/fordworg" # the subpath of your site, e.g. /blog
@@ -38,14 +42,14 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   default
+disqus_shortname:   # leave blank to hide icon
 
 # Social
-analytics-id: ""
-twitter: jAtlas7
-facebook: johnnychan0302
-instagram: jatlas7
-github: atlas7
+#analytics-id:
+twitter: friendsrdw  # leave blank to hide icon
+facebook:   # leave blank to hide icon
+instagram:   # leave blank to hide icon
+github:   # leave blank to hide icon
 
 # This is displayed on website footer
 location: Russia Dock Woodland
