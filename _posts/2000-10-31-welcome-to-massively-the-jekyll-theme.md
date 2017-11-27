@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Massively: The Jekyll Theme!"
-date:   2017-10-31
+date:   2000-10-31
 excerpt: "Huge thanks to HTML5 UP for making this awesome template! Let's see what it can do"
 image: "/images/pic02.jpg"
 ---
@@ -26,3 +26,5 @@ sitemap:
 ```
 ### Formspring integration
 The contact form below each page on the footer actually collects information! Just change your email address in the ```_config.yml``` file!
+
+<img src="{{page.image | prepend:site.baseurl }}" alt="" style="display: block; width: 70%; margin: auto" />
