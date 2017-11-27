@@ -1,55 +1,65 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
   Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+
+  <!--head-->
+  <head>
     {% include head.html %}
-	</head>
-	<body class="is-loading">
+  </head>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  <!--body-->
+  <body class="is-loading">
 
-				<!-- Header -->
+    <!-- Wrapper -->
+      <div id="wrapper" class="fade-in">
+
+        <!-- Header -->
         <header id="header">
           <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
         </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-            {% include nav.html %}
-						{% include social-media.html className="icons" %}
-					</nav>
+        <!-- Nav -->
+        <nav id="nav">
+          {% include nav.html %}
+          {% include social-media.html className="icons" %}
+        </nav>
 
-				<!-- Main -->
-				<div id="main">
+        <!-- Main -->
+        <div id="main">
+
+          <!-- Individual Blog Post -->
           <section class="post">
-    				<header class="major">
-      				<span class="date">{{page.date | date_to_string}}</span>
-      				<h1>{{page.title}}</h1>
-      				<p>{{page.excerpt}}</p>
-      			</header>
-      			<div class="image main"><img src="{{page.image | prepend:site.baseurl }}" alt=""></div>
-      			<p>{{content}}</p>
-      		</section>
+            <header class="major">
+              <span class="date">{{page.date | date_to_string}}</span>
+              <h1>{{page.title}}</h1>
+              <p>{{page.excerpt}}</p>
+            </header>
 
+            {% if page.image %}
+            <div class="image main"><img src="{{page.image | prepend:site.baseurl }}" alt=""></div>
+            {% endif %}
+
+            <p>{{content}}</p>
+          </section>
+
+          <!--Disqus Commenting System-->
+          {% if site.disqus_shortname %}
           <div class="comments-wrapper">
-          <div id="disqus_thread"></div>
-          <script>
+            <div id="disqus_thread" />
+            <script>
               /**
                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
                */
-
               var disqus_config = function () {
                   this.page.url = '{{ site.baseurl }}{{ page.url }}';  /*Replace PAGE_URL with your page's canonical URL variable*/
                   this.page.identifier = '{{ page.url }}'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
               };
-
               (function() {  /* dont endit below this line */
                   var d = document, s = d.createElement('script');
 
@@ -58,27 +68,27 @@
                   s.setAttribute('data-timestamp', +new Date());
                   (d.head || d.body).appendChild(s);
               })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        </div><!-- /.comments-wrapper -->
+            </script>
+            <noscript>
+              Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+            </noscript>
+          </div><!-- /.comments-wrapper -->
+          {% endif %}
 
+          <!-- Footer -->
+          {% include our-blog.html text="Our Blog" %}
 
-					<!-- Footer -->
-						<footer>
-              <ul class="actions">
-                <li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">Our Blog</a></li>
-              </ul>
-						</footer>
-					</div>
+        </div>
+        <!-- Main above -->
 
-				<!-- Footer -->
+        <!-- Footer -->
         {% include foot.html %}
 
-			</div>
+      </div>
 
       <!-- Scripts -->
-  		{% include scripts-main.html %}
-			{% include tracking.html %}
+      {% include scripts-main.html %}
+      {% include tracking.html %}
 
-	</body>
+  </body>
 </html>

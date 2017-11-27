@@ -1,54 +1,51 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
   Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+  <head>
     {% include head.html %}
-	</head>
-	<body class="is-loading">
+  </head>
+  <body class="is-loading">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- Wrapper -->
+      <div id="wrapper" class="fade-in">
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
-				</header>
+        <!-- Header -->
+        <header id="header">
+          <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
+        </header>
 
-				<!-- Nav -->
-					<nav id="nav">
+        <!-- Nav -->
+          <nav id="nav">
             {% include nav.html %}
-						{% include social-media.html className="icons" %}
-					</nav>
+            {% include social-media.html className="icons" %}
+          </nav>
 
-				<!-- Main -->
-				<div id="main">
+        <!-- Main -->
+        <div id="main">
 
-					<!-- Post -->
-					<section class="post">
-						<p>{{content}}</p>
-					</section>
+          <!-- Post -->
+          <section class="post">
+            <p>{{content}}</p>
+          </section>
 
-					<!-- Footer -->
-						<footer>
-              <ul class="actions">
-								<li><a href="{{ "/blog/" | prepend:site.baseurl }}" class="button">Our Blog</a></li>
-              </ul>
-						</footer>
-					</div>
+          <!-- Footer -->
+          {% include our-blog.html text="Our Blog" %}
 
-				<!-- Footer -->
+        </div>
+
+        <!-- Footer -->
         {% include foot.html %}
 
-			</div>
+      </div>
 
-			<!-- Scripts -->
-			{% include scripts-main.html %}
-			{% include tracking.html %}
+      <!-- Scripts -->
+      {% include scripts-main.html %}
+      {% include tracking.html %}
 
-	</body>
+  </body>
 </html>
