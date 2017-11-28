@@ -3,7 +3,7 @@ layout: post
 title:  "September Update"
 date:   2016-09-27 20:00:00
 excerpt: "LNR status, Borehole, Barrats, London Quadrant, Sellars, Green Connections 106"
-image: "/images/blog/.jpg"
+image: "/images/blog/Fox.jpg"
 ---
 
 ### Bad news about the Woodland borehole.
