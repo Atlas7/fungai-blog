@@ -8,7 +8,7 @@ sitemap:
     changefreq: weekly
 ---
 
-## Come visit us!
+## Visit the Woodland
 
 Russia Dock Woodland is a tranquil nature reserve in the heart of London. Well worth a visit (even if you’re not a local) it is a haven for wildlife including kingfishers, sparrow hawks, woodpeckers ~ even a pheasant has been spotted there. Created in the 1980s as part of dockland regeneration, Russia Dock Woodland is, as its name implies, a dock that has been filled in and landscaped with the emphasis on creating a woodland with natural waterways running throughout; it is not a park and together with the adjacent Stave Hill Ecological Park is a wonderful green oasis by the nearby Thames. From Stave Hill, a man made mound, it is possible to look out over the treetops to a panoramic view of the City and its surroundings.
 

@@ -50,9 +50,7 @@
                   <img src="{{ post.image | prepend:site.baseurl }}" alt="" />
                 </a>
                 <p>{{ post.excerpt }}</p>
-                <ul class="actions">
-                  <li><a href="{{ post.url | prepend:site.baseurl }}" class="button">Full Story</a></li>
-                </ul>
+                {% include read-more.html %}
               </article>
               <!--{% if mod3 == 0 %}-->
               <!--<article>-->
