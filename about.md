@@ -10,7 +10,7 @@ sitemap:
 
 ## About us
 
-<span class="image main"><img src="{{ "/images/CW.jpg" | prepend:site.baseurl }}" alt="" /></span>
+<span class="image left"><img src="{{ "/images/kingfisher.jpg" | prepend:site.baseurl }}" alt="" /></span>
 
 The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.  We address everything from damaged signage and rubbish management to development planning applications which impact the local ecology.  We are on good terms with other local groups (LINKs), and we have frequent dialogue with Southwark Council about the management of the Woodland area.  
 
