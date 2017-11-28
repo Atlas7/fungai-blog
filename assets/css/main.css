@@ -3028,10 +3028,10 @@ table.alt tbody tr td {
 	height: 100%;
 	background-color: #4f6978;
 	background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-	background-size: auto,								auto,														100% auto;
-	background-position: center,								center,														top center;
-	background-repeat: repeat,								no-repeat,													no-repeat;
-	background-attachment: scroll,								scroll,														scroll;
+	background-size: auto, auto, 100% auto;
+	background-position: center, center, top center;
+	background-repeat: repeat, no-repeat, no-repeat;
+	background-attachment: scroll, scroll, scroll;
 	z-index: -1;
 }
 
@@ -3072,7 +3072,7 @@ body.is-loading #wrapper.fade-in:before {
 @media screen and (orientation: portrait) {
 
 	#wrapper > .bg {
-		background-size: auto,								auto,														auto 175%;
+		background-size: auto, auto, auto 175%;
 	}
 
 }
@@ -4204,6 +4204,9 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
+		background-color: #4a5e6b;
+		padding: 10px;
+		border-radius: 10px;
 	}
 
 		#copyright input, #copyright select, #copyright textarea {
