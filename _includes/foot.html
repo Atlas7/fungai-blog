@@ -25,19 +25,11 @@
   <section class="split contact">
     <section class="alt">
       <h3>Location</h3>
-      <p>{{site.location}}</p>
+      <p><a href="{{site.location_url}}" target="_blank">{{site.location}}</a></p>
     </section>
     <section class="alt">
-      <h3>Chairman</h3>
-      <p>{{site.chairman}}</p>
-    </section>
-    <section class="alt">
-      <h3>Phone</h3>
-      <p><a href="tel:{{site.phone2}}">{{site.phone1}}</a></p>
-    </section>
-    <section class="alt">
-      <h3>Mobile</h3>
-      <p><a href="tel:{{site.phone2}}">{{site.phone2}}</a></p>
+      <h3>CTO</h3>
+      <p><a href="{{site.CTO_url}}" target="_blank">{{site.CTO}}</a></p>
     </section>
     <section class="alt">
       <h3>Email</h3>
@@ -53,8 +45,8 @@
 <!-- Copyright -->
 <div id="copyright">
   <ul>
-    <li><a href="https://github.com/Atlas7/fordworg/graphs/contributors" target="_blank">Made with &hearts; by a bunch of open source developers for {{ site.client }}</a></li>
-    <li><a href="https://github.com/Atlas7/fordworg" target="_blank">GitHub Repository</a></li>
+    <li><a href="{{site.github_repo_url}}/graphs/contributors" target="_blank">Made with &hearts; by a bunch of open source developers for {{ site.client }}</a></li>
+    <li><a href="{{site.github_repo_url}}" target="_blank">GitHub Repository</a></li>
     <li><a href="http://jekyllthemes.org/themes/massively/" target="_blank">Massively Theme</a> designed by <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
     <li>Jekyll Integration by <a href="https://somiibo.com" target="_blank">Somiibo</a></li>
   </ul>

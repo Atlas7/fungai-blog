@@ -1,11 +1,7 @@
 ---
 layout: null
-title: Friends of Russia Dock Woodland
-description: >
-    The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland
-    and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.
-    We address everything from damaged signage and rubbish management to development planning applications which
-    impact on the local ecology.
+title: fungai.org
+description: fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images using deep learning technologies.
 sitemap:
     priority: 1.0
     lastmod: 2017-11-26
@@ -29,17 +25,6 @@ sitemap:
     <!-- Wrapper -->
       <div id="wrapper" class="fade-in">
 
-        <!-- Intro -->
-          <!--<div id="intro">-->
-            <!--<h1>{{site.title}}</h1>-->
-            <!--<h2>{{site.bio}}</h2>-->
-            <!--<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />-->
-            <!--and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>-->
-            <!--<ul class="actions">-->
-              <!--<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>-->
-            <!--</ul>-->
-          <!--</div>-->
-
         <!-- Header -->
           <header id="header">
             <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
@@ -55,13 +40,12 @@ sitemap:
           <div id="main">
             <!-- Featured Post -->
               <article class="post featured">
-                <h2>{{ site.purpose }}</h2>
-                <img class="image main" src="{{ "/images/CW.jpg" | prepend:site.baseurl }}" alt="" />
+                <img class="image main" src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="" />
                 <p>{{ page.description }}</p>
               </article>
 
             <!-- Posts -->
-              <h2>Latest News</h2>
+              <h2 class="main featured">Blog Posts</h2>
               <section class="posts">
                 {% for post in site.posts limit: site.posts_limits %}
                 {% assign mod3 = forloop.index | modulo: 3 %}

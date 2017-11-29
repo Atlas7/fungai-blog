@@ -8,20 +8,53 @@ sitemap:
     changefreq: weekly
 ---
 
-## About us
+## About the Project
 
-<span class="image left"><img src="{{ "/images/kingfisher.jpg" | prepend:site.baseurl }}" alt="" /></span>
+### Go on a Wild Mushroom Survey Trip
 
-The Friends of Russia Dock Woodland (FRDW) are a group of residents who help to protect and enhance the woodland and Stave Hill ecological park, which together run through the middle of the Rotherhithe peninsula.  We address everything from damaged signage and rubbish management to development planning applications which impact the local ecology.  We are on good terms with other local groups (LINKs), and we have frequent dialogue with Southwark Council about the management of the Woodland area.  
+1 - hmm where are you mushroom...
 
-<span class="image main"><img src="{{ "/images/blog/Vol2.jpg" | prepend:site.baseurl }}" alt="" /></span>
+<span class="image main"><img src="{{ "/images/blog/trip-100.jpg" | prepend:site.baseurl }}" alt="" /></span>
 
-#### Awards
+2 - Ah ha! Spotted a wild mushroom
 
-In July 2016, 2009 (other dates) we were awarded Green Flag status and in December 2009 the the London Tree and Woodland Award, achievements which pay a huge compliment to the hard work of those who have worked to make it such a terrific place. 
+<span class="image main"><img src="{{ "/images/blog/trip-200.jpg" | prepend:site.baseurl }}" alt="" /></span>
 
-<span class="image main"><img src="{{ "/images/blog/Vol.jpg" | prepend:site.baseurl }}" alt="" /></span>
+3 - Take pictures...
 
-#### Get Involved
+<span class="image main"><img src="{{ "/images/blog/trip-300.jpg" | prepend:site.baseurl }}" alt="" /></span>
 
-We are always keen to welcome people who would like to help out so if you would like to support the Friends by participating in our activities please see our Events/Volunteering (LINK?) page.
+4 - Take more pictures...
+
+<span class="image main"><img src="{{ "/images/blog/trip-400.jpg" | prepend:site.baseurl }}" alt="" /></span>
+
+### Option 1: Identify mushroom species with a Guide Book
+
+Human: Hmmm... I think it is a (fill in the blanks)
+
+<span class="image main"><img src="{{ "/images/blog/trip-500.jpg" | prepend:site.baseurl }}" alt="" /></span>
+
+### Option 2: Identify mushroom species offline on-the-fly
+
+Computer says: hmmm... I think it is 99% likely that it is a (fill in the blanks).
+
+### Option 3: Identify mushroom species in a batch at home
+
+(this may be either online or offline)
+
+1 - Go home, upload a batch of pictures to a computer
+ 
+<span class="image main"><img src="{{ "/images/blog/trip-600.jpg" | prepend:site.baseurl }}" alt="" /></span>
+
+2 - computer says: these are the likely mushroom specie predictions
+
+<span class="image main"><img src="{{ "/images/blog/fungai-poc-1.png" | prepend:site.baseurl }}" alt="" /></span>
+
+3 - computer says: you want to know more? Here are some more details. Click links to see other similar mushrooms of the same specie
+
+<span class="image main"><img src="{{ "/images/blog/fungai-poc-2.png" | prepend:site.baseurl }}" alt="" /></span>
+
+4 - computer says: here are other similar mushroom of the same specie
+
+<span class="image main"><img src="{{ "/images/blog/fungai-poc-3.png" | prepend:site.baseurl }}" alt="" /></span>
+

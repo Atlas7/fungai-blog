@@ -1,20 +1,21 @@
 # Site
-title: Friends of Russia Dock Woodland
-purpose: To protect, enhance, and promote Russia Dock Woodland for the enjoyment of all
-bio: Friends of Russia Dock Woodland Bio
-description: The official homepage of Friends of Russia Dock Woodland.
+title: fungai.org - identify wild mushroom with deep learning
+purpose: >
+  fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images
+  using deep learning technologies.
+bio: fungai.org - a wild mushroom ID machine
+description: The official homepage of fungai.org
 
 # index.html - how many posts to display at home page?
 posts_limits: 10
 
 # Credit footer (foot.html) - populate this to form the string at the bottom
 # Further developed by [developer](developer_github) for client
-client: Friends of Russia Dock Woodland
-developer: atlas7
-developer_github: https://github.com/Atlas7
+client: fungai.org
+github_repo_url: https://github.com/Atlas7/fungai-blog
 
 locale: en_US
-baseurl: "/fordworg" # the subpath of your site, e.g. /blog
+baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
 url: "https://atlaas7.github.io" # the base hostname & protocol for your site
 
 defaults:
@@ -45,24 +46,27 @@ sass:
 disqus_shortname:   # leave blank to hide icon
 
 # Social
+# leave blank to hide icon
 #analytics-id:
-twitter: friendsrdw  # leave blank to hide icon
-#facebook:   # leave blank to hide icon
-#instagram:   # leave blank to hide icon
-#githubid:   # leave blank to hide icon
+twitter: jatlas7
+#facebook:
+#instagram:
+githubid: Atlas7
 
 # This is displayed on website footer
-location: Russia Dock Woodland
-chairman: Steve Cornish
-phone1: +44 20 7237 7586
-phone2: +44 79 4727 5386
+location: Earth
+location_url: "https://en.wikipedia.org/wiki/Earth"
+CTO: Johnny Chan
+CTO_url: "https://atlas7.github.io"
+#phone1:
+#phone2:
 
 # This is displayed on website footer
-email: "fordw.org@gmail.com"
+email: "fungai.org@gmail.com"
 
 # Messages sent via website message box will send to here (via formspree.io)
 # Reference: https://formspree.io/
-email2: "fordw.org@gmail.com"
+email2: "fungai.org@gmail.com"
 
 # Gems
 gems:

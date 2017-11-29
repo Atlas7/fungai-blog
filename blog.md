@@ -1,10 +1,9 @@
 ---
 layout: blog
-title: Latest News
+title: Blog Articles
 description: >
-  The best ways of staying in touch with local news and all our activities are to check the blog posts on this
-  website and to join our email forum which acts as a central information distribution service and will keep you
-  up to date with day to day topics.
+  You may find the latest research articles and blog posts relating to fungai.org here. We cover
+  a wide range of topics including deep learning, wild mushrooms, and overall project updates.
 sitemap:
     priority: 1.0
     lastmod: 2017-11-02
