@@ -1,0 +1,19 @@
+- name: Johnny Chan
+  avatar: https://avatars0.githubusercontent.com/u/11135428?s=460&v=4
+  role: CTO
+  greet: Hello world!
+  desc: I do machine learning and web dev
+  twitter: jAtlas7
+  linkedin: johnnycnchan
+  githubid: Atlas7
+  facebook: johnnychan0302
+
+- name: Clare Street
+  avatar: https://pbs.twimg.com/profile_images/784701067535712256/uIiRQvsi_400x400.jpg
+  greet: Hi there!
+  desc: I know fungi very well
+  role: Conservationist
+  twitter: lemon_disco
+  linkedin: clarestreet
+  githubid: hazelnutshell
+#  facebook: clareystreety

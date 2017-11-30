@@ -21,21 +21,19 @@
         </header>
 
         <!-- Nav -->
-          <nav id="nav">
-            {% include nav.html %}
-            {% include social-media.html className="icons" %}
-          </nav>
+        <nav id="nav">
+          {% include nav.html %}
+          {% include social-media.html className="icons" %}
+        </nav>
 
         <!-- Main -->
         <div id="main">
 
-          <!--<article class="post featured">-->
-          <article class="">
-            <!--<header class="major">-->
-            <h2 class="featured">{{ page.title }}</h2>
-            <!--</header>-->
+          <header>
+            <!--<br/>-->
+            <h2 class="featured">{{ page.title }}</h2 class="featured">
             <p>{{ page.description }}</p>
-          </article>
+          </header>
 
           <!-- Post -->
           <section class="posts">

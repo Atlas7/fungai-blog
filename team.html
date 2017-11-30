@@ -1,0 +1,56 @@
+---
+layout: page
+title: Meet our team
+description: Meet our team desc
+sitemap:
+  priority: 0.7
+  lastmod: 2017-11-30
+  changefreq: weekly
+---
+
+<!--Note: borrowed meet our team theme from this code pen: https://codepen.io/shamim539/pen/VvLLdV-->
+<!-- Text stuff -->
+<h2>Meet Our Team</h2>
+<p>We are a community interested in machine learning and mushroom identification, and are part of the <a href="https://devmesh.intel.com/projects/fungi-barbarian" target="_blank">Intel Developer Mesh Project - Fungi Barbarian</a></p>
+
+<div id="main">
+  <section class="posts">
+    {% for member in site.data.team %}
+    <div class="team-body">
+      <div class="team-member">
+        <div class="team-img">
+          <img src="{{ member.avatar }}" alt="{{ member.avatar }}" class="image fit">
+        </div>
+        <div class="team-hover">
+          <div class="team-body desk">
+            <h4>{{ member.greet }}</h4>
+            <p>{{ member.desc}}</p>
+          </div>
+          <div class="s-link">
+
+            {% if member.twitter %}
+            <a href="https://twitter.com/{{ member.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+            {% endif %}
+
+            {% if member.linkedin %}
+            <a href="https://linkedin.com/in/{{ member.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+            {% endif %}
+
+            {% if member.githubid %}
+            <a href="https://github.com/{{ member.githubid }}" target="_blank"><i class="fa fa-github"></i></a>
+            {% endif %}
+
+            {% if member.facebook %}
+            <a href="https://facebook.com/{{ member.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="team-title">
+        <h5>{{ member.name }}</h5>
+        <span>{{ member.role }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+</div>

@@ -40,12 +40,27 @@ sitemap:
           <div id="main">
             <!-- Featured Post -->
               <article class="post featured">
+                <quote>{{ site.purpose }}</quote>
                 <img class="image main" src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="" />
-                <p>{{ page.description }}</p>
+                <p>
+                  We are a community interested in machine learning and mushrooms. Our goal is to create an
+                  automated mushroom ID ecosystem by combining the two worlds: given images of mushrooms taken
+                  from a walking trip, fungai.org will automatically predict the mushroom classifications
+                  either immediately during the trip (offline), or processed as a batch after the trip (offline/online).
+                </p>
+                <p>
+                  We are also part of the <a href="https://devmesh.intel.com/projects/fungi-barbarian" target="_blank">Intel Developer Mesh Project - Fungi Barbarian</a>
+                </p>
+              </article>
+
+              <article class="post featured">
+                <h3><a href="{{ '/about/' | prepend:site.baseurl }}">Concept</a></h3>
+                <h3><a href="{{ '/team/' | prepend:site.baseurl }}">Meet our Team</a></h3>
+                <h3><a href="{{ '/blog/' | prepend:site.baseurl }}">Blog</a></h3>
               </article>
 
             <!-- Posts -->
-              <h2 class="main featured">Blog Posts</h2>
+              <!--<h2 class="main featured">Blog Posts</h2>-->
               <section class="posts">
                 {% for post in site.posts limit: site.posts_limits %}
                 {% assign mod3 = forloop.index | modulo: 3 %}
