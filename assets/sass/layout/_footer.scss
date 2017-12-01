@@ -6,7 +6,7 @@
 
 /* Footer */
 
-	#footer {
+	#contact-us {
 		@include color(alt);
 		@include vendor('display', 'flex');
 		background-color: _palette(alt, bg);

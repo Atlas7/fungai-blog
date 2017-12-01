@@ -3764,7 +3764,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 
 /* Footer */
 
-	#footer {
+	#contact-us {
 		color: #717981;
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3780,224 +3780,224 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 		z-index: 2;
 	}
 
-		#footer input, #footer select, #footer textarea {
+		#contact-us input, #contact-us select, #contact-us textarea {
 			color: #717981;
 		}
 
-		#footer a {
+		#contact-us a {
 			color: #717981;
 			border-bottom-color: rgba(113, 121, 129, 0.5);
 		}
 
-			#footer a:hover {
+			#contact-us a:hover {
 				border-bottom-color: transparent;
 				color: #18bfef !important;
 			}
 
-		#footer strong, #footer b {
+		#contact-us strong, #contact-us b {
 			color: #717981;
 		}
 
-		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
+		#contact-us h1, #contact-us h2, #contact-us h3, #contact-us h4, #contact-us h5, #contact-us h6 {
 			color: #717981;
 		}
 
-		#footer blockquote {
+		#contact-us blockquote {
 			border-left-color: #e2e2e2;
 		}
 
-		#footer code {
+		#contact-us code {
 			background: rgba(220, 220, 220, 0.5);
 			border-color: #e2e2e2;
 		}
 
-		#footer hr {
+		#contact-us hr {
 			border-bottom-color: #e2e2e2;
 		}
 
-		#footer .box {
+		#contact-us .box {
 			border-color: #e2e2e2;
 		}
 
-		#footer input[type="submit"],
-		#footer input[type="reset"],
-		#footer input[type="button"],
-		#footer button,
-		#footer .button {
+		#contact-us input[type="submit"],
+		#contact-us input[type="reset"],
+		#contact-us input[type="button"],
+		#contact-us button,
+		#contact-us .button {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px #717981;
 			color: #717981 !important;
 		}
 
-			#footer input[type="submit"]:hover,
-			#footer input[type="reset"]:hover,
-			#footer input[type="button"]:hover,
-			#footer button:hover,
-			#footer .button:hover {
+			#contact-us input[type="submit"]:hover,
+			#contact-us input[type="reset"]:hover,
+			#contact-us input[type="button"]:hover,
+			#contact-us button:hover,
+			#contact-us .button:hover {
 				box-shadow: inset 0 0 0 2px #18bfef;
 				color: #18bfef !important;
 			}
 
-			#footer input[type="submit"].special,
-			#footer input[type="reset"].special,
-			#footer input[type="button"].special,
-			#footer button.special,
-			#footer .button.special {
+			#contact-us input[type="submit"].special,
+			#contact-us input[type="reset"].special,
+			#contact-us input[type="button"].special,
+			#contact-us button.special,
+			#contact-us .button.special {
 				background-color: #717981;
 				box-shadow: none;
 				color: #f5f5f5 !important;
 			}
 
-				#footer input[type="submit"].special:hover,
-				#footer input[type="reset"].special:hover,
-				#footer input[type="button"].special:hover,
-				#footer button.special:hover,
-				#footer .button.special:hover {
+				#contact-us input[type="submit"].special:hover,
+				#contact-us input[type="reset"].special:hover,
+				#contact-us input[type="button"].special:hover,
+				#contact-us button.special:hover,
+				#contact-us .button.special:hover {
 					background-color: #18bfef;
 				}
 
-		#footer label {
+		#contact-us label {
 			color: #717981;
 		}
 
-		#footer input[type="text"],
-		#footer input[type="password"],
-		#footer input[type="email"],
-		#footer select,
-		#footer textarea {
+		#contact-us input[type="text"],
+		#contact-us input[type="password"],
+		#contact-us input[type="email"],
+		#contact-us select,
+		#contact-us textarea {
 			border-color: #e2e2e2;
 		}
 
-			#footer input[type="text"]:focus,
-			#footer input[type="password"]:focus,
-			#footer input[type="email"]:focus,
-			#footer select:focus,
-			#footer textarea:focus {
+			#contact-us input[type="text"]:focus,
+			#contact-us input[type="password"]:focus,
+			#contact-us input[type="email"]:focus,
+			#contact-us select:focus,
+			#contact-us textarea:focus {
 				border-color: #18bfef;
 			}
 
-		#footer select option {
+		#contact-us select option {
 			background-color: #f5f5f5;
 			color: #717981;
 		}
 
-		#footer .select-wrapper:before {
+		#contact-us .select-wrapper:before {
 			color: #e2e2e2;
 		}
 
-		#footer input[type="checkbox"] + label,
-		#footer input[type="radio"] + label {
+		#contact-us input[type="checkbox"] + label,
+		#contact-us input[type="radio"] + label {
 			color: #717981;
 		}
 
-			#footer input[type="checkbox"] + label:before,
-			#footer input[type="radio"] + label:before {
+			#contact-us input[type="checkbox"] + label:before,
+			#contact-us input[type="radio"] + label:before {
 				border-color: #e2e2e2;
 			}
 
-		#footer input[type="checkbox"]:checked + label:before,
-		#footer input[type="radio"]:checked + label:before {
+		#contact-us input[type="checkbox"]:checked + label:before,
+		#contact-us input[type="radio"]:checked + label:before {
 			background-color: #717981;
 			border-color: #717981;
 			color: #f5f5f5;
 		}
 
-		#footer input[type="checkbox"]:focus + label:before,
-		#footer input[type="radio"]:focus + label:before {
+		#contact-us input[type="checkbox"]:focus + label:before,
+		#contact-us input[type="radio"]:focus + label:before {
 			border-color: #18bfef;
 		}
 
-		#footer ::-webkit-input-placeholder {
+		#contact-us ::-webkit-input-placeholder {
 			color: #b3b7bb !important;
 		}
 
-		#footer :-moz-placeholder {
+		#contact-us :-moz-placeholder {
 			color: #b3b7bb !important;
 		}
 
-		#footer ::-moz-placeholder {
+		#contact-us ::-moz-placeholder {
 			color: #b3b7bb !important;
 		}
 
-		#footer :-ms-input-placeholder {
+		#contact-us :-ms-input-placeholder {
 			color: #b3b7bb !important;
 		}
 
-		#footer .formerize-placeholder {
+		#contact-us .formerize-placeholder {
 			color: #b3b7bb !important;
 		}
 
-		#footer ul.divided li {
+		#contact-us ul.divided li {
 			border-top-color: #e2e2e2;
 		}
 
-		#footer ul.icons li a.icon:hover:before {
+		#contact-us ul.icons li a.icon:hover:before {
 			color: #18bfef;
 		}
 
-		#footer ul.icons.alt li .icon:before {
+		#contact-us ul.icons.alt li .icon:before {
 			box-shadow: inset 0 0 0 2px #e2e2e2;
 		}
 
-		#footer ul.icons.alt li a.icon:hover:before {
+		#contact-us ul.icons.alt li a.icon:hover:before {
 			box-shadow: inset 0 0 0 2px #18bfef;
 		}
 
-		#footer header.major .date:before, #footer header.major .date:after {
+		#contact-us header.major .date:before, #contact-us header.major .date:after {
 			border-top-color: #e2e2e2;
 		}
 
-		#footer table tbody tr {
+		#contact-us table tbody tr {
 			border-color: #e2e2e2;
 		}
 
-			#footer table tbody tr:nth-child(2n + 1) {
+			#contact-us table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(220, 220, 220, 0.5);
 			}
 
-		#footer table th {
+		#contact-us table th {
 			color: #717981;
 		}
 
-		#footer table thead {
+		#contact-us table thead {
 			border-bottom-color: #e2e2e2;
 		}
 
-		#footer table tfoot {
+		#contact-us table tfoot {
 			border-top-color: #e2e2e2;
 		}
 
-		#footer table.alt tbody tr td {
+		#contact-us table.alt tbody tr td {
 			border-color: #e2e2e2;
 		}
 
-		#footer .pagination a, #footer .pagination span {
+		#contact-us .pagination a, #contact-us .pagination span {
 			border-color: #e2e2e2;
 		}
 
-		#footer .pagination a {
+		#contact-us .pagination a {
 			color: #717981 !important;
 		}
 
-			#footer .pagination a:hover {
+			#contact-us .pagination a:hover {
 				color: #18bfef !important;
 				border-color: #18bfef;
 				z-index: 1;
 			}
 
-				#footer .pagination a:hover + a, #footer .pagination a:hover + span {
+				#contact-us .pagination a:hover + a, #contact-us .pagination a:hover + span {
 					border-left-color: #18bfef;
 				}
 
-			#footer .pagination a.active {
+			#contact-us .pagination a.active {
 				background-color: #e2e2e2;
 			}
 
-		#footer .pagination span {
+		#contact-us .pagination span {
 			color: #e2e2e2;
 		}
 
-		#footer > section {
+		#contact-us > section {
 			-moz-flex-basis: 50%;
 			-webkit-flex-basis: 50%;
 			-ms-flex-basis: 50%;
@@ -4014,11 +4014,11 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 			border-left: solid 2px #e2e2e2;
 		}
 
-			#footer > section:first-child {
+			#contact-us > section:first-child {
 				border-left: 0;
 			}
 
-			#footer > section.split {
+			#contact-us > section.split {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -4030,21 +4030,21 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 				padding: 0;
 			}
 
-				#footer > section.split > section {
+				#contact-us > section.split > section {
 					padding: 3rem 4rem 1rem 4rem ;
 					border-top: solid 2px #e2e2e2;
 				}
 
-					#footer > section.split > section:first-child {
+					#contact-us > section.split > section:first-child {
 						padding: 5rem 4rem 1rem 4rem ;
 						border-top: 0;
 					}
 
-					#footer > section.split > section:last-child {
+					#contact-us > section.split > section:last-child {
 						padding: 3rem 4rem 3rem 4rem ;
 					}
 
-				#footer > section.split.contact > section {
+				#contact-us > section.split.contact > section {
 					display: -moz-flex;
 					display: -webkit-flex;
 					display: -ms-flex;
@@ -4056,11 +4056,11 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 					padding: 3.15rem 4rem;
 				}
 
-					#footer > section.split.contact > section > * {
+					#contact-us > section.split.contact > section > * {
 						margin-bottom: 0;
 					}
 
-					#footer > section.split.contact > section > :first-child {
+					#contact-us > section.split.contact > section > :first-child {
 						-moz-flex-shrink: 0;
 						-webkit-flex-shrink: 0;
 						-ms-flex-shrink: 0;
@@ -4072,7 +4072,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 						width: 6rem;
 					}
 
-					#footer > section.split.contact > section > :last-child {
+					#contact-us > section.split.contact > section > :last-child {
 						-moz-flex-shrink: 1;
 						-webkit-flex-shrink: 1;
 						-ms-flex-shrink: 1;
@@ -4083,72 +4083,72 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 						flex-grow: 1;
 					}
 
-					#footer > section.split.contact > section:first-child {
+					#contact-us > section.split.contact > section:first-child {
 						padding: 4rem 4rem 3rem 4rem;
 					}
 
-					#footer > section.split.contact > section:last-child {
+					#contact-us > section.split.contact > section:last-child {
 						padding: 3rem 4rem 4rem 4rem;
 					}
 
-					#footer > section.split.contact > section.alt {
+					#contact-us > section.split.contact > section.alt {
 						-moz-align-items: -moz-flex-start;
 						-webkit-align-items: -webkit-flex-start;
 						-ms-align-items: -ms-flex-start;
 						align-items: flex-start;
 					}
 
-						#footer > section.split.contact > section.alt > :last-child {
+						#contact-us > section.split.contact > section.alt > :last-child {
 							margin-top: -0.325rem;
 						}
 
-		#footer form label,
-		#footer h3,
-		#footer p {
+		#contact-us form label,
+		#contact-us h3,
+		#contact-us p {
 			font-size: 0.8rem;
 		}
 
 		@media screen and (max-width: 980px) {
 
-			#footer {
+			#contact-us {
 				display: block;
 			}
 
-				#footer > section {
+				#contact-us > section {
 					border-top: solid 2px #e2e2e2;
 				}
 
-					#footer > section:first-child {
+					#contact-us > section:first-child {
 						border-top: 0;
 					}
 
-					#footer > section.split > section {
+					#contact-us > section.split > section {
 						padding: 4rem 4rem 2rem 4rem ;
 					}
 
-						#footer > section.split > section:first-child {
+						#contact-us > section.split > section:first-child {
 							padding: 4rem 4rem 2rem 4rem ;
 						}
 
-						#footer > section.split > section:last-child {
+						#contact-us > section.split > section:last-child {
 							padding: 4rem 4rem 2rem 4rem ;
 						}
 
-					#footer > section.split.contact > section {
+					#contact-us > section.split.contact > section {
 						padding: 4rem;
 					}
 
-						#footer > section.split.contact > section:first-child {
+						#contact-us > section.split.contact > section:first-child {
 							padding: 4rem;
 						}
 
-						#footer > section.split.contact > section:last-child {
+						#contact-us > section.split.contact > section:last-child {
 							padding: 4rem;
 						}
 
-				#footer form label,
-				#footer h3,
-				#footer p {
+				#contact-us form label,
+				#contact-us h3,
+				#contact-us p {
 					font-size: 0.9rem;
 				}
 
@@ -4156,31 +4156,31 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 
 		@media screen and (max-width: 736px) {
 
-			#footer > section {
+			#contact-us > section {
 				padding: 2rem 2rem 0.1rem 2rem ;
 			}
 
-				#footer > section.split > section {
+				#contact-us > section.split > section {
 					padding: 2rem 2rem 0.1rem 2rem ;
 				}
 
-					#footer > section.split > section:first-child {
+					#contact-us > section.split > section:first-child {
 						padding: 2rem 2rem 0.1rem 2rem ;
 					}
 
-					#footer > section.split > section:last-child {
+					#contact-us > section.split > section:last-child {
 						padding: 2rem 2rem 0.1rem 2rem ;
 					}
 
-				#footer > section.split.contact > section {
+				#contact-us > section.split.contact > section {
 					padding: 2rem;
 				}
 
-					#footer > section.split.contact > section:first-child {
+					#contact-us > section.split.contact > section:first-child {
 						padding: 2rem;
 					}
 
-					#footer > section.split.contact > section:last-child {
+					#contact-us > section.split.contact > section:last-child {
 						padding: 2rem;
 					}
 
@@ -4188,7 +4188,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 
 		@media screen and (max-width: 480px) {
 
-			#footer {
+			#contact-us {
 				width: 100%;
 			}
 
