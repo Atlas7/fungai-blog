@@ -3026,8 +3026,8 @@ table.alt tbody tr td {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #4f6978;
-	background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+	background-color: #8bc163;
+	background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(25, 103, 51, 0.1), rgba(25, 103, 51, 0.1)), url("../../images/bg.jpg");
 	background-size: auto, auto, 100% auto;
 	background-position: center, center, top center;
 	background-repeat: repeat, no-repeat, no-repeat;
@@ -3054,7 +3054,11 @@ table.alt tbody tr td {
 	-webkit-transition-delay: 0.75s;
 	-ms-transition-delay: 0.75s;
 	transition-delay: 0.75s;
-	background: #4f6978;
+	/*-moz-transition-delay: 0s;*/
+	/*-webkit-transition-delay: 0s;*/
+	/*-ms-transition-delay: 0s;*/
+	/*transition-delay: 0s;*/
+	background: #547368;
 	content: '';
 	display: block;
 	height: 100%;
@@ -3370,7 +3374,6 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 	-ms-pointer-events: auto;
 	pointer-events: auto;
 	border-style: solid;
-	border-color: #464c56;
 	border-radius: 10px;
 	border-width: 3px !important;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -3381,13 +3384,15 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 	padding: 1rem 1.75rem;
 	text-transform: uppercase;
 	visibility: visible;
-	color: #464c56;
+	border-color: #c3c3c3;
+	color: #c3c3c3 !important;
+	background-color: rgba(79, 105, 120, 0.5);
 }
 
 #header .logo:hover {
-	border-color: #464c56;
-	color: #464c56 !important;
-	background-color: rgba(79, 105, 120, 0.5);
+	border-color: #c3c3c3;
+	color: #c3c3c3 !important;
+	background-color: rgba(123, 171, 207, 0.5);
 }
 
 @media screen and (max-width: 980px) {
@@ -4189,9 +4194,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 		}
 
 	#copyright {
-		color: #ffffff;
 		position: relative;
-		color: rgba(255, 255, 255, 0.25);
 		cursor: default;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.8rem;
@@ -4204,7 +4207,8 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
-		background-color: #4a5e6b;
+		color: #c3c3c3;
+		background-color: rgba(79, 105, 120, 0.7);
 		padding: 10px;
 		border-radius: 10px;
 	}
