@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-description: About page here
+title: Concept
+description: Concept
 sitemap:
     priority: 0.7
     lastmod: 2017-11-02
