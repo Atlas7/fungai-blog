@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Intro 5"
+title:  "Placeholder 5"
 date:   2016-12-02 12:30:00
 excerpt: "Hello Placeholder 5"
 image: "/images/blog/fungai-poc-1.png"
