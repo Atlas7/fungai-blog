@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Intro 6"
-date:   2016-12-03 12:30:00
-excerpt: "fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images using deep learning technologies."
+title:  "Intro 5"
+date:   2016-12-02 12:30:00
+excerpt: "Hello Placeholder 5"
 image: "/images/blog/fungai-poc-1.png"
 ---
 
