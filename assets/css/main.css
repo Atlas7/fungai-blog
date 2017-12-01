@@ -2904,7 +2904,8 @@ table.alt tbody tr td {
 /* Pagination */
 
 .pagination {
-	display: inline-flex;
+	display: flex;
+	justify-content: center;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;

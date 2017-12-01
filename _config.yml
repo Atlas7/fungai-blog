@@ -95,7 +95,7 @@ pagination:
   per_page: 2
   permalink: '/page/:num/'
 #  title: ':title - page :num of :max'
-  limit: 0
+#  limit: 0
   sort_field: 'date'
   sort_reverse: true
 
