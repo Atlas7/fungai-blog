@@ -2936,7 +2936,7 @@ table.alt tbody tr td {
 	text-transform: uppercase;
 }
 
-.pagination .next, .pagination .previous {
+.pagination .next, .pagination .previous, .pagination .page-number {
 	text-decoration: none;
 	padding: 0 1.75rem;
 }
