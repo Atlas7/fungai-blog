@@ -34,7 +34,8 @@ GEM
       activesupport (~> 4.0)
       html-pipeline (~> 2.3)
       jekyll (~> 3.0)
-    jekyll-paginate (1.1.0)
+    jekyll-paginate-v2 (1.9.0)
+      jekyll (~> 3.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-sitemap (0.11.0)
@@ -80,12 +81,11 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  html-pipeline
   jekyll (~> 3.2.1)
   jekyll-feed
   jekyll-gist
   jekyll-mentions
-  jekyll-paginate
+  jekyll-paginate-v2
   jekyll-sitemap
 
 BUNDLED WITH

@@ -1,6 +1,8 @@
 ---
 layout: blog
 title: Blog Articles
+pagination: 
+  enabled: true
 description: >
   You may find the latest research articles and blog posts relating to fungai.org here. We cover
   a wide range of topics including deep learning, wild mushrooms, and overall project updates.
