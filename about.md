@@ -54,6 +54,8 @@ Human: Hmmm... I think it is a (fill in the blanks)
 
 Computer says: hmmm... I think it is 99% likely that it is a (fill in the blanks).
 
+<span class="image main"><img src="{{ "/images/blog/fungi-barbarian-concept-v2.png" | prepend:site.baseurl }}" alt="" /></span>
+
 #### <a name="step3c">Classification Option 3: with a machine learning app (in a batch at home later)</a>
 
 This may be either online or offline.
