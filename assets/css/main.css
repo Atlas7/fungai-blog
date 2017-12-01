@@ -3764,13 +3764,30 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 
 /* Footer */
 
+	#nice-footer {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		background-color: #f5f5f5;
+		color: #909498;
+		cursor: default;
+		position: relative;
+		margin: 0 auto;
+		width: calc(100% - 4rem);
+		max-width: 72rem;
+		z-index: 2;
+	}
+
+	/*Contact*/
+
 	#contact-us {
 		color: #717981;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #f5f5f5;
+		/*background-color: #f5f5f5;*/
 		color: #909498;
 		cursor: default;
 		position: relative;
