@@ -4209,7 +4209,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 		max-width: 72rem;
 		z-index: 2;
 		color: #c3c3c3;
-		background-color: rgba(79, 105, 120, 0.7);
+		/*background-color: rgba(79, 105, 120, 0.7);*/
 		padding: 10px;
 		border-radius: 10px;
 	}

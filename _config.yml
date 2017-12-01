@@ -7,7 +7,7 @@ bio: fungai.org - a wild mushroom ID machine
 description: The official homepage of fungai.org
 
 # index.html - how many posts to display at home page?
-posts_limits: 10
+posts_limits: 2
 
 # Credit footer (foot.html) - populate this to form the string at the bottom
 # Further developed by [developer](developer_github) for client
@@ -92,7 +92,7 @@ exclude:
 # Pagination Settings (jekyll-paginate-v2)
 pagination:
   enabled: true
-  per_page: 2
+  per_page: 4
   permalink: '/page/:num/'
 #  title: ':title - page :num of :max'
 #  limit: 0

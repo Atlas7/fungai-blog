@@ -53,17 +53,10 @@ sitemap:
                 </p>
               </article>
 
-              <article class="post featured">
-                <h3><a href="{{ '/about/' | prepend:site.baseurl }}">Concept</a></h3>
-                <h3><a href="{{ '/team/' | prepend:site.baseurl }}">Meet our Team</a></h3>
-                <h3><a href="{{ '/blog/' | prepend:site.baseurl }}">Blog</a></h3>
-              </article>
-
             <!-- Posts -->
               <!--<h2 class="main featured">Blog Posts</h2>-->
               <section class="posts">
                 {% for post in site.posts limit: site.posts_limits %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
                   <article>
                     <header>
                       <span class="date">{{ post.date | date_to_string }}</span>
@@ -73,25 +66,17 @@ sitemap:
                     <p>{{ post.excerpt }}</p>
                     {% include read-more.html %}
                   </article>
-                  <!--{% if mod3 == 0 %}-->
-                  <!--<article>-->
-                    <!--<header>-->
-                      <!--<h2><a href="#">Sponsored</h2>-->
-                    <!--</header>-->
-
-                  <!--</article>-->
-                  <!--{% endif %}-->
                 {% endfor %}
 
               </section>
 
-            <!-- Footer -->
-            {% include our-blog.html text="See More" %}
+            <!-- Our blog -->
+            {% include our-blog.html text="Read our Blog" %}
 
           </div>
 
         <!-- Footer -->
-        {% include foot.html %}
+        {% include copyright.html %}
 
       </div>
 

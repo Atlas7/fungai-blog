@@ -1,0 +1,12 @@
+<!-- Showing buttons to move to the next and to the previous list of posts (pager buttons). -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+  <a class="previous" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"></a>
+  {% endif %}
+  <span class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+  <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"></a>
+  {% endif %}
+</div>
+{% endif %}
