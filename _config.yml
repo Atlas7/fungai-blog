@@ -16,7 +16,7 @@ github_repo_url: https://github.com/Atlas7/fungai-blog
 
 locale: en_US
 baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
-url: "https://atlaas7.github.io" # the base hostname & protocol for your site
+url: "https://atlas7.github.io" # the base hostname & protocol for your site
 
 # Jekyll
 #permalink: /blog/:title/
