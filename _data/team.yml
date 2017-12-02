@@ -8,7 +8,8 @@
   githubid: Atlas7
 
 - name: Clare Street
-  avatar: https://pbs.twimg.com/profile_images/784701067535712256/uIiRQvsi_400x400.jpg
+  # avatar: https://pbs.twimg.com/profile_images/784701067535712256/uIiRQvsi_400x400.jpg
+  avatar: https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAaLAAAAJDdmZmE4ODE2LWYzM2EtNDI1Mi1iMjk0LTJlNjMxOWIwNTQzZQ.jpg
   greet: Shrooooommss...
   desc: I know fungi very well
   role: Conservationist
