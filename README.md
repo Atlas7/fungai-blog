@@ -91,6 +91,8 @@ git branch -d my-new-branch
 ## Handy articles
 
 - [Jekyll blog posts on non index.html pages](https://stackoverflow.com/questions/26048623/jekyll-blog-posts-on-non-index-html-pages): unfortunately GitHub pages doesn't support `jekyll-paginate-v2` gem yet so will need to continue with `jekyll-paginate` gem. One limitation is that pagination only works on `index.html`. To get pagination to work on a non root end point (e.g. `/pages/blog/` or `/blog/`), one must create a sub-directory (or sub-sub directory) at root, and create `index.html` inside it.
+- [Setting the DNS for GitHub Pages on GoDaddy](https://medium.com/@LovettLovett/github-pages-godaddy-f0318c2f25a): use this
+  instruction to link up `fungai.org` with this github page `atlas7.github.io/fungai-blog`
 
 ## Credits
 
