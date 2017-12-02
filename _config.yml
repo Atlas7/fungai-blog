@@ -6,7 +6,7 @@ purpose: >
 bio: fungai.org - a wild mushroom ID machine
 description: The official homepage of fungai.org
 
-# index.html - how many posts to display at home page?
+# how many posts to display at home page?
 posts_limits: 2
 
 # Credit footer (foot.html) - populate this to form the string at the bottom
@@ -18,17 +18,9 @@ locale: en_US
 baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
 url: "https://atlaas7.github.io" # the base hostname & protocol for your site
 
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    permalink: "/blog/:title/"
-    layout: post
-    author:
-
 # Jekyll
-permalink:          /blog/:title/
+#permalink: /blog/:title/
+permalink: /:year/:month/:day/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -58,8 +50,6 @@ location: Earth
 location_url: "https://en.wikipedia.org/wiki/Earth"
 CTO: Johnny Chan
 CTO_url: "https://atlas7.github.io"
-#phone1:
-#phone2:
 
 # This is displayed on website footer
 email: "fungai.org@gmail.com"
@@ -74,30 +64,14 @@ gems:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate-v2
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
 
-
-# Produces a cleaner folder structure when using categories
-#permalink: /:year/:month/:title.html
-
 # Explicitly turn off the old code  (jekyll-paginate)
-#paginate: 6
-#paginate_path: "/blog/page:num/"
-#paginate: nil
-#paginate_path: nil
-
-# Pagination Settings (jekyll-paginate-v2)
-pagination:
-  enabled: true
-  per_page: 4
-  permalink: '/page/:num/'
-#  title: ':title - page :num of :max'
-#  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+paginate: 4
+paginate_path: "blog/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
