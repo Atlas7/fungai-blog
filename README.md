@@ -1,6 +1,7 @@
-Home page for fungai.org. Currently hosted on this GitHub page:
+Home page for fungai.org. Currently hosted on this GitHub page. You can access it via either of these URLs:
 
-[https://atlas7.github.io/fungai-blog/](https://atlas7.github.io/fungai-blog/)
+- [https://atlas7.github.io/fungai-blog/](https://atlas7.github.io/fungai-blog/): default github pages URL
+- [http://fungai.org/](http://fungai.org/) custom domain name as defined in `CNAME` file.
 
 ---
 
