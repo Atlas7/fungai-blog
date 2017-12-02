@@ -95,6 +95,8 @@ git branch -d my-new-branch
 - [Setting the DNS for GitHub Pages on GoDaddy](https://medium.com/@LovettLovett/github-pages-godaddy-f0318c2f25a): use this
   instruction to link up `fungai.org` with this github page `atlas7.github.io/fungai-blog`
 - [Configuring A records with your DNS provider](https://help.github.com/articles/setting-up-an-apex-domain/)
+- [Custom domain for GitHub project pages](https://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages): to check and see if domain A records have been updated on DNS provider side, do this: `dig yourdomain.com +nostats +nocomments +nocmd`.
+It should says the same thing as the DNS provider control panel. Otherwise, it could be just some kind of delay.
 
 ## Credits
 
