@@ -1,67 +1,3 @@
-# Site
-title: fungai.org - identify wild mushroom with deep learning
-purpose: >
-  fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images
-  using deep learning technologies.
-bio: fungai.org - a wild mushroom ID machine
-description: The official homepage of fungai.org
-
-# how many posts to display at home page?
-posts_limits: 2
-
-# Credit footer (foot.html) - populate this to form the string at the bottom
-# Further developed by [developer](developer_github) for client
-client: fungai.org
-github_repo_url: https://github.com/Atlas7/fungai-blog
-
-locale: en_US
-# use these for non custom domain. i.e. we want this website to be "https://atlas7.github.io/fungai-blog
-#baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
-#url: "https://atlas7.github.io" # the base hostname & protocol for your site
-
-# use these for custom domain. i.e. we want this website to be "http://custom-domain (i.e. no base path. url is root)
-url: "/"
-
-# Jekyll
-#permalink: /blog/:title/
-permalink: /:year/:month/:day/:title/
-markdown:           kramdown
-highlighter:        rouge
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
-
-# Comments
-disqus_shortname:   # leave blank to hide icon
-
-# Social
-# leave blank to hide icon
-#analytics-id:
-twitter: jatlas7
-#facebook:
-#instagram:
-githubid: Atlas7
-
-# This is displayed on website footer
-location: Earth
-location_url: "https://en.wikipedia.org/wiki/Earth"
-CTO: Johnny Chan
-CTO_url: "https://atlas7.github.io"
-
-# This is displayed on website footer
-email: "fungai.org@gmail.com"
-
-# Messages sent via website message box will send to here (via formspree.io)
-# Reference: https://formspree.io/
-email2: "fungai.org@gmail.com"
-
 # Gems
 gems:
   - jekyll-mentions
@@ -73,12 +9,81 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-# Explicitly turn off the old code  (jekyll-paginate)
+# Site specific (non jekyll related).
+title: fungai.org - identify wild mushroom with deep learning
+purpose: >
+  fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images
+  using deep learning technologies.
+bio: fungai.org - a wild mushroom ID machine
+description: >
+  fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images
+  using deep learning technologies.
+
+# Site specific: how many posts to display at home page?
+posts_limits: 2
+
+# specific: Credit footer (foot.html) - populate this to form the string at the bottom
+client: fungai.org
+github_repo_url: https://github.com/Atlas7/fungai-blog
+
+# Deployment specific
+#
+# Option 1 - use github domain. e.g. https://atlas7.github.io/fungai-blog
+#baseurl: "/fungai-blog"
+#url: "https://atlas7.github.io"
+#
+# Option 2 - use custom domain. e.g. http://fungai.org
+url: "/"
+
+# Define how individual post URL looks.
+# e.g. a post with a name like this: 2016-11-28-placeholder-1.md
+# ... will have a URL looke this: http://fungai.org/2016/11/28/placeholder-1
+# Note, the following value is equivalent to "pretty"
+permalink: /:year/:month/:day/:title/
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+mathjax: true
+
+# This comes with the massively theme. Don't think it is used.
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Comments (Comment out if not used)
+#disqus_shortname:
+
+# Site specific social contacts. Only used in Contact section
+# leave blank to hide icon
+#analytics-id:
+twitter: jatlas7
+#facebook:
+#instagram:
+githubid: Atlas7
+location: Earth
+location_url: "https://en.wikipedia.org/wiki/Earth"
+CTO: Johnny Chan
+CTO_url: "https://atlas7.github.io"
+email: "fungai.org@gmail.com"
+
+# Messages sent via website message box will send to here (via formspree.io)
+# Reference: https://formspree.io/
+email2: "fungai.org@gmail.com"
+
+# Jekyll-paginate - how many blog posts displayed per page (used in blog section)
 paginate: 4
 paginate_path: "blog/page:num/"
 
+# Comes with Massively Theme. Note quite sure if this is used.
 jekyll-mentions:
     base_url: https://github.com
 
-# Exclude list
+# Exclude list. Comes with Massively Theme.
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
