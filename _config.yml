@@ -74,7 +74,7 @@ gems:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate-v2
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -84,20 +84,8 @@ exclude:
 #permalink: /:year/:month/:title.html
 
 # Explicitly turn off the old code  (jekyll-paginate)
-#paginate: 6
-#paginate_path: "/blog/page:num/"
-#paginate: nil
-#paginate_path: nil
-
-# Pagination Settings (jekyll-paginate-v2)
-pagination:
-  enabled: true
-  per_page: 4
-  permalink: '/page/:num/'
-#  title: ':title - page :num of :max'
-#  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+paginate: 4
+paginate_path: "pages/blog/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
