@@ -39,6 +39,12 @@ This will serve the blog post locally at [http://127.0.0.1:4000/](http://127.0.0
 
 ## How to create a new blog post
 
+First of all, it's always a good practice to create a new branch and work there (instead of directly on master branch)
+
+```
+git checkout -b my-new-branch
+```
+
 Use an IDE (I use Webstorm, though Sublime text will also do) and a terminal (e.g. iterm2, or Mac Terminal).
 
 Create a new blog post:
@@ -59,22 +65,10 @@ This will serve the blog post locally at [http://127.0.0.1:4000/](http://127.0.0
 
 Ready to push to [https://atlas7.github.io/fungai-blog](https://atlas7.github.io/fungai-blog)?
 
-Easy, just do push master to origin:
-
 ```
-git push origin master
-```
-
-(or just `git push`). The actual GitHub page [https://atlas7.github.io/fungai-blog/] may take a few seconds to build / update.
-
-Tip: It is good practice to work on a branch instead of master directly. I usually do this:
-
-```
-git checkout -b my-new-branch-name
-# do some stuff bla bla bla
 git add .
 git commit -m "add new features"
-git push origin my-new-branch-name
+git push origin my-new-branch
 ```
 
 Go to Github, create a new pull request. (and as an admin myself I will happily approve and merge). Delete the
@@ -91,7 +85,7 @@ git pull origin master
 Delete the local branch for tidiness:
 
 ```
-git branch -d my-new-branch-name
+git branch -d my-new-branch
 ```
 
 ## Handy articles
