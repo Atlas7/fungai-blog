@@ -15,8 +15,12 @@ client: fungai.org
 github_repo_url: https://github.com/Atlas7/fungai-blog
 
 locale: en_US
-baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
-url: "https://atlas7.github.io" # the base hostname & protocol for your site
+# use these for non custom domain. i.e. we want this website to be "https://atlas7.github.io/fungai-blog
+#baseurl: "/fungai-blog" # the subpath of your site, e.g. /blog
+#url: "https://atlas7.github.io" # the base hostname & protocol for your site
+
+# use these for custom domain. i.e. we want this website to be "http://custom-domain (i.e. no base path. url is root)
+url: "/"
 
 # Jekyll
 #permalink: /blog/:title/
