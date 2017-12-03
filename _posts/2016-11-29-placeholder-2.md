@@ -3,7 +3,9 @@ layout: post
 title:  "Placeholder 2"
 date:   2016-11-29 12:30:00
 excerpt: "Hello Placeholder 2"
-image: "/images/blog/fungai-poc-1.png"
+image:
+  - url: "/images/blog/fungai-poc-1.png"
+    alt: "post image"
 ---
 
 fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images using deep learning technologies.
