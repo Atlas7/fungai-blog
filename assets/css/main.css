@@ -2914,6 +2914,7 @@ table.alt tbody tr td {
   list-style: none;
   margin: 0 0 2rem 2px;
   padding: 0;
+  color: #6A6A6A;
 }
 
 .pagination a, .pagination span {
@@ -2935,25 +2936,30 @@ table.alt tbody tr td {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  color: #6A6A6A;
 }
 
 .pagination .next, .pagination .previous, .pagination .page-number {
   text-decoration: none;
   padding: 0 1.75rem;
+  font-family: FontAwesome;
+  /*font-weight: bold;*/
+  /*color: #6A6A6A;*/
 }
 
 .pagination .next:before, .pagination .previous:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: FontAwesome;
+  color: #6A6A6A;
+  /*font-family: FontAwesome;*/
   font-style: normal;
-  font-weight: normal;
-  text-transform: none !important;
+  font-weight: bold;
+  /*text-transform: none !important;*/
 }
 
 .pagination .next:before, .pagination .previous:before {
   display: inline-block;
-  color: inherit !important;
+  /*color: inherit !important;*/
 }
 
 .pagination .previous:before {
@@ -2984,7 +2990,7 @@ table.alt tbody tr td {
 }
 
 .pagination a, .pagination span {
-  border-color: #eeeeee;
+  border-color: #979797;
 }
 
 .pagination a {
@@ -3002,11 +3008,11 @@ table.alt tbody tr td {
 }
 
 .pagination a.active {
-  background-color: #eeeeee;
+  background-color: #a4a4a4;
 }
 
 .pagination span {
-  color: #eeeeee;
+  color: #6d6d6d;
 }
 
 /* Wrapper */
