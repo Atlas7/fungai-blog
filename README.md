@@ -1,3 +1,7 @@
+# fungai-blog
+
+[![Build Status](https://travis-ci.org/Atlas7/fungai-blog.svg?branch=master)](https://travis-ci.org/Atlas7/fungai-blog)
+
 Home page for fungai.org. Currently hosted on this GitHub page. You can access it via either of these URLs:
 
 - [https://atlas7.github.io/fungai-blog/](https://atlas7.github.io/fungai-blog/): default github pages URL
@@ -5,7 +9,18 @@ Home page for fungai.org. Currently hosted on this GitHub page. You can access i
 
 ---
 
-Built with Jekyll [Massively Theme](https://github.com/iwiedenm/jekyll-theme-massively-src), GitHub Pages, [formspree.io](https://formspree.io/), and lots of modifications (e.g. pagination with jekyll-paginate-v2, newer CSS, overall layout, refactoring).
+Built with:
+
+- Jekyll [Massively Theme](https://github.com/iwiedenm/jekyll-theme-massively-src),
+- GitHub Pages,
+- [formspree.io](https://formspree.io/),
+- and lots of modifications (e.g. pagination with jekyll-paginate)
+- newer CSS, overall layout, refactoring).
+
+Incorporated Continuous Integration with Travis CI and HTML Proofer Gem. Handy Ref:
+
+- [Jekyll, Travis CI, and Github](https://jekyllrb.com/docs/continuous-integration/travis-ci/)
+- [HTML Proofer](https://github.com/gjtorikian/html-proofer): check HTML syntax
 
 ## Development Instruction
 
