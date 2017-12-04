@@ -10,7 +10,7 @@ sitemap:
 
 ## Demos
 
-Here are some initial proof of concepts (POC).
+Here are some initial proof of concepts (POC). May take a while to spin up.
 
 ### Intel Developer Mesh Project
 
@@ -20,13 +20,22 @@ Here are some initial proof of concepts (POC).
 ### Blog
 
 - Done! It is [this website - fungai.org](http://fungai.org)
+    <a href="{{ site.github_repo_url }}" class="icon fa-github" rel="nofollow" target="_blank">
+      <span class="label">GitHub</span>
+    </a>
 
 ### Batch Fungi Classification User Interface (UI)
 
 - <a href="https://fungai-react-ui.herokuapp.com/fungpredict" target="_blank">ReactJS UI built with ReactJS and
-  hosted on Heroku</a>. May take a while to spin up
+  hosted on Heroku</a>
+    <a href="https://github.com/Atlas7/fungai-react-ui" class="icon fa-github" rel="nofollow" target="_blank">
+      <span class="label">GitHub</span>
+    </a>
 - <a href="https://fungai-json-server-heroku.herokuapp.com/" target="_blank">Fake API built with json-server and
-  hosted Heroku:</a>. May take a while to spin up
+  hosted Heroku</a>
+    <a href="https://github.com/Atlas7/fungai-json-server-heroku" class="icon fa-github" rel="nofollow" target="_blank">
+      <span class="label">GitHub</span>
+    </a>
 
 ### Tensorflow Models - Training
 
