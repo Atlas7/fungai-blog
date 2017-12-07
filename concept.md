@@ -26,21 +26,21 @@ The proposed ecosystem looks like this:
 
 1 - hmm where are you mushroom...
 
-<span class="image main"><img src="{{ "/images/blog/trip-100.jpg" | prepend:site.baseurl }}" alt="trip-100.jpg" /></span>
+![trip-100.jpg](/images/blog/trip-100.jpg)
 
 2 - Ah ha! Spotted a wild mushroom
 
-<span class="image main"><img src="{{ "/images/blog/trip-200.jpg" | prepend:site.baseurl }}" alt="trip-200.jpg" /></span>
+![trip-200.jpg](/images/blog/trip-200.jpg)
 
 ### <a name="step2">Step 2: Observe and take pictures</a>
 
 1 - What a beautify mushroom. OK obligatory pictures...
 
-<span class="image main"><img src="{{ "/images/blog/trip-300.jpg" | prepend:site.baseurl }}" alt="trip-300.jpg" /></span>
+![trip-300.jpg](/images/blog/trip-300.jpg)
 
 2 - Take more pictures...
 
-<span class="image main"><img src="{{ "/images/blog/trip-400.jpg" | prepend:site.baseurl }}" alt="trip-400.jpg" /></span>
+![trip-400.jpg](/images/blog/trip-400.jpg)
 
 ### <a name="step3">Step 3: Classification</a>
 
@@ -48,13 +48,13 @@ The proposed ecosystem looks like this:
 
 Human: Hmmm... I think it is a (fill in the blanks)
 
-<span class="image main"><img src="{{ "/images/blog/trip-500.jpg" | prepend:site.baseurl }}" alt="trip-500.jpg" /></span>
+![trip-500.jpg](/images/blog/trip-500.jpg)
 
 #### <a name="step3b">Classification Option 2: with a machine learning app (offline, immediately)</a>
 
 Computer says: hmmm... I think it is 99% likely that it is a (fill in the blanks).
 
-<span class="image main"><img src="{{ "/images/blog/fungi-barbarian-concept-v2.png" | prepend:site.baseurl }}" alt="fungi-barbarian-concept-v2.png" /></span>
+![fungi-barbarian-concept-v2.png](/images/blog/fungi-barbarian-concept-v2.png)
 
 #### <a name="step3c">Classification Option 3: with a machine learning app (in a batch at home later)</a>
 
@@ -62,19 +62,19 @@ This may be either online or offline.
 
 1 - Go home, upload a batch of pictures to a computer
  
-<span class="image main"><img src="{{ "/images/blog/trip-600.jpg" | prepend:site.baseurl }}" alt="trip-600.jpg" /></span>
+![trip-600.jpg](/images/blog/trip-600.jpg)
 
 2 - computer says: these are the likely mushroom specie predictions
 
-<span class="image main"><img src="{{ "/images/blog/fungai-poc-1.png" | prepend:site.baseurl }}" alt="fungai-poc-1.png" /></span>
+![fungai-poc-1.png](/images/blog/fungai-poc-1.png)
 
 3 - computer says: you want to know more? Here are some more details. Click links to see other similar mushrooms of the same specie
 
-<span class="image main"><img src="{{ "/images/blog/fungai-poc-2.png" | prepend:site.baseurl }}" alt="fungai-poc-2.png" /></span>
+![fungai-poc-1.png](/images/blog/fungai-poc-2.png)
 
 4 - computer says: here are other similar mushroom of the same specie
 
-<span class="image main"><img src="{{ "/images/blog/fungai-poc-3.png" | prepend:site.baseurl }}" alt="fungai-poc-3.png" /></span>
+![fungai-poc-3.png](/images/blog/fungai-poc-3.png)
 
 Checkout <a href="https://fungai-react-ui.herokuapp.com/" target="_blank">this frontend proof of concept of classification option 3 - in a batch at home</a>
 

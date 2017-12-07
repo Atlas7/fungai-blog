@@ -48,6 +48,11 @@
     -webkit-text-size-adjust: none;
   }
 
+  img {
+    max-width: 100%;
+    padding: 2rem;
+  }
+
 /* Box Model */
 
   *, *:before, *:after {
@@ -2433,17 +2438,20 @@
     .image.left {
       float: left;
       margin: 0 2rem 2rem 0;
+      padding: 20px;
       top: 0.75rem;
     }
 
     .image.right {
       float: right;
       margin: 0 0 2rem 2rem;
+      padding: 20px;
       top: 0.75rem;
     }
 
     .image.fit {
       display: block;
+      justify-content: ;
       margin: 2.5rem 0;
       width: 100%;
     }
@@ -2453,13 +2461,15 @@
       }
 
       .image.fit img {
-        width: 100%;
+        /*width: 100%;*/
+        max-height: 200px;
       }
 
-    .image.main {
+    .image .main {
       display: block;
-      margin: 4rem 0;
-      width: 100%;
+      /*width: 100%;*/
+      max-height: 200px;
+      margin: auto;
     }
 
       .image.main:first-child {
@@ -2467,7 +2477,7 @@
       }
 
       .image.main img {
-        width: 100%;
+        /*width: 100%;*/
       }
 
     @media screen and (max-width: 736px) {
