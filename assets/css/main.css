@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
 /*
-  Massively by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 /* Reset */
@@ -49,12 +49,8 @@ body {
 }
 
 img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  /*max-height: 100%;*/
+  max-width: 100%
 }
-
 
 /* Box Model */
 
@@ -2424,9 +2420,7 @@ input[type="radio"]:focus + label:before {
   border: 0;
   display: inline-block;
   position: relative;
-  padding: 2rem;
 }
-
 
 .image img {
   display: block;
@@ -2466,17 +2460,10 @@ input[type="radio"]:focus + label:before {
   width: 100%;
 }
 
-/*.image.main {*/
-  /*display: block;*/
-  /*margin: 4rem 0;*/
-  /*width: 100%;*/
-/*}*/
-
 .image.main {
   display: block;
   margin: 4rem 0;
-  width: 70%;
-  margin: auto;
+  width: 100%;
 }
 
 .image.main:first-child {
@@ -2484,7 +2471,8 @@ input[type="radio"]:focus + label:before {
 }
 
 .image.main img {
-  width: 100%;
+  width: 70%;
+  margin: auto;
 }
 
 @media screen and (max-width: 736px) {
@@ -2503,14 +2491,14 @@ a.image {
   overflow: hidden;
 }
 
-a.image img, .image img {
+a.image img {
   -moz-transition: -moz-transform 0.2s ease-out;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   -ms-transition: -ms-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
 }
 
-a.image:hover img, .image:hover {
+a.image:hover img {
   -moz-transform: scale(1.05);
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
@@ -2918,6 +2906,7 @@ table.alt tbody tr td {
   border-color: #eeeeee;
 }
 
+
 /* Pagination */
 
 .pagination {
@@ -3050,8 +3039,8 @@ table.alt tbody tr td {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #8bc163;
-  background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(25, 103, 51, 0.1), rgba(25, 103, 51, 0.1)), url("../../images/bg.jpg");
+  background-color: #4f6978;
+  background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
   background-size: auto, auto, 100% auto;
   background-position: center, center, top center;
   background-repeat: repeat, no-repeat, no-repeat;
@@ -3078,11 +3067,7 @@ table.alt tbody tr td {
   -webkit-transition-delay: 0.75s;
   -ms-transition-delay: 0.75s;
   transition-delay: 0.75s;
-  /*-moz-transition-delay: 0s;*/
-  /*-webkit-transition-delay: 0s;*/
-  /*-ms-transition-delay: 0s;*/
-  /*transition-delay: 0s;*/
-  background: #547368;
+  background: #4f6978;
   content: '';
   display: block;
   height: 100%;
@@ -3398,6 +3383,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   -ms-pointer-events: auto;
   pointer-events: auto;
   border-style: solid;
+  border-color: #464c56;
   border-radius: 10px;
   border-width: 3px !important;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -3408,15 +3394,13 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   padding: 1rem 1.75rem;
   text-transform: uppercase;
   visibility: visible;
-  border-color: #c3c3c3;
-  color: #c3c3c3 !important;
-  background-color: rgba(79, 105, 120, 0.5);
+  color: #464c56;
 }
 
 #header .logo:hover {
-  border-color: #c3c3c3;
-  color: #c3c3c3 !important;
-  background-color: rgba(123, 171, 207, 0.5);
+  border-color: #464c56;
+  color: #464c56 !important;
+  background-color: rgba(79, 105, 120, 0.5);
 }
 
 @media screen and (max-width: 980px) {
@@ -3728,8 +3712,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   }
 
   #main > .posts > * {
-    /*padding: 2.5rem;*/
-    padding: 1rem;
+    padding: 2.5rem;
     width: 50%;
   }
 
@@ -3803,7 +3786,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   z-index: 2;
 }
 
-/*Contact*/
+/* contact */
 
 #contact-us {
   color: #717981;
@@ -3811,6 +3794,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  background-color: #f5f5f5;
   color: #909498;
   cursor: default;
   position: relative;
