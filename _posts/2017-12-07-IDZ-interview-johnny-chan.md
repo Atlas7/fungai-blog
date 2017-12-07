@@ -16,19 +16,25 @@ Whilst I was studying for my aeronautical engineering masters at Imperial Colleg
 
 #### What projects are you working on now?
 
-I am currently building [fungAI.org](http://fungai.org/) - an application with the aim of assisting scientists and enthusiasts to easily identify wild mushroom species from images using deep learning technologies.
-
-This project was motivated by a casual friend's Facebook post from a walking trip:
+I am currently building [fungAI.org](http://fungai.org/) - a machine learning application that automatically identify wild mushroom species from input images using deep learning (classification and localization) techniques, primarily motivated by a casual friend's Facebook post from a walking trip:
  
  > "hey do you know what mushroom this is?"
   
-I've decided to build an application that will help identifying wild mushroom species from images with deep learning technologies. You can see an [initial toy demo here](https://fungai-react-ui.herokuapp.com/fungpredict), and read more about it from this [Intel DevMesh Fungi Barbarian Project page](https://devmesh.intel.com/projects/fungi-barbarian).
+Coincidently [Clare my partner](https://twitter.com/lemon_disco) happens to be a mushroom enthusiast and so naturally we've formed a [couple team](http://127.0.0.1:4000/team/) - me focus on the tech part and Clare the domain expert! We think the project would be fun.
+
+You can [read more about the project concept here](http://fungai.org/concept/), take a look at an [initial frontend toy demo here](https://fungai-react-ui.herokuapp.com/fungpredict), and check out this [Intel DevMesh Fungi Barbarian Project page](https://devmesh.intel.com/projects/fungi-barbarian).
 
 ![fungi-barbarian-concept-v2.png](/images/blog/fungi-barbarian-concept-v2.png)
 
 ![fungai-poc-1.png](/images/blog/fungai-poc-1.png)
 
+![fungai-poc-2.png](/images/blog/fungai-poc-2.png)
+
+![fungai-poc-3.png](/images/blog/fungai-poc-3.png)
+
 #### Tell us about a technology challenge you’ve had to overcome in a project.
+
+
 
 - install OpenCV to Anaconda
 
