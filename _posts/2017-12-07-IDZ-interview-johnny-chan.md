@@ -6,12 +6,6 @@ excerpt: "Intel Developer Zone Interview"
 image: https://avatars1.githubusercontent.com/u/11135428?s=400&u=6974cfe92abcde2c79bcf492b31cb9908c5c1818&v=4
 ---
 
-<img class="image main" alt="avatar" src="https://avatars1.githubusercontent.com/u/11135428?s=400&u=6974cfe92abcde2c79bcf492b31cb9908c5c1818&v=4" style="width: 50%; margin: auto"/>
-
-<br/>
-
-<img class="image main left" alt="avatar" src="https://avatars1.githubusercontent.com/u/11135428?s=400&u=6974cfe92abcde2c79bcf492b31cb9908c5c1818&v=4"/>
-
 #### Tell us about your background.
 
 Professionally I had worked as a technologist for a large global investment bank, an analytics consultant for a major UK bank, and a full-stack developer for a wellness startup. In my spare time I am the creator and author of [Mathalope.co.uk](http://mathalope.co.uk/) (a tech blog visited by 120,000+ students and professionals from 180+ countries), voluntary developer of the [Friends of Russia Dock Woodland Website](http://fordw.org/), open source software contributor (including Tensorflow), hackathon competitor, and part of the Intel Software Innovator Program. My current goal is to become a full-time machine learning engineer.
@@ -30,11 +24,9 @@ This project was motivated by a casual friend's Facebook post from a walking tri
   
 I've decided to build an application that will help identifying wild mushroom species from images with deep learning technologies. You can see an [initial toy demo here](https://fungai-react-ui.herokuapp.com/fungpredict), and read more about it from this [Intel DevMesh Fungi Barbarian Project page](https://devmesh.intel.com/projects/fungi-barbarian).
 
-![hi](/images/blog/fungi-barbarian-concept-v2.png)
+![fungi-barbarian-concept-v2.png](/images/blog/fungi-barbarian-concept-v2.png)
 
-<img class="image main" alt="fungi-barbarian-concept-v2.png" src="/images/blog/fungi-barbarian-concept-v2.png" style="width: 80%; margin: auto;"/>
-
-<img class="image main" alt="fungi-poc-1.png" src="/images/blog/fungai-poc-1.png" style="width: 80%; margin: auto;"/>
+![fungai-poc-1.png](/images/blog/fungai-poc-1.png)
 
 #### Tell us about a technology challenge you’ve had to overcome in a project.
 
