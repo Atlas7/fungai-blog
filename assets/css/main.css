@@ -1,3 +1,5 @@
+@import url(bootstrap-grid.min.css);
+@import url(bootstrap.min.css);
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
@@ -4667,6 +4669,10 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 
 
 /* center flow imnages */
+
+.gallery-row {
+  margin: 0px;
+}
 
 .gallery-grid {
   display: flex;
