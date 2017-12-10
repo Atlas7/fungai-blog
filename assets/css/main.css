@@ -52,6 +52,11 @@ img {
   max-width: 100%
 }
 
+img.resize {
+  width:300px; /* you can use % */
+  height: auto;
+}
+
 /* Box Model */
 
 *, *:before, *:after {
@@ -4658,4 +4663,31 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   text-transform: uppercase;
   color: #a5a5a5;
   letter-spacing: 1px;
+}
+
+
+/* center flow imnages */
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gallery-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.gallery-img {
+  width: 400px;
+  height: auto;
+  /*border-radius: 10px;*/
+}
+
+.gallery-wide {
+  width: 90%;
+  height: auto;
+  /*border-radius: 10px;*/
 }

@@ -8,11 +8,23 @@ image: https://avatars1.githubusercontent.com/u/11135428?s=400&u=6974cfe92abcde2
 
 #### Tell us about your background.
 
-Professionally I've been a technologist for a large global investment bank, an analytics consultant for a major UK commercial and private bank, a full-stack developer for a wellness startup, and briefly an engineering intern for an airline. In my spare time I am the creator and author of [Mathalope.co.uk](http://mathalope.co.uk/) (a tech blog visited by 120,000+ students and professionals from 180+ countries), volunteer developer of the [Friends of Russia Dock Woodland Website](http://fordw.org/), open source software contributor, hackathon competitor, and part of the Intel Software Innovator Program. I am working my way on becomming a better machine learning engineer and educator.
+Professionally I've been a technologist for a large global investment bank, an analytics consultant for a major UK commercial and private bank, a full-stack developer for a wellness startup, and briefly an engineering intern for an airline. In my spare time I am the creator and author of [Mathalope.co.uk](http://mathalope.co.uk/) (a tech blog visited by 120,000+ students and professionals from 180+ countries so far), volunteer developer of the [Friends of Russia Dock Woodland Website](http://fordw.org/), open source software contributor, hackathon competitor, and part of the Intel Software Innovator Program. I am currently working on becoming a better machine learning engineer and educator.
+
+<div class="gallery-grid">
+  <div class="gallery-item"><img alt="citi-1.jpg" src="/images/blog/citi-1.jpg" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="rbs-1.jpg" src="/images/blog/rbs-1.jpg" class="gallery-img"/></div>
+</div>
 
 #### What got you started in technology?
 
-When I was studying for my masters in aeronautical engineering at Imperial College London, I learnt to write small Fortran/Matlab programs where you can throw at it say satellite data, and it spit out geographical location on Earth. I then started my professional technology career in 2008 for a global investment bank, where I collaborated with colleagues from all 4 regions globally (EMEA, ASPAC, NAM and LATAM), developed and rolled-out a fully automated data extraction and analytics tool - protecting the 100,000+ production systems (Windows, UNIX, AIX, Mainframe platforms etc) from risk of overloading. I built the system with proprietary technologies including SAS, SQL, Oracle, Autosys batch scheuling, and internal configuration databases. In 2014 I decided to learn about open source technologies in my spare time and as a result created [Mathalope.co.uk](http://mathalope.co.uk/) - and that's the point I believe was where I started making a real impact globally - contributing codes and knowledge to the rest of the world, reaching to 120,000+ audiences from 180+ countries.
+When I was studying masters in aeronautical engineering at Imperial College London, I learnt to write small Fortran/Matlab programs where you could throw at it say satellite data, and it spit out geographical location on Earth. I then started my professional technology career in 2008 for a global investment bank, where I collaborated with colleagues from all 4 regions globally (EMEA, ASPAC, NAM and LATAM), developed and rolled-out a fully automated capacity planning and analytics tool, wrapped with governance and processes - protecting the 100,000+ production systems (Windows, UNIX, AIX, Mainframe platforms etc) from risk of overloading. I built the system with proprietary technologies including SAS, Oracle, Autosys batch scheuling, Windows/UNIX scripts, and internal configuration databases. In 2014 I decided to learn about open source technologies in my spare time and as a result created [Mathalope.co.uk](http://mathalope.co.uk/) - and that's the point I believe was where I started making a real impact globally - contributing codes and knowledge to the rest of the world, reaching to 120,000+ audiences from 180+ countries.
+
+I started teaching myself machine learning during 2017 with the help of [deeplearning.ai](https://www.deeplearning.ai/), [Stanford Machine learning courses](https://www.coursera.org/learn/machine-learning), Karpathy's [Stanford cs231n Convolutional Nerual Networks for Visual Recognition](http://cs231n.stanford.edu/), and [many other deep learning books and courses online](https://github.com/ChristosChristofidis/awesome-deep-learning). 
+
+<div class="gallery-grid">
+  <div class="gallery-item"><img class="gallery-img" alt="cert-stanford-ml-1.png" src="/images/blog/cert-stanford-ml-1.png" /></div>
+  <div class="gallery-item"><img class="gallery-img" alt="cert-deeplearning-ai-1.png" src="/images/blog/cert-deeplearning-ai-1.png" /></div>
+</div>
 
 #### What projects are you working on now?
 
@@ -24,11 +36,12 @@ Coincidentally [my partner who is a conservationist](https://twitter.com/lemon_d
 
 You can [read more about the project concept](http://fungai.org/concept/), try out an [initial frontend toy demo](https://fungai-react-ui.herokuapp.com/fungpredict), and check out this [Intel DevMesh Fungi Barbarian Project page](https://devmesh.intel.com/projects/fungi-barbarian). All project source codes are open sourced on GitHub - you may find [more Demos and Github repository links here](http://fungai.org/demos/).
 
-![fungi-barbarian-concept-v2.png](/images/blog/fungi-barbarian-concept-v2.png)
-
-![fungai-poc-1.png](/images/blog/fungai-poc-1.png)
-
-![fungai-poc-2.png](/images/blog/fungai-poc-2.png)
+<div class="gallery-grid">
+  <div class="gallery-item"><img alt="fungi-barbarian-concept-v2.png" src="/images/blog/fungi-barbarian-concept-v2.png" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="fungai-poc-3.png" src="/images/blog/fungai-poc-3.png" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="fungai-poc-1.png" src="/images/blog/fungai-poc-1.png" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="fungai-poc-2.png" src="/images/blog/fungai-poc-2.png" class="gallery-img"/></div>
+</div>
 
 #### Tell us about a technology challenge you’ve had to overcome in a project.
 
@@ -52,12 +65,28 @@ Say we wish to [train a model to recognise different types of daisies](https://w
  
 An ultra powerful and expensive GPU is no longer a "must have requirement" to solve deep learning problems. Transfer learning and open source software together have made deep learning more inclusive and accessible to all. This will lead to stronger communities, knowledge sharing, and further technological advancement of deep learning in the near future.
 
-![fungai-poc-3.png](/images/blog/fungai-poc-3.png)
+<div class="gallery-grid">
+  <div class="gallery-item"><img alt="desk-1.jpg" src="/images/blog/desk-1.jpg" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="win-3.jpg" src="/images/blog/win-3.jpg" class="gallery-img"/></div>
+</div>
+
 
 #### How does Intel help you succeed?
 
 Intel supports innovative projects (including [fungAI.org](http://fungai.org) which I'm currently working on) by providing access to state-of-the-art deep learning technologies, including the Intel Xeon-Phi enabled cluster nodes for model training, Neural Compute Stick for embedded machine learning applications, and more. At a personal level, Intel has provided me access to a community of technology experts and innovators from AI, IoT, VR and Game Development - where I get to learn and bounce ideas from. I was also sponsored by Intel to take part in events including the Seattle Innovator Summit and Nuremberg Embedded World Expo, where I had the opportunity to travel, learn, and contribute to the tech community. I really appreciate the amount of efforts the Intel Software Innovator Program team has put in to ensure long-term success of the innovation community. It has been a privilege and I thank you all for the opportunities.
 
+<div class="gallery-grid">
+  <div class="gallery-item"><img alt="innovator-summit-2016-seattle-1.png" src="/images/blog/innovator-summit-2016-seattle-1.png" class="gallery-img-wide"/></div>
+  <div class="gallery-item"><img alt="innovator-summit-2016-seattle-2.png" src="/images/blog/innovator-summit-2016-seattle-2.png" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="innovator-1.jpg" src="/images/blog/innovator-1.jpg" class="gallery-img"/></div>
+</div>
+
 #### Outside of technology, what type of hobbies do you enjoy?
 
 Since 2009 I've been playing social mixed-gender non-contact (touch/tag) rugby leagues here in London weekly evenings outside work. It's a fun way to socialise and meet new friends. What's even better: the lost calories from exercising on the field is perfectly balanced by the calories gained from the pub session afterwards. (But to be honest I think it's usually a net gain!)
+
+<div class="gallery-grid">
+  <div class="gallery-item"><img alt="touch-rugby-2.jpg" src="/images/blog/touch-rugby-2.jpg" class="gallery-img-wide"/></div>
+  <div class="gallery-item"><img alt="touch-rugby-1.jpg" src="/images/blog/touch-rugby-1.jpg" class="gallery-img"/></div>
+  <div class="gallery-item"><img alt="touch-rugby-3.jpg" src="/images/blog/touch-rugby-3.jpg" class="gallery-img"/></div>
+</div>
