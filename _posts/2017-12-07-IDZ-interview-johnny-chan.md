@@ -3,7 +3,7 @@ layout: post
 title:  "IDZ Interview"
 date:   2017-12-06 12:30:00
 excerpt: "Intel Developer Zone Interview (draft)"
-image: https://avatars1.githubusercontent.com/u/11135428?s=400&u=6974cfe92abcde2c79bcf492b31cb9908c5c1818&v=4
+image: /images/blog/avatar-jc.jpg
 ---
 
 #### Tell us about your background.
