@@ -59,6 +59,10 @@ img.resize {
   height: auto;
 }
 
+a.button {
+  text-decoration: none;
+}
+
 /* Box Model */
 
 *, *:before, *:after {
@@ -3352,6 +3356,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 #header a {
   color: #ffffff;
   border-bottom-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 #header a:hover {
@@ -3481,6 +3486,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 #nav a {
   color: #ffffff;
   border-bottom-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 #nav a:hover {
