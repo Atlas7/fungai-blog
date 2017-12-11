@@ -4,6 +4,7 @@
   Jekyll integration by somiibo.com
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<!DOCTYPE HTML>
 <html>
   <head>
     {% include head.html %}
@@ -15,14 +16,14 @@
 
         <!-- Header -->
         <header id="header">
-          <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
+          <a href="{{ '/' | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
         </header>
 
         <!-- Nav -->
-          <nav id="nav">
-            {% include nav.html %}
-            {% include social-media.html className="icons" %}
-          </nav>
+        <nav id="nav">
+          {% include nav.html %}
+          {% include social-media.html className="icons" %}
+        </nav>
 
         <!-- Main -->
         <div id="main">

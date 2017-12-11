@@ -39,17 +39,21 @@ sitemap:
           <div id="main">
             <!-- Featured Post -->
               <article class="post featured">
-                <quote>{{ site.purpose }}</quote>
-                <img class="image" src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="home-main.jpg" />
                 <p>
-                  We are a community interested in machine learning and mushrooms. Our goal is to create an
-                  automated mushroom ID ecosystem by combining the two worlds: given images of mushrooms taken
-                  from a walking trip, fungai.org will automatically predict the mushroom classifications
-                  either immediately during the trip (offline), or processed as a batch after the trip (offline/online).
+                  <a href="{{ '/' | prepend:site.baseurl }}">fungAI.org</a> is a machine learning application with the aim of identifying wild mushroom species from images using deep learning techniques. The project was primarily inspired and motivated by a casual friend's Facebook post from a walking trip.
+                </p>
+                <h3>hey do you know what mushroom this is?</h3>
+                <div class="container">
+                  <div class="col-sm-12"><img src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="home-main.jpg" /></div>
+                </div>
+                <p></p>
+                <p>
+                  You can <a href="{{ '/concept/' | prepend:site.baseurl }}" target="_blank">read more about the project concept</a>, try out an <a href="https://fungai-react-ui.herokuapp.com/fungpredict" target="_blank">initial ReactJS frontend toy demo</a>, and check out this <a href="https://devmesh.intel.com/projects/fungi-barbarian" target="_blank">Intel DevMesh Fungi Barbarian Project page</a>.
                 </p>
                 <p>
-                  We are also part of the <a href="https://devmesh.intel.com/projects/fungi-barbarian" target="_blank">Intel Developer Mesh Project - Fungi Barbarian</a>
+                  All project source codes are open sourced on GitHub. You may find <a href="{{ '/demos/' | prepend:site.baseurl }}" target="_blank">more Demos and Github repository links here</a>.
                 </p>
+                <a href="https://github.com/{{site.githubid}}" class="icon fa fa-github fa-3x" rel="nofollow" target="_blank"><span class="label">GitHub</span></a>
               </article>
 
             <!-- Posts -->
