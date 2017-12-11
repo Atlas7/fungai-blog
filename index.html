@@ -40,7 +40,7 @@ sitemap:
             <!-- Featured Post -->
               <article class="post featured">
                 <quote>{{ site.purpose }}</quote>
-                <img class="image main" src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="home-main.jpg" />
+                <img class="image" src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="home-main.jpg" />
                 <p>
                   We are a community interested in machine learning and mushrooms. Our goal is to create an
                   automated mushroom ID ecosystem by combining the two worlds: given images of mushrooms taken
@@ -61,7 +61,11 @@ sitemap:
                       <span class="date">{{ post.date | date_to_string }}</span>
                       <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
                     </header>
+
+                    {% if post.image %}
                     <a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="post.image" /></a>
+                    {% endif %}
+
                     <p>{{ post.excerpt }}</p>
                     {% include read-more.html %}
                   </article>
