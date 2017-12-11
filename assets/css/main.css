@@ -59,6 +59,10 @@ img.resize {
   height: auto;
 }
 
+a.button {
+  text-decoration: none;
+}
+
 /* Box Model */
 
 *, *:before, *:after {
@@ -3352,6 +3356,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 #header a {
   color: #ffffff;
   border-bottom-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 #header a:hover {
@@ -3389,8 +3394,8 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   -webkit-pointer-events: auto;
   -ms-pointer-events: auto;
   pointer-events: auto;
-  border-style: solid;
-  border-color: #464c56;
+  border-style: none;
+  border-color: #d1d3d4;
   border-radius: 10px;
   border-width: 3px !important;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -3401,13 +3406,14 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   padding: 1rem 1.75rem;
   text-transform: uppercase;
   visibility: visible;
-  color: #464c56;
+  color: #d1d3d4;
+  background: rgba(79, 105, 120, 0.7);
 }
 
 #header .logo:hover {
   border-color: #464c56;
-  color: #464c56 !important;
-  background-color: rgba(79, 105, 120, 0.5);
+  color: #7babcf !important;
+  background-color: rgba(79, 105, 120, 0.7);
 }
 
 @media screen and (max-width: 980px) {
@@ -3481,6 +3487,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 #nav a {
   color: #ffffff;
   border-bottom-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 #nav a:hover {
