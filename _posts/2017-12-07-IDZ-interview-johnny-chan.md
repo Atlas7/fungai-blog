@@ -2,7 +2,7 @@
 layout: post
 title:  "IDZ Interview"
 date:   2017-12-06 12:30:00
-excerpt: "Intel Developer Zone Interview (draft)"
+excerpt: "Intel Developer Zone Interview"
 image: "/images/blog/avatar-jc.jpg"
 ---
 
