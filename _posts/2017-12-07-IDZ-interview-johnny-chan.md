@@ -2,9 +2,11 @@
 layout: post
 title:  "IDZ Interview"
 date:   2017-12-06 12:30:00
-excerpt: "Intel Developer Zone Interview (draft)"
+excerpt: "Intel Developer Zone Interview"
 image: "/images/blog/avatar-jc.jpg"
 ---
+
+Update 12th Dec 2017: this post is now [published at Intel Developer Zone](https://software.intel.com/en-us/blogs/2017/12/11/intel-software-innovator-johnny-chan-programmer-educator-and-open-source-enthusiast)
 
 #### Tell us about your background.
 
@@ -38,7 +40,7 @@ I am currently building [fungAI.org](http://fungai.org/) - a machine learning ap
  
  > "hey do you know what mushroom this is?"
   
-Coincidentally [my partner who is a conservationist](https://twitter.com/lemon_disco) happens also to be a mushroom enthusiast and so naturally we've formed a [couple team](http://127.0.0.1:4000/team/). We think the project will be fun and educational.
+Coincidentally [my partner who is a conservationist](https://twitter.com/lemon_disco) happens also to be a mushroom enthusiast and so naturally we've formed a [couple's team](http://fungai.org/team/). We think the project will be fun and educational.
 
 You can [read more about the project concept](http://fungai.org/concept/), try out an [initial ReactJS frontend toy demo](https://fungai-react-ui.herokuapp.com/fungpredict), and check out this [Intel DevMesh Fungi Barbarian Project page](https://devmesh.intel.com/projects/fungi-barbarian). All project source codes are open sourced on GitHub - you may find [more Demos and Github repository links here](http://fungai.org/demos/).
 
@@ -56,7 +58,7 @@ You can [read more about the project concept](http://fungai.org/concept/), try o
 
 #### Tell us about a technology challenge you’ve had to overcome in a project.
 
-During the summer of 2015 I spent the entire weekend just trying to get [OpenCV-Python](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html), Windows, and the [Anaconda package manager](https://docs.anaconda.com/anaconda/) to work together for a personal computer vision project. I remember searching really hard on the internet for solutions, trying out many of them, and failed uncountable times. After many rounds of trial-and-errors and investigations I eventually solved the problem by combining multiple "partially working" solutions. In the end I decided to [write an article summarising my solution via a blog post](http://mathalope.co.uk/2015/05/07/opencv-python-how-to-install-opencv-python-package-to-anaconda-windows/) which has since been viewed more than 120,000 times. To increase the range of impact I also [posted it as a solution to a Stackoverflow Forum](https://stackoverflow.com/questions/23119413/how-do-i-install-python-opencv-through-conda#answer-30281466) - the forum has so far been viewed over 200,000 times and my solution has received 50+ "good citizen brownie points" upvotes. It turns out many developers around the world had also bumped into similar issues at the time and got the problem solved with the help of the articles.
+During the summer of 2015 I spent the entire weekend just trying to get [OpenCV-Python](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html), Windows, and the [Anaconda package manager](https://docs.anaconda.com/anaconda/) to work together for a [personal computer vision project](https://www.youtube.com/watch?v=A0OFX6W1AcA). I remember searching really hard on the internet for solutions, trying out many of them, and failed uncountable times. After many rounds of trial-and-errors and investigations I eventually solved the problem by combining multiple "partially working" solutions. In the end I decided to [write an article summarising my solution via a blog post](http://mathalope.co.uk/2015/05/07/opencv-python-how-to-install-opencv-python-package-to-anaconda-windows/) which has since been viewed more than 120,000 times. To increase the range of impact I also [posted it as a solution to a Stackoverflow Forum](https://stackoverflow.com/questions/23119413/how-do-i-install-python-opencv-through-conda#answer-30281466) - the forum has so far been viewed over 200,000 times and my solution has received 50+ "good citizen brownie points" upvotes. It turns out many developers around the world had also bumped into similar issues at the time and got the problem solved with the help of the articles.
 
 This experience has taught me an important lesson on making an impact: it doesn't have to be building the next Google or Facebook - all it requires could be as simple as writing up a summary of how you've solved a problem and sharing it online. We only get to live once.
 
@@ -76,7 +78,7 @@ Personally, I am super excited about transfer learning and believe this techniqu
 
 > This suddenly makes deep learning very inclusive to everybody
  
-An ultra powerful and expensive GPU is no longer a "must have requirement" to solve deep learning problems. Transfer learning and open source software together have made deep learning more inclusive and accessible to all. The power of **inclusiveness** will enable stronger communities, knowledge sharing, and further technological advancement of deep learning in the near future.
+An ultra powerful and expensive graphics processing unit (GPU) is no longer a "must have requirement" to solve deep learning problems. Transfer learning and open source software together have made deep learning more inclusive and accessible to all. The power of **inclusiveness** will enable stronger communities, knowledge sharing, and further technological advancement of deep learning in the near future.
 
 <div class="container">
   <div class="row">
@@ -87,7 +89,7 @@ An ultra powerful and expensive GPU is no longer a "must have requirement" to so
 
 #### How does Intel help you succeed?
 
-Intel supports innovative projects, such as [fungAI.org](http://fungai.org) that I'm currently working on, by providing access to state-of-the-art deep learning technologies: [Intel Xeon-Phi](https://www.intel.com/content/www/us/en/products/processors/xeon-phi/xeon-phi-processors.html) enabled cluster nodes for model training, [Intel Movidius Neural Compute Stick](https://developer.movidius.com/) for embedded machine learning applications, and more. At a personal level, Intel has provided me access to a community of technology experts and [innovators](https://software.intel.com/en-us/intel-software-innovators/meet-innovators) from AI, IoT, VR and Game Development - where I get to learn and be inspired from. Recently I was sponsored by Intel to take part in events including the [Seattle Intel Software Innovator Summit 2016](https://software.intel.com/en-us/blogs/2016/12/02/intel-software-innovator-summit-2016) and Nuremberg Embedded World Expo 2017, where I had the opportunity to travel, learn, and contribute to the tech community. I really appreciate the amount of efforts the Intel Software Innovator Program team has put together in enabling long-term success of the innovation community. It has been a privilege and I thank you all for the opportunities.
+Intel supports innovative projects, such as [fungAI.org](http://fungai.org) that I'm currently working on, by providing access to state-of-the-art deep learning technologies: [Intel Xeon-Phi](https://www.intel.com/content/www/us/en/products/processors/xeon-phi/xeon-phi-processors.html) enabled cluster nodes for model training, [Intel Movidius Neural Compute Stick](https://developer.movidius.com/) for embedded machine learning applications, and more. At a personal level, Intel has provided me access to a community of technology experts and [innovators](https://software.intel.com/en-us/intel-software-innovators/meet-innovators) from artificial intelligence (AI), Internet of Things (IoT), virtual reality (VR), and Game Development  - where I get to learn and be inspired from. Recently I was sponsored by Intel to take part in events including the [Seattle Intel Software Innovator Summit 2016](https://software.intel.com/en-us/blogs/2016/12/02/intel-software-innovator-summit-2016) and Nuremberg Embedded World Expo 2017, where I had the opportunity to travel, learn, and contribute to the tech community. I really appreciate the amount of efforts the Intel Software Innovator Program team has put together in enabling long-term success of the innovation community. It has been a privilege and I thank you all for the opportunities.
 
 
 <div class="container">
