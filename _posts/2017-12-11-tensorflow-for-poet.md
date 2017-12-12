@@ -2,7 +2,7 @@
 layout: post
 title:  "Tensorflow for Poet"
 date:   2017-12-11 14:30:00
-excerpt: "(draft / work in progress) Build a Flower Image Recognition Model with Transfer Learning Techniques, Python 3.6.3, Tensorflow 1.4.1 and tensorflow-tensorboard v0.4.0rc3."
+excerpt: "Build a Flower Image Recognition Model with Transfer Learning Techniques, Python 3.6.3, Tensorflow 1.4.1 and tensorflow-tensorboard v0.4.0rc3."
 image: "/images/blog/daisy-1.jpg"
 ---
 
