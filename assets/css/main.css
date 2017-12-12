@@ -4704,3 +4704,8 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   height: auto;
   /*border-radius: 10px;*/
 }
+
+
+a:hover {
+  text-decoration: none;
+}

@@ -227,12 +227,11 @@ We are still at the root of the github repository.
 
 Let's take a look at the transfer learning (i.e. re-training) script. See [the original page](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3) for more details.
 
-Note the script appears to support Python 3.5. It "should" be ok for Python 3.6 (which we are on currently).
+Note the script appears to support Python 3.5. It "should" be ok for Python 3.6 (which we are on currently). You may get some warning on this when you run python scripts (not critical).
  
 ```
 (py36-tf14) $ python -m scripts.retrain -h
-/Users/johnny/anaconda/envs/py36-tf14/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
-  return f(*args, **kwds)
+
 usage: retrain.py [-h] [--image_dir IMAGE_DIR] [--output_graph OUTPUT_GRAPH]
                   [--intermediate_output_graphs_dir INTERMEDIATE_OUTPUT_GRAPHS_DIR]
                   [--intermediate_store_frequency INTERMEDIATE_STORE_FREQUENCY]
@@ -406,6 +405,98 @@ Take a look at Tensorboard at [http://localhost:6006/](http://localhost:6006/) w
 Now is probably a good time to take a break. Then come back, and try and understanding what is going on, before moving on to the next step. I would suggest to:
 
 - read through [the rest of the original instruction on retraining the network](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3)
+- read the paper [Going Deeper with Convolutions](http://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf). Remarks: it turns out image cropping increases performance marginally? Try work out number of parameters and computations required and ensure result matches the one in paper (for understanding).
 - navigate around Tensorboard. What the summary is trying to tell us?
 - study the training script `/scripts/retrain.py`. What does it do exactly?
 - take a look at the newly created files at `/tf_files/`
+  - `/bottlenecks` contain the images in the form of bottlenect values. i.e. each file has 1001 values.
+  
+Note:
+
+- the cached input values of the final layer is stored at `/tf_files/bottlenecks` (these are generated once for reuse in the retraining phase
+- the retrained model (aka retrained graph) is now stored at `/tf_files/retrained_graph.pb`
+- the retrained lables are stored in a file at `tf_files/retrained_labels.txt`
+
+### Perform classification inference
+
+The script that does this is `/scripts/label_image`. The default options should be good enough but let's take a look at these options anyway:
+
+```
+(py36-tf14) $ python -m  scripts.label_image -h
+
+usage: label_image.py [-h] [--image IMAGE] [--graph GRAPH] [--labels LABELS]
+                      [--input_height INPUT_HEIGHT]
+                      [--input_width INPUT_WIDTH] [--input_mean INPUT_MEAN]
+                      [--input_std INPUT_STD] [--input_layer INPUT_LAYER]
+                      [--output_layer OUTPUT_LAYER]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --image IMAGE         image to be processed
+  --graph GRAPH         graph/model to be executed
+  --labels LABELS       name of file containing labels
+  --input_height INPUT_HEIGHT
+                        input height
+  --input_width INPUT_WIDTH
+                        input width
+  --input_mean INPUT_MEAN
+                        input mean
+  --input_std INPUT_STD
+                        input std
+  --input_layer INPUT_LAYER
+                        name of input layer
+  --output_layer OUTPUT_LAYER
+                        name of output layer
+```
+
+To perform inference for a test image do something like this:
+
+```
+python -m scripts.label_image \
+    --graph=tf_files/retrained_graph.pb  \
+    --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+```
+
+Output:
+
+```
+(py36-tf14) $ python -m scripts.label_image \
+  --graph=tf_files/retrained_graph.pb  \
+  --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
+Evaluation time (1-image): 0.267s
+
+daisy 0.998764
+dandelion 0.00100535
+sunflowers 0.000216147
+roses 1.42537e-05
+tulips 6.22144e-07
+```
+
+Note it returns the top 5 (softmax) probabilities. Model is ~99% confident the image eis a daisy.
+
+Do the same for rose:
+
+```
+(py36-tf14) $ python -m scripts.label_image \
+  --graph=tf_files/retrained_graph.pb  \
+  --image=tf_files/flower_photos/roses/2414954629_3708a1a04d.jpg
+
+Evaluation time (1-image): 0.244s
+
+roses 0.954326
+tulips 0.0456478
+dandelion 1.27241e-05
+daisy 1.15512e-05
+sunflowers 1.34952e-06
+```
+
+### What next
+
+- try other hyperparameters
+- train on our own categories (e.g. fungi categories)
+- build a frontend for inferences. e.g.
+  - web app
+  - mobile app
+  - video streaming / realtime classification app
+
