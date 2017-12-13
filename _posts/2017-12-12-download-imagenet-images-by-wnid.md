@@ -108,7 +108,7 @@ Here are the steps that I follow to download images for `fly agaric` (`wnid = n1
     `$ git clone https://github.com/tzutalin/ImageNet_Utils`
 2. navigate into the repository:
     `$ cd ImageNet_Utils`
-3. the script seems to work well with Python 2.7 (and not so for Python 2.x). So let's create an Anaconda python environment (feel free to use Python 3.x if you like. I used Python 3.6 originally and bumped into errors. So guessing the scripts aren't Python 3.x compatible yet - maybe):
+3. the script seems to work well with Python 2.7 (and not so for Python 3.x). So let's create an Anaconda python environment (feel free to use Python 3.x if you like. I used Python 3.6 originally and bumped into errors. So guessing the scripts aren't Python 3.x compatible yet - maybe):
     `$ conda create py27p13 python=2.7.13`
 4. activate the conda environment (so we have Python 2.7 enabled in an isolated environment):
     `(py27p13) $ source activate py27p13`
