@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Download ImageNet Images by WordNet ID"
-date:   2017-12-11 14:30:00
+date:   2017-12-12 14:30:00
 excerpt: "Download ImageNet images for Transfer Learning, with ImageNet-Utils"
 image: "/images/blog/imagenet-logo.png"
 ---
