@@ -332,6 +332,8 @@ optional arguments:
                         Mobilenet.
 ```
 
+If you have read the script, you'd notice that it only accepts images in the JPEG format. i.e. any of these extensions are valid: `['jpg', 'jpeg', 'JPG', 'JPEG']`. So beware.
+
 ### Perform the re-training
 
 Before doing this, export one more environmental variable. i.e. the root directory of the training images.
