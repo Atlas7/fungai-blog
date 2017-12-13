@@ -2,11 +2,51 @@
 layout: post
 title:  "Train a basic wild mushroom classifier"
 date:   2017-12-13 14:30:00
-excerpt: "Train a basic image classification model to identify 5 types of wild mushrooms, with Transfer Learning, Tensorflow, Tensorboard, MobileNet, and ImageNet images."
+excerpt: "(draft mode) Train a basic image classification model to identify 5 types of wild mushrooms, with Transfer Learning, Tensorflow, Tensorboard, MobileNet, and ImageNet images."
 image: "/images/blog/mushroom-classifier-poc.png"
 ---
 
-### How to use the retrain script
+Earlier, we learnt about [transfer learning with Tensorflow for Poets retrain scripts](http://fungai.org/2017/12/11/tensorflow-for-poets/), and [downloading images from ImageNet](http://fungai.org/2017/12/11/tensorflow-for-poets/).
+
+In this article we will focus on combining these concepts and techniques and build a more specialized machine learning application.
+
+We are going to build a very basic image classification model to identify 5 types of wild mushrooms (we also show the WordNet ID `wnid` in bracket):
+
+- Fly Agaric (n13003061)
+- Scarlet Elf cup (n13030337)
+- Common Stinkhorn (n13040629)
+- Giant Puffball (n13044375)
+- Earthstar (n13044778)
+
+To do this, we will need to accomplish the following at a high level:
+
+1. download reasonable amount of images per wild mushroom type from ImageNet. I'd say 250 is a good number.
+2. ensure our images are clean. e.g. it needs to open up, in `.jpg` format, non corrupted, belong to correct category (I've seen non-mushroom objects in a mushroom category - this needs to be removed), non flickr dummy image. I tend to use image with at least 100 KB in file size for safety, but at least 20 KB. Anything less than 2KB is suspicious.
+3. move 200 images per category to a folder structure suitable for the retrain script.
+4. move the remaining 50 per category to a folder in same structure as above, but we'll use this for demo test running against the retrained model (i.e. no used for training).
+5. run the retrain script `retrain.py` (with the appropriate options).
+6. visualize training process with Tensorboard. This will give us an idea of model quality / hyperparameter tweaks required
+7. test out the model by using the image inference / prediction script `label_image.py` (with the appropriate options).
+
+### Step 1: Download 250 Images per Category
+
+(work in progress)
+
+### Step 2: Clean the 250 Images per Category
+
+(work in progress)
+
+### Step 3: Move 200 Images per category to a folder for image retraining
+
+(work in progress)
+
+### Step 4: Move 50 Images per category to a folder to perform demo inferences
+
+(work in progress)
+
+### Step 5: Perform Model Retraining (Transfer Learning)
+
+#### How to use the retrain script
 
 To see what options are there, do a: 
 
@@ -68,3 +108,16 @@ Instead of having to issue `help` every time, I've just had a read through the c
 | bottleneck_dir                    | str   | "/tmp/bottleneck"          | Path to cache bottleneck layer values as files.                             |
 | final_tensor_name                 | str   | "final_result"             | The name of the output classification layer in the retrained graph.         |
 ```
+
+### Step 6: Visualize Retraining on Tensorboard
+
+(work in progress)
+
+### Step 7: Perform demo inferences
+
+(work in progress)
+
+## Summary
+
+
+### Next Steps
