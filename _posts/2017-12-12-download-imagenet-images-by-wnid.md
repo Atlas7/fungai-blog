@@ -153,6 +153,26 @@ When an image no longer exists on [Flickr](https://www.flickr.com/) (where some 
 
 You will see quite a number of this. The strategy is to either remove them manually (by eye), or find a programmatic way to remove these later on.
 
+Update 2017-12-13: I just noticed image like this has a file size of about 2 KB. Most good images have a size of a least 40 KB. A quick win could be to do a sort by file size in the Mac finder window, and filter away the very small images, such as this.
+
+#### Corrupted Image
+
+The download process is not perfect. Sometimes an image could be partially downloaded. For instance, when I click on one of this partially downloaded images, it just loads forever (or shows sign of errors). Such as this one:
+
+![imagenet-partial-downloaded-image.png](/images/blog/imagenet-partial-downloaded-image.png)
+
+These images then to have really small file size, of less than 2 KB (as far as I could see).
+
+A quick win is probably to just filter out files like this. Only when have the time we then attempt download again in future.
+
+#### Non Image Type
+
+You'd also notice some files downloaded are not actually images (`.jpg`, `.png`, etc), but text files (e.g. `.php`, `.html`, `.txt`, etc).
+
+This is probably due to some URLs are no longer valid and the server decided to respond with a text file instead of an image.
+
+This can be filtered away easily by file type. (do a sort in Mac finder, or programmatically using filename extension).
+
 ### Summary
 
 In this article we have:
