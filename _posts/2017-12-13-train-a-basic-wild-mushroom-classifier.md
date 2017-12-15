@@ -22,7 +22,7 @@ But before getting our hands dirty let's take a step back and form our high leve
 
 ### Google's 7 Steps of Machine Learning
 
-Let's review quickkly the Google's [7 Steps of Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw) (see 9:38 - 9:53):
+Let's review quickly the Google's [7 Steps of Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw) (see 9:38 - 9:53):
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nKW8Ndu7Mjw?rel=0&amp;start=578" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
@@ -120,7 +120,7 @@ $ cd ~/repos/my-ImageNet_Utils
 Ensure we have Python 2.7 environment setup (yes I know. We are in this age we should be using Python 3.6+ really. But from what I've tested so far, Python 2.7 works for this ImageNet_Utils tool. So just stick with it for now. We are only ever going to use it strictly for downloading ImageNet images). Let's create a Python 2.7 environment with Anaconda (if you've already done this, skip to next step)
 
 ```
-$ conda create --name py27p13 python=2.7
+$ conda create --name py27p13 python=2.7.13
 ```
 
 Activate the Python environment (Python 2.7.13 is what I use):
@@ -198,10 +198,179 @@ Earthstar images at `~/repos/ImageNet_Utils/n13003061/n13003061_urlimages`:
 Notice that we will inevitably have more images in certain categories than the other from our initial raw datasets.
 
 
-
 ### Step 2: Preparing that Data
 
 (work in progress)
+
+#### Decision: Pick our subset and clean (or the other way round?)
+
+Now that we have the raw ImageNet images downloaded to `~/repos/ImageNet_Utils/`, we have a decision to make: we can either (1) clean all the raw images, then pick our random 250 images per category, or (2) the other way round - pick aound 250 images per category, then clean this smaller subset. Let's compare these two options.
+
+Option (1): clean everything up front once and then pick our 250 images per category. Advantage of this is that know our entire dataset will be clean at the end of the data cleansing. This allow flexibility in long run - for instance, we will be able to select our fixed subset of any size, be it 250 images per category, 300 per category, or even 500 per category, we will be able to do that easily. The only drawback of this option is the massive effort in cleaning more data than we actually need upfront, for our initial prototype. If you have already done the tensorflow for poets tutorial previously, you'll know that around 200 retrain images will be good enough to get started. If we look at fly agaric alone, we already have 850 ish images in this category - to clean all 850 fly agaric images when all we need is just 250 from that category, could slow down our first attempt to this exercise. Imagine we have 5 categories to clean! At the time of writing this, step 1 would have downloaded 842 Fly agaric images, 310 scarlet elf cup, 613 common stinkhorn, 643 giant puffball, and 572 earthstar. That's a total of 2980 images to clean (when all we need is 1250 images: 250 per category x 5 categories). This option will likely double the number of images to clean than actually required.
+
+Option (2): pick our 250 images per category, and then clean these subsets. Advantage of this is **focus**. We know 250 clean images per category is good enough. We pick only 250 raw images and focus on getting them cleansed. This will ensure we are not distracted too much upfront, at such an early stage. The downside of this option is that (as you've probably have guessed), is that whenever we see invalid images, we delete them. So say we have started with 250 fly agaric images, and we've found 30 dirty ones and ended up deleting them and reduce our bucket size to 220 fly agaric images. We then copy and paste the additional 30 unused fly agaric images to this bucket (to make it up to 250). We do the cleaning on this 30 images, find 5 dirty ones, delete them, and ended up with 245 clean images in this bucket. We repeat the process until we obtain the entire set of 250 clean fly agaric images. The downside as you see is the additional manual work involved. But with a systematic approach, it is possible to reduce the likelihood of dirty images in our 250 buckets. This option is not perfect, but for a first attempt in building this wild mushroom classificaton app, it is good enough for getting things done and gaining relevant experience, and so we will choose this option in this tutorial.
+
+In this tutorial we will use option (2) - pick around 250 images per category, then clean this smaller subset.
+
+#### Create a new folder dedicated to our 250 cleansed images per category
+
+let's create a new folder to store our ~250 clean images per categories:
+
+```
+(py27p13) $ cd ~/repos/my-ImageNet_Utils
+(py27p13) $ mkdir shrooms-clean-250-each
+```
+
+Within this `shrooms-clean-250-each`, let's create 5 subdirectories with appropriate names:
+
+```
+(py27p13) $ cd ~/repos/my-ImageNet_Utils
+(py27p13) $ mkdir n13003061-fly-agaric
+(py27p13) $ mkdir n13030337-scarlet-elf-cup
+(py27p13) $ mkdir n13040629-common-stinkhorn
+(py27p13) $ mkdir n13044375-giant-puffball
+(py27p13) $ mkdir n13044778-Earthstar
+```
+
+Our directory `~/repos/my-ImageNet_Utils/shrooms-clean-250-each` should look like this:
+
+![shrooms-clean-250-each](/images/blog/shrooms-clean-250-each.png)
+
+#### Copy 250 images per category for cleansing
+
+This step is a bit manual, but easy to do for first timer. Open up two Finder windows. Make sure both Finders are at  `~/repos/my-ImageNet_Utils`. We then copy 250 images from Finder 1 to Finder 2 like this:
+
+<div class="table-wrapper" markdown="block">
+
+| Category          | Copy images from `./`              | Paste images to `shrooms-clean-250-each`               |
+|-------------------|------------------------------------|--------------------------------------------------------|
+| Fly Agaric        | `./n13030337/n13003061_urlimages/` | `./shrooms-clean-250-each/n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./n13030337/n13030337_urlimages/` | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./n13040629/n13040629_urlimages/` | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./n13044375/n13044375_urlimages/` | `./shrooms-clean-250-each/n13044375-giant-puffball/`   |
+| Earthstar         | `./n13003061/n13003061_urlimages/` | `./shrooms-clean-250-each/n13003061-earthstar/`        |
+
+</div>
+
+Tip: do a sort descending by file size. Images with larger file size is likely to be more valid than smaller ones. In particular, images with 2KB or below are very likely invalid images. Focusing larger size images will likely reduce the population of "dirty" images.
+
+#### Do some cleaning
+
+Now, review the images in `~/repos/my-ImageNet_Utils/shrooms-clean-250-each/`. Delete any invalid images as appropriate.
+
+For example, while I was checking through my Earthstar images, these are what I consider valid and invalid images:
+
+##### Example: Valid Earth Star (keep these) <i class="fa fa-check" aria-hidden="true" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6"><img alt="valid-earthstar-1.png.png" src="/images/blog/valid-earthstar-1.png"/></div>
+    <div class="col-sm-6"><img alt="valid-earthstar-2.png.png" src="/images/blog/valid-earthstar-2.png"/></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6"><img alt="valid-earthstar-3.png.png" src="/images/blog/valid-earthstar-3.png"/></div>
+    <div class="col-sm-6"><img alt="valid-earthstar-4.png.png" src="/images/blog/valid-earthstar-4.png"/></div>
+  </div>
+</div>
+
+##### Example: Ivnalid Earth Star (delete these) <i class="fa fa-times" aria-hidden="true" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6"><img alt="invalid-earthstar-1.png.png" src="/images/blog/invalid-earthstar-1.png"/></div>
+    <div class="col-sm-6"><img alt="invalid-earthstar-2.png.png" src="/images/blog/invalid-earthstar-2.png"/></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6"><img alt="invalid-earthstar-3.png.png" src="/images/blog/invalid-earthstar-3.png"/></div>
+    <div class="col-sm-6"><img alt="imagenet-partial-downloaded-image.png" src="/images/blog/imagenet-partial-downloaded-image.png"/></div>
+  </div>  
+</div>
+
+Notice that as we delete images, our "250 per bucket" will start to fall short. In this case, just add more unused images and repeat the cleaning step (probably a few times). In the end of we should have 250 clean images per category, stored at `~/repos/my-ImageNet_Utils/shrooms-clean-250-each/`.
+
+#### Prepare the clean data for tensorflow for poets
+
+First of all, recall our directory structure:
+
+```
+|- repos
+  |- my-ImageNet_Utils
+  |- my-tensorflow-for-poets
+```
+
+So far we have been working with the `my-ImageNet_Utils` repository: we've downaloded raw ImageNet images there and prepared 250 clean images per wild mushroom category - all stored under `~/repos/my-ImageNet_Utils/shrooms-clean-250-each/`.
+
+We now need to copy the images accordingly to the `my-tensorflow-for-poets`, so we can run some scripts to perform transfer learning and predictions. If you have come across the tensorflow for poets exercise previously, you would have learnt that all the (untracked) working files are stored under `~/repos/my-tensorflow-for-poets/tf_files`. This will include images for retraining, the retrained models / graphs, labels, etc. We can basically store anything relating to retraining in this location for convenience.
+
+#### Prepare 200 Images per category for transfer learning
+
+Create the `shrooms-train-200-each` folder at `~repos/my-tensorflow-for-poets`, and create a similar directory structure to the `shrooms-clean-250-each` that we created and populated earlier:
+
+```
+(py27p13) $ cd ~/repos/my-tensorflow-for-poets/tf_files
+(py27p13) $ mkdir shrooms-train-200-each
+(py27p13) $ cd shrooms-train-200-each
+(py27p13) $ mkdir n13003061-fly-agaric
+(py27p13) $ mkdir n13030337-scarlet-elf-cup
+(py27p13) $ mkdir n13040629-common-stinkhorn
+(py27p13) $ mkdir n13044375-giant-puffball
+(py27p13) $ mkdir n13044778-Earthstar
+```
+
+Now, open up two Finder windows:
+
+- Finder 1 points to the clean images directory: `~/repos/my-ImageNet_Utils/shrooms-clean-250-each`
+- Finder 2 points to the retraining images directory: `~/repos/my-tensorflow-for-poets/tf_files/shrooms-train-200-each` 
+
+In Finder 1, sort the images by name. Copy the **first 200** clean images per category over to this folder, like this:
+
+<div class="table-wrapper" markdown="block">
+
+| Category          | from `~/repos/my-ImageNet_Utils/`                      | to `~/repos/my-tensorflow-for-poets/tf_files/`         |
+|-------------------|--------------------------------------------------------|--------------------------------------------------------|
+| Fly Agaric        | `./shrooms-clean-250-each/n13003061-fly-agaric/`       | `./shrooms-train-200-each/n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  | `./shrooms-train-200-each/n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` | `./shrooms-train-200-each/n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./shrooms-clean-250-each/n13044375-giant-puffball/`   | `./shrooms-train-200-each/n13044375-giant-puffball/`   |
+| Earthstar         | `./shrooms-clean-250-each/n13003061-earthstar/`        | `./shrooms-train-200-each/n13003061-earthstar/`        |
+
+</div>
+
+#### Prepare 50 Images per category for prediction
+
+This will be very similar to our previous step, but we copy over the remaining 50 unused images over for demo / prediction activities later.
+
+Create the `shrooms-demo-50-each` folder at `~repos/my-tensorflow-for-poets`, and create a similar directory structure to the `shrooms-clean-250-each` that we created and populated earlier:
+
+```
+(py27p13) $ cd ~/repos/my-tensorflow-for-poets/tf_files
+(py27p13) $ mkdir shrooms-demo-50-each
+(py27p13) $ cd shrooms-demo-50-each
+(py27p13) $ mkdir n13003061-fly-agaric
+(py27p13) $ mkdir n13030337-scarlet-elf-cup
+(py27p13) $ mkdir n13040629-common-stinkhorn
+(py27p13) $ mkdir n13044375-giant-puffball
+(py27p13) $ mkdir n13044778-Earthstar
+```
+
+Now, open up two Finder windows:
+
+- Finder 1 points to the clean images directory: `~/repos/my-ImageNet_Utils/shrooms-clean-250-each`
+- Finder 2 points to the retraining images directory: `~/repos/my-tensorflow-for-poets/tf_files/shrooms-demo-50-each` 
+
+In Finder 1, sort the images by name. Copy the **last 50** clean images per category over to this folder, like this:
+
+<div class="table-wrapper" markdown="block">
+
+| Category          | from `~/repos/my-ImageNet_Utils/`                      | to `~/repos/my-tensorflow-for-poets/tf_files/`         |
+|-------------------|--------------------------------------------------------|--------------------------------------------------------|
+| Fly Agaric        | `./shrooms-clean-250-each/n13003061-fly-agaric/`       | `./shrooms-demo-50-each/n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  | `./shrooms-demo-50-each/n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` | `./shrooms-demo-50-each/n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./shrooms-clean-250-each/n13044375-giant-puffball/`   | `./shrooms-demo-50-each/n13044375-giant-puffball/`   |
+| Earthstar         | `./shrooms-clean-250-each/n13003061-earthstar/`        | `./shrooms-demo-50-each/n13003061-earthstar/`        |
+
+</div>
 
 ### Step 3: Choosing a Model
 
