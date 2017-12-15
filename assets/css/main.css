@@ -4705,7 +4705,21 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   /*border-radius: 10px;*/
 }
 
-
 a:hover {
+
   text-decoration: none;
+}
+
+pre.cap {
+  display: inline;
+  margin: 0 0 0 0;
+}
+
+.container {
+  margin-bottom: 2rem;
+}
+
+/* required for markdown scrolling table. See the blog post train a basic wild mushroom classifier on 2017-12-13*/
+.table-wrapper {
+  overflow-x: scroll;
 }
