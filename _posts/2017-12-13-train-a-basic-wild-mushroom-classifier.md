@@ -278,7 +278,7 @@ For example, while I was checking through my Earthstar images, these are what I 
   </div>
 </div>
 
-##### Example: Ivnalid Earth Star (delete these) <i class="fa fa-times" aria-hidden="true" />
+##### Example: Invnalid Earth Star (delete these) <i class="fa fa-times" aria-hidden="true" />
 
 <div class="container">
   <div class="row">
