@@ -238,21 +238,26 @@ Our directory `~/repos/my-ImageNet_Utils/shrooms-clean-250-each` should look lik
 
 #### Copy 250 images per category for cleansing
 
-This step is a bit manual, but easy to do for first timer. Open up two Finder windows. Make sure both Finders are at  `~/repos/my-ImageNet_Utils`. We then copy 250 images from Finder 1 to Finder 2 like this:
+This step is a bit manual, but easy to do for first timer. Open up two Finder windows:
+
+- Finder 1 points to the clean images directory: `~/repos/my-ImageNet_Utils`
+- Finder 2 points to the retraining images directory: `~/repos/my-ImageNet_Utils/shrooms-clean-250-each` 
+
+In Finder 1, sort the images by descending by file size. Copy the first 250 clean images per category over to Finder 2, like this:
 
 <div class="table-wrapper" markdown="block">
 
-| Category          | Copy images from `./`              | Paste images to `shrooms-clean-250-each`               |
-|-------------------|------------------------------------|--------------------------------------------------------|
-| Fly Agaric        | `./n13030337/n13003061_urlimages/` | `./shrooms-clean-250-each/n13003061-fly-agaric/`       |
-| Scarlet Elf cup   | `./n13030337/n13030337_urlimages/` | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  |
-| Common Stinkhorn  | `./n13040629/n13040629_urlimages/` | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` |
-| Giant Puffball    | `./n13044375/n13044375_urlimages/` | `./shrooms-clean-250-each/n13044375-giant-puffball/`   |
-| Earthstar         | `./n13003061/n13003061_urlimages/` | `./shrooms-clean-250-each/n13003061-earthstar/`        |
+| Category          | Copy from Finder 1                 | Paste to Finder 2               |
+|-------------------|------------------------------------|---------------------------------|
+| Fly Agaric        | `./n13030337/n13003061_urlimages/` | `./n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./n13030337/n13030337_urlimages/` | `./n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./n13040629/n13040629_urlimages/` | `./n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./n13044375/n13044375_urlimages/` | `./n13044375-giant-puffball/`   |
+| Earthstar         | `./n13003061/n13003061_urlimages/` | `./n13003061-earthstar/`        |
 
 </div>
 
-Tip: do a sort descending by file size. Images with larger file size is likely to be more valid than smaller ones. In particular, images with 2KB or below are very likely invalid images. Focusing larger size images will likely reduce the population of "dirty" images.
+What is the reason for doing a sort descending by file size? It's just a trick: images with larger file size is likely to be more valid than smaller ones. In particular, images with 2KB or below are very likely invalid images. Focusing larger size images will likely reduce the population of "dirty" images. But it's entirely up to you how you'd like to do it.
 
 #### Do some cleaning
 
@@ -322,17 +327,17 @@ Now, open up two Finder windows:
 - Finder 1 points to the clean images directory: `~/repos/my-ImageNet_Utils/shrooms-clean-250-each`
 - Finder 2 points to the retraining images directory: `~/repos/my-tensorflow-for-poets/tf_files/shrooms-train-200-each` 
 
-In Finder 1, sort the images by name. Copy the **first 200** clean images per category over to this folder, like this:
+In Finder 1, sort the images by name. Copy the **first 200** clean images per category over to Finder 2, like this:
 
 <div class="table-wrapper" markdown="block">
 
-| Category          | from `~/repos/my-ImageNet_Utils/`                      | to `~/repos/my-tensorflow-for-poets/tf_files/`         |
-|-------------------|--------------------------------------------------------|--------------------------------------------------------|
-| Fly Agaric        | `./shrooms-clean-250-each/n13003061-fly-agaric/`       | `./shrooms-train-200-each/n13003061-fly-agaric/`       |
-| Scarlet Elf cup   | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  | `./shrooms-train-200-each/n13030337-scarlet-elf-cup/`  |
-| Common Stinkhorn  | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` | `./shrooms-train-200-each/n13040629-common-stinkhorn/` |
-| Giant Puffball    | `./shrooms-clean-250-each/n13044375-giant-puffball/`   | `./shrooms-train-200-each/n13044375-giant-puffball/`   |
-| Earthstar         | `./shrooms-clean-250-each/n13003061-earthstar/`        | `./shrooms-train-200-each/n13003061-earthstar/`        |
+| Category          | copy from Finder 1                 | paste to Finder 2               |
+|-------------------|------------------------------------|---------------------------------|
+| Fly Agaric        | `./n13003061-fly-agaric/`          | `./n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./n13030337-scarlet-elf-cup/`     | `./n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./n13040629-common-stinkhorn/`    | `./n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./n13044375-giant-puffball/`      | `./n13044375-giant-puffball/`   |
+| Earthstar         | `./n13003061-earthstar/`           | `./n13003061-earthstar/`        |
 
 </div>
 
@@ -362,13 +367,13 @@ In Finder 1, sort the images by name. Copy the **last 50** clean images per cate
 
 <div class="table-wrapper" markdown="block">
 
-| Category          | from `~/repos/my-ImageNet_Utils/`                      | to `~/repos/my-tensorflow-for-poets/tf_files/`         |
-|-------------------|--------------------------------------------------------|--------------------------------------------------------|
-| Fly Agaric        | `./shrooms-clean-250-each/n13003061-fly-agaric/`       | `./shrooms-demo-50-each/n13003061-fly-agaric/`       |
-| Scarlet Elf cup   | `./shrooms-clean-250-each/n13030337-scarlet-elf-cup/`  | `./shrooms-demo-50-each/n13030337-scarlet-elf-cup/`  |
-| Common Stinkhorn  | `./shrooms-clean-250-each/n13040629-common-stinkhorn/` | `./shrooms-demo-50-each/n13040629-common-stinkhorn/` |
-| Giant Puffball    | `./shrooms-clean-250-each/n13044375-giant-puffball/`   | `./shrooms-demo-50-each/n13044375-giant-puffball/`   |
-| Earthstar         | `./shrooms-clean-250-each/n13003061-earthstar/`        | `./shrooms-demo-50-each/n13003061-earthstar/`        |
+| Category          | copy from Finder 1                 | paste to Finder 2               |
+|-------------------|------------------------------------|---------------------------------|
+| Fly Agaric        | `./n13003061-fly-agaric/`          | `./n13003061-fly-agaric/`       |
+| Scarlet Elf cup   | `./n13030337-scarlet-elf-cup/`     | `./n13030337-scarlet-elf-cup/`  |
+| Common Stinkhorn  | `./n13040629-common-stinkhorn/`    | `./n13040629-common-stinkhorn/` |
+| Giant Puffball    | `./n13044375-giant-puffball/`      | `./n13044375-giant-puffball/`   |
+| Earthstar         | `./n13003061-earthstar/`           | `./n13003061-earthstar/`        |
 
 </div>
 
