@@ -712,42 +712,67 @@ Instead of printing the boring texts, I will manually do some "artistic" editing
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4"><img alt="pred-1a.jpg" src="/images/blog/pred-1a.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-1b.jpg" src="/images/blog/pred-1b.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-1c.jpg" src="/images/blog/pred-1c.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-1a.png" src="/images/blog/pred-1a.png"></div>
+    <div class="col-sm-4"><img alt="pred-1b.png" src="/images/blog/pred-1b.png"></div>
+    <div class="col-sm-4"><img alt="pred-1c.png" src="/images/blog/pred-1c.png"></div>
   </div>
   <div class="row">
-    <div class="col-sm-4"><img alt="pred-2a.jpg" src="/images/blog/pred-2a.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-2b.jpg" src="/images/blog/pred-2b.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-2c.jpg" src="/images/blog/pred-2c.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-2a.png" src="/images/blog/pred-2a.png"></div>
+    <div class="col-sm-4"><img alt="pred-2b.png" src="/images/blog/pred-2b.png"></div>
+    <div class="col-sm-4"><img alt="pred-2c.png" src="/images/blog/pred-2c.png"></div>
   </div>
   <div class="row">
-    <div class="col-sm-4"><img alt="pred-3a.jpg" src="/images/blog/pred-3a.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-3b.jpg" src="/images/blog/pred-3b.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-3c.jpg" src="/images/blog/pred-3c.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-3a.png" src="/images/blog/pred-3a.png"></div>
+    <div class="col-sm-4"><img alt="pred-3b.png" src="/images/blog/pred-3b.png"></div>
+    <div class="col-sm-4"><img alt="pred-3c.png" src="/images/blog/pred-3c.png"></div>
   </div>
   <div class="row">
-    <div class="col-sm-4"><img alt="pred-4a.jpg" src="/images/blog/pred-4a.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-4b.jpg" src="/images/blog/pred-4b.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-4c.jpg" src="/images/blog/pred-4c.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-4a.png" src="/images/blog/pred-4a.png"></div>
+    <div class="col-sm-4"><img alt="pred-4b.png" src="/images/blog/pred-4b.png"></div>
+    <div class="col-sm-4"><img alt="pred-4c.png" src="/images/blog/pred-4c.png"></div>
   </div>
   <div class="row">
-    <div class="col-sm-4"><img alt="pred-5a.jpg" src="/images/blog/pred-5a.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-5b.jpg" src="/images/blog/pred-5b.jpg"></div>
-    <div class="col-sm-4"><img alt="pred-5c.jpg" src="/images/blog/pred-5c.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-5a.png" src="/images/blog/pred-5a.png"></div>
+    <div class="col-sm-4"><img alt="pred-5b.png" src="/images/blog/pred-5b.png"></div>
+    <div class="col-sm-4"><img alt="pred-5c.png" src="/images/blog/pred-5c.png"></div>
   </div>
 </div>
 
-Got the idea? :)
+One thing I've learnt about deep learning is that the prediction performance depends heavily on the training data. The model is more likely to be able to classify correctly / with high confidence when the test image contains features that are similar to the corresponding training images. The prediction confidence is likely low when the test image deviates a lot from the training image.
 
 #### create an automated prediction process
 
 It would be beneficial to have some kind of slide show type app that flash through the demo images one by one, or in batches, to show the prediction vs ground truth, along with the overall accuracy / errors. Sort of like [this ReactJS frontend demo](https://fungai-react-ui.herokuapp.com/fungpredict) but hopefully better! (This will be another project for another time.)
 
+#### Potential Improvement Opportunities
+
+Some ideas to jot down:
+
+- study the tensorflow for poets retrain and prediction scripts. Could we use other better options? 
+- a utility to enable user to upload photos and obtain prediction on the fly
+- hook up the retrained model to perform prediction offline? (e.g. rasberry pi, camera, Movidius Neural Compute stick?)
+- more automated / systematic way to regularly obtain more training images, perform retraining, update models?
+- A/B testing of different models?
+- video streaming and perform prediction on the fly?
+- perform training on more mushroom categories?
+- use crops to generate more data?
+- hyperparameter tuning?
+- YOLO?
+- Do some [deepvis](http://yosinski.com/deepvis) type visualization of the neural network?
+- etc.
+
 ### Summary
 
-(work in progress)
+In this article we've had a go creating a basic wild mushroom classification app that performs image classification on 5 types of mushroom with the help of Google's 7 steps to machine learning, and the Tensorflow for Poets Google lab. We've successfully perform a start-to-finish iteration on building our first app and gained some hands-on experiences. We've discussed some potential improvements and next steps that we may try out later on.
 
-### Next Steps
+Just to recall, here are the 7 steps to machine learning:
 
-(work in progress)
+1. Gathering Data
+2. Preparing that Data
+3. Choosing a Model
+4. Training
+5. Evaluation
+6. Hyperparameter Tuning
+7. Prediction
+
+We will revisit Hyperparameter Tuning in a separate article. We will also try and improve our app further with automation and standardization etc.
