@@ -379,43 +379,267 @@ In Finder 1, sort the images by name. Copy the **last 50** clean images per cate
 
 ### Step 3: Choosing a Model
 
-(work in progress)
+The tensorflow for poets retraining script can retrain either Inception V3 model or MobileNet.
+
+- Inception V3 model: optimized for accuracy, at the cost of size (1st choice accuracy of 78% on ImageNet, and 85 MB in size)
+- MobileNets: optimized to be small and efficient, at the cost of some accuracy (1st choice accuracy of 70.5% on ImageNet, and 19 MB in size)
+
+Let's keep it simple. Use MobileNet - as suggested in Tensorflow for Poets. Once we've got this working nicely, we may try Inception v3 / other models in future.
 
 ### Step 4: Training
 
 (work in progress)
 
+This is probably one of the most important steps. We will follow [tensorflow for poets retraining guide](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3)
+
+#### Setup Python 3.x Tensorflow environment
+
+On Python version: Python 3.x is likely to be more supported in the long run (comparing to 2.x). So let's use it.
+
+On Tensorflow version: At the time of writing this, tensorflow is on version 1.4.1, which includes `tensorflow-tensorboard ` (version v0.4.0rc3). This will likely change as time goes by.
+
+We will be reusing the instructions from our previous article [Tensorflow for Poets]({% post_url 2017-12-11-tensorflow-for-poets %}).
+
+Create a conda environment with Anaconda (this may take a while). If you've already done this previously, feel free to skip this step.
+
+```
+$ cd ~
+$ conda create --name py36-tf14 python=3.6 --channel conda-forge
+```
+
+Activate conda environment:
+
+```
+$ source activate
+$ source activate py36-tf14
+```
+
+Our command prompt should now look like this:
+
+```
+(py36-tf14) $
+```
+
+Install tensorflow with `pip`:
+
+```
+(py36-tf14) $ pip install "tensorflow=1.4.1"
+```
+
+Side note: why not use `conda install tensorflow` instead? My answer: at the time of writing this article, the Tensorflow on conda-forge channel was only up to 1.4.0. Tensorboard turned out to be a bit buggy with this version (from what I've seen). Install Tensorflow with `pip` with version `1.4.1` seems to have fixed it. (this version may be even higher as time goes by).
+
+Our conda environment should now look like this:
+
+```
+(py36-tf14) $ conda list
+# packages in environment at /Users/johnny/anaconda/envs/py36-tf14:
+#
+bleach                    1.5.0                     <pip>
+ca-certificates           2017.11.5                     0    conda-forge
+certifi                   2017.11.5                py36_0    conda-forge
+enum34                    1.1.6                     <pip>
+html5lib                  0.9999999                 <pip>
+Markdown                  2.6.10                    <pip>
+ncurses                   5.9                          10    conda-forge
+numpy                     1.13.3                    <pip>
+openssl                   1.0.2n                        0    conda-forge
+pip                       9.0.1                    py36_0    conda-forge
+protobuf                  3.5.0.post1               <pip>
+python                    3.6.3                         4    conda-forge
+readline                  7.0                           0    conda-forge
+setuptools                38.2.4                   py36_0    conda-forge
+six                       1.11.0                    <pip>
+sqlite                    3.20.1                        0    conda-forge
+tensorflow                1.4.1                     <pip>
+tensorflow-tensorboard    0.4.0rc3                  <pip>
+tk                        8.6.7                         0    conda-forge
+Werkzeug                  0.13                      <pip>
+wheel                     0.30.0                     py_1    conda-forge
+xz                        5.2.3                         0    conda-forge
+zlib                      1.2.11                        0    conda-forge
+```
+
+Note: at the time of writing this, `tensorflow v1.4.1` seems to work well with `tensorflow-tensorboard v0.4.0rc3` (aka tensorboard).
+
+#### Start TensorBoard in the background
+
+I just wanted to emphasize, Tensorflow is **awesome**. I've learnt a great deal on model training with Tensorboard. I would highly recommend using it for two main visualizations / charts: 
+
+- accuracy (higher the better)
+- cross entropy (lower the better)
+
+Let's start tensorboard in the background
+
+```
+(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
+(py36-tf14) $ tensorboard --logdir tf_files/training_summaries --host=localhost &
+```
+
+If it works, navigate to [http://localhost:6006](http://localhost:6006) and see the TensorBoard frontend:
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"><img alt="tensorboard-1.png" src="/images/blog/tensorboard-1.png" /></div>
+  </div>
+</div>
+
+Note: if we wish to re-run the above tensorboard command, make sure we kill the previously created tensorboard session (to avoid port collision), like this:
+
+```
+(py36-tf14) $ pkill -f "tensorboard"
+```
+
+From experience, we will likely start and kill Tensorboard from time to time, as needed.
+
+#### Configure our MobileNet
+
+The followings is a direct copy & paste from Tensorflow for poets:
+
+--- 
+
+Pick the following configuration options (which are also hyperparameters):
+
+Input image resolution (`TFP_IMAGE_SIZE`): `128`, `160`, `192`, or `224` px. Unsurprisingly, feeding in a higher resolution image takes more processing time, but results in better classification accuracy. We recommend 224 as an initial setting.
+
+The relative size (`TFP_RELATIVE_SIZE`) of the model as a fraction of the largest MobileNet: `1.0`, `0.75`, `0.50`, or `0.25`. We recommend `0.5` as an initial setting. The smaller models run significantly faster, at a cost of accuracy.
+
+---
+
+Let's set these as shell environmental variables (copy the following block, paste it in terminal, and run it):
+
+```
+export TFP_IMAGE_SIZE="224"
+export TFP_RELATIVE_SIZE="0.50"
+export TFP_ARCHITECTURE="mobilenet_${TFP_RELATIVE_SIZE}_${TFP_IMAGE_SIZE}"
+```
+
+Let's confirm that we've set these variables correctly (copy the following block, paste it in terminal, and run it):
+
+```
+echo ${TFP_IMAGE_SIZE}
+echo ${TFP_RELATIVE_SIZE}
+echo ${TFP_ARCHITECTURE}
+```
+
+You shall see:
+
+```
+244
+0.50
+mobilenet_0.5_224
+```
+
+Note: if we wish to try out other MobileNet configuration options, just edit the environmental variable export scripts above and re-run.
+
+#### Configure Image Retrain Path
+
+We need to tell the retrain script where to find our training images (i.e. our 200 per category). By default the retrain script will use a split of 80% trainn / 10% validation / 10% test, but we can alter that in our retrain script later.
+
+But first, we need to export one more environmental variable. i.e. the root directory of the training images - which if you recall from step 2 on data preparation, it is `shrooms-train-200-each`.
+
+Copy the following line, paste it in terminal, and run it:
+
+```
+export TFP_IMAGES_DIR="shrooms-train-200-each"
+```
+
 #### How to use the retrain script
 
-To see what options are there, do a: 
+To see what options are there:
 
 ```
-$ python -m scripts.retrain -h
+(py36-tf14) $ python -m scripts.retrain -h
 ```
 
-Usage:
+#### Do the training
+
+Ensure we are in the correct location:
 
 ```
-$ python -m scripts.retrain [--option value]
+(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
 ```
 
-For example:
+Copy the following block, paste it in terminal, and run it (this will start the re-training)
 
 ```
-$ python -m scripts.retrain \
-  --image_dir=tf_files/${TFP_IMAGES_DIR}
+python -m scripts.retrain \
+  --image_dir=tf_files/${TFP_IMAGES_DIR} \
   --bottleneck_dir=tf_files/bottlenecks \
-  --how_many_training_steps=500 \
   --model_dir=tf_files/models/ \
-  --summaries_dir=tf_files/training_summaries/"${TFP_ARCHITECTURE}" \
+  --summaries_dir=tf_files/training_summaries/basic/"${TFP_ARCHITECTURE}" \
   --output_graph=tf_files/retrained_graph.pb \
   --output_labels=tf_files/retrained_labels.txt \
-  --architecture="${TFP_ARCHITECTURE}" \
+  --how_many_training_steps=500 \
+  --architecture="${TFP_ARCHITECTURE}"
 ```
 
-#### Retrain options
+A bit of explanation (with the help of the official Tensorflow for Poets tutorial)
 
-Instead of having to issue `help` every time, I've just had a read through the code and manually document the options here for better understanding / ease of reference.
+- `image_dir`: this is where we've stored our training images. The directory must exist already. Otherwise the script will fail.
+- `bottleneck_dir`: A bottleneck is an informal term we often use for the layer just before the final output layer that actually does the classification. Every image is reused multiple times during training. Calculating the layers behind the bottleneck for each image takes a significant amount of time. Since these lower layers of the network are not being modified their outputs can be cached and reused. The directory will be automatically created.
+- `model_dir`: The location where the "frozen" MobileNet models are downloaded. The directory will be automatically created. 
+- `summaries_dir`: the directory where tensorboard summaries will be saved to. Note our use of `${TFP_ARCHITECTURE}` - if we are to try out a different MobileNet configuration option, the script will create a tensorboard summary without overwriting our old ones. The benefit of this option is to enable us to name-space our summary - so we can do some comparisons in our tuning step before commiting to the model(s) we want to use in production environment later on.
+- `output_graph`: this is our new (re)trained graph file. The prediction phase later on will need this.
+- `output_labels`: this file shows our ground truth labels - extracted from our `image_dir` directory structure. The prediction phase later on will need this.
+- `how_many_training`: the script will run for 4000 epochs (steps) by default. This may take 30 minutes. By reducing this to 500 steps, the script may complete within around 5 minutes on a modern CPU laptop, while giving us reasonable good accuracy (of around 85-95%.). Handy for what we are trying to achieve - get from start to the end as quickly as possible, whilst producing an output that is reasonable good enough.
+
+Note that most of these options have a default values - so we don't strictly need to specify all of them.
+
+One more thing to note, by default the script use this split: 80% train / 10% validation / 10% test. Given we have 200 images per category, we are actually using 160 for training, 20 for validation, and 20 for testing.
+
+We should get a final accuracy of somewhere between 85-95%.
+
+### Step 5: Evaluation
+
+Tensorboard is the place to go - to evaluate how good our retrained model is.
+
+The intuitions are:
+
+- training accuracy should increase as we perform more epochs (steps).
+- training cross entropy should decrease as we perform more epochs (steps).
+- validation trend (in blue) should closely resemble training trend (orange). If the two lines deviate too much, it implies the model is not generic enough.
+
+#### Visualize training summary on Tensorboard
+
+If tensorboard is already running, navigate to [http://localhost:6006](http://localhost:6006) to visualize.
+
+Otherwise, copy the following block to a terminal, run it (to get tensorboard running)
+
+```
+cd ~/repos/my-tensorflow-for-poets
+pkill -f "tensorboard"
+tensorboard --logdir tf_files/training_summaries --host=localhost &
+```
+
+If it works, we shall see the accuracy chart (higher the better), cross entropy chart (lower the better), and other analysis.
+
+As this is our first attempt to this problem (without too much hyperparameter tuning), it should be expected that the validation result to be not as good as the training result. Despite that, we still get over 90% accuracy in our validation set (which is actually, pretty good considering we haven't performed much tuning at this stage, and our restricted number of retraining image samples).
+
+Here are some snapshots from Tensorboard:
+
+##### Accuracy, Cross Entropy, and more
+
+![tensorboard-6a.png](/images/blog/tensorboard-6a.png)
+
+##### Graph
+
+![tensorboard-6b.png](/images/blog/tensorboard-6b.png)
+
+##### Distribution
+
+![tensorboard-6c.png](/images/blog/tensorboard-6c.png)
+
+##### Histogram
+
+![tensorboard-6d.png](/images/blog/tensorboard-6d.png)
+
+We shall do more deep dive into tensorboard at a later time. For now, let's just say our main interests are the accuracy and cross entropy charts. (in fact, I would say accuracy is probably the most important one. We need high accuracy for both training and validation)
+
+### Step 6: Hyperparameter Tuning
+
+I would suggest for the purpose of this article we skip hyperparameter tuning for now. It deserves an article on its on - so let's do this in a separate article.
+
+For now, take a look at the retrain script options and default values. This will give us some inspiration on some of the hyperparameters we may use for tuning.
 
 ```
 | option                            | type  | default value              | description                                                                 |
@@ -448,15 +672,77 @@ Instead of having to issue `help` every time, I've just had a read through the c
 | final_tensor_name                 | str   | "final_result"             | The name of the output classification layer in the retrained graph.         |
 ```
 
-### Step 5: Evaluation
-
-### Step 6: Hyperparameter Tuning
-
-(work in progress)
-
 ### Step 7: Prediction
 
-(work in progress)
+Firs of all, make sure we are at the appropriate location:
+
+```
+(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
+```
+
+To perform a prediction we use the `label_image` script (copy following block, paste in a terminal, and run it)
+
+```
+python -m scripts.label_image \
+    --graph=tf_files/retrained_graph.pb  \
+    --image=tf_files/shrooms-demo-50-each/n13003061-fly-agaric/110269850_ea5678a3ef.jpg
+```
+
+Note: the demo images in `tf_files/shrooms-demo-50-each/` were not used in our training step earlier - so it should be fun to visualize.
+
+We should get an output like this in the terminal:
+
+```
+Evaluation time (1-image): 0.237s
+
+n13003061 fly agaric 0.999988
+n13040629 common stinkhorn 1.22072e-05
+n13044778 earthstar 8.6851e-08
+n13044375 giant puffball 3.17381e-08
+n13030337 scarlet elf cup 1.16116e-08
+```
+
+Yay! The image is a Fly Agaric, and the model predicted high confidence that it is a Fly Agaric (and low for other categories).
+
+#### try out a handful of prediction manually
+
+Just to quickly see for ourself that our retrained model is what we would expect to see, let's try perform predictions on a few more handful demo images! For the purpose of this article, I'm going to manually run the predict script one by one, for (say) 3 demo images per categories (for the 5 categories) - so we get an idea of our application outputs.
+
+Instead of printing the boring texts, I will manually do some "artistic" editing with PowerPoint - just to get the idea across a bit more effectively (without doing any programming at such an early phase!)
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"><img alt="pred-1a.jpg" src="/images/blog/pred-1a.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-1b.jpg" src="/images/blog/pred-1b.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-1c.jpg" src="/images/blog/pred-1c.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><img alt="pred-2a.jpg" src="/images/blog/pred-2a.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-2b.jpg" src="/images/blog/pred-2b.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-2c.jpg" src="/images/blog/pred-2c.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><img alt="pred-3a.jpg" src="/images/blog/pred-3a.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-3b.jpg" src="/images/blog/pred-3b.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-3c.jpg" src="/images/blog/pred-3c.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><img alt="pred-4a.jpg" src="/images/blog/pred-4a.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-4b.jpg" src="/images/blog/pred-4b.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-4c.jpg" src="/images/blog/pred-4c.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><img alt="pred-5a.jpg" src="/images/blog/pred-5a.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-5b.jpg" src="/images/blog/pred-5b.jpg"></div>
+    <div class="col-sm-4"><img alt="pred-5c.jpg" src="/images/blog/pred-5c.jpg"></div>
+  </div>
+</div>
+
+Got the idea? :)
+
+#### create an automated prediction process
+
+It would be beneficial to have some kind of slide show type app that flash through the demo images one by one, or in batches, to show the prediction vs ground truth, along with the overall accuracy / errors. Sort of like [this ReactJS frontend demo](https://fungai-react-ui.herokuapp.com/fungpredict) but hopefully better! (This will be another project for another time.)
 
 ### Summary
 
