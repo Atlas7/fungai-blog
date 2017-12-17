@@ -35,28 +35,7 @@
           <!-- Individual Blog Post -->
           <section class="post">
 
-              <!-- Look the author details up from the site config. -->
-              {% assign author = site.data.authors[page.author] %}
-              {% if author %}
-              <div class="author-container">
-                <div class="author-avatar-box">
-                  <img class="author-avatar" src="{{ author.avatar }}" alt="A photo of {{ author.name }}" />
-                </div>
-                <div class="author-desc">
-                  <ul>
-                    <li>
-                      <span class="author-name">{{ author.name }}</span>
-                      <a href="https://twitter.com/{{author.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                      <a href="https://github.com/{{ author.githubid }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                      <a href="https://linkedin.com/in/{{ author.linkedin }}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </li>
-                    <li>{{ author.desc }} </li>
-                    <li>{{page.date | date_to_string}}</li>
-                  </ul>
-                </div>
-              </div>
-
-              {% endif %}
+            {% include post-author.html %}
 
             <header class="major">
               <!--<span class="date">{{page.date | date_to_string}}</span>-->
@@ -71,35 +50,10 @@
             {% endif %}
 
             <p>{{content}}</p>
+
+            {% include post-author.html %}
+
           </section>
-
-          <!--Disqus Commenting System-->
-          {% if site.disqus_shortname %}
-          <div class="comments-wrapper">
-            <div id="disqus_thread" />
-            <script>
-              /**
-               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-               */
-              var disqus_config = function () {
-                  this.page.url = '{{ site.baseurl }}{{ page.url }}';  /*Replace PAGE_URL with your page's canonical URL variable*/
-                  this.page.identifier = '{{ page.url }}'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
-              };
-              (function() {  /* dont endit below this line */
-                  var d = document, s = d.createElement('script');
-
-                  s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
-
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-            </script>
-            <noscript>
-              Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-            </noscript>
-          </div><!-- /.comments-wrapper -->
-          {% endif %}
 
           <!-- Footer -->
           {% include our-blog.html text="Read our blog" %}
