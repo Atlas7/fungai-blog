@@ -764,7 +764,7 @@ It would be beneficial to have some kind of slide show type app that flash throu
 Some ideas to jot down:
 
 - study the tensorflow for poets retrain and prediction scripts. Could we use other better options? 
-- a utility to enable user to upload photos and obtain prediction on the fly
+- an utility to enable user to upload photos and obtain prediction on the fly
 - hook up the retrained model to perform prediction offline? (e.g. rasberry pi, camera, Movidius Neural Compute stick?)
 - more automated / systematic way to regularly obtain more training images, perform retraining, update models?
 - A/B testing of different models?
