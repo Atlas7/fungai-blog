@@ -49,8 +49,8 @@ sitemap:
       {% for post in paginator.posts %}
       <article>
         <header>
-          <span class="date">{{ post.date | date_to_string }}</span>
           <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
+          {% include post-author-mini.html %}
         </header>
         <a href="{{ post.url | prepend:site.baseurl }}" class="image fit">
           <img alt="post_image" src="{{ post.image | prepend:site.baseurl }}" />
