@@ -1,10 +1,13 @@
 ---
 layout: null
-title: Blog Articles
+title: fungAI Engineering Blog
+description: fungai.org assists scientists and enthusiasts to easily identify wild mushroom species from images using deep learning technologies.
 sitemap:
   priority: 1.0
   lastmod: 2017-11-02
   changefreq: weekly
+image: "/images/home-main.jpg"
+url: "/blog"
 ---
 <!DOCTYPE HTML>
 <!--
@@ -20,6 +23,9 @@ sitemap:
 <html>
 <head>
   {% include head.html %}
+  {% assign image_og = {{page.image | prepend:site.url}} %}
+  {% assign url_og = {{page.url | prepend:site.url}} %}
+  {% include head-og.html image=image_og description=page.description title=page.title type="website" fb_app_id=site.fb_app_id url=url_og %}
 </head>
 
 <body class="is-loading">
