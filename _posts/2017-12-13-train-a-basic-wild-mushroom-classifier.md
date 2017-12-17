@@ -4,6 +4,8 @@ title:  "Train a basic wild mushroom classifier"
 date:   2017-12-13 14:30:00
 excerpt: "Train a basic image classification model to identify 5 types of wild mushrooms, with Transfer Learning, Tensorflow, Tensorboard, MobileNet, and ImageNet images. Inspired by the Tensorflow for Poets Google Lab."
 image: "/images/blog/mushroom-classifier-poc.png"
+author: johnny_chan
+read_minutes: 20
 ---
 
 Earlier, we learnt about [transfer learning with Tensorflow for Poets retrain scripts](http://fungai.org/2017/12/11/tensorflow-for-poets/), and [how to download images from ImageNet](http://fungai.org/2017/12/11/tensorflow-for-poets/). In this article we will focus on combining these concepts and techniques and build a more specialized machine learning application.
@@ -25,7 +27,7 @@ But before getting our hands dirty let's take a step back and form our high leve
 Let's review quickly the Google's [7 Steps of Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw) (see 9:38 - 9:53):
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nKW8Ndu7Mjw?rel=0&amp;start=578" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/nKW8Ndu7Mjw?rel=0&amp;start=578" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
 
 Expand these 7 steps to suit our Wild Mushroom Classifier Project:

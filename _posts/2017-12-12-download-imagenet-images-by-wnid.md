@@ -4,6 +4,8 @@ title:  "Download ImageNet Images by WordNet ID"
 date:   2017-12-12 14:30:00
 excerpt: "Download ImageNet images for Transfer Learning, with ImageNet-Utils"
 image: "/images/blog/imagenet-logo.png"
+author: johnny_chan
+read_minutes: 15
 ---
 
 From [this earlier post]({% post_url 2017-12-11-tensorflow-for-poets %}) we learnt to easily train a specialized image classification model with Transfer Learning without writing a single line of code. With the help of the retrain script provided by the Google Codelab [Tensorflow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0), all we need is a directory structure containing directories of training images like this:

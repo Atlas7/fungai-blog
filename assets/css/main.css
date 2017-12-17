@@ -542,6 +542,10 @@ a.button {
     margin-left: 8.33333%;
   }
 
+  iframe {
+    width: 560px;
+    height: 315px;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -1617,6 +1621,9 @@ a.button {
     margin-left: 8.33333%;
   }
 
+  iframe {
+    width: 100%;
+  }
 }
 
 /* Basic */
@@ -1633,6 +1640,10 @@ body {
 
   html, body {
     min-width: 320px;
+  }
+
+  iframe {
+    width: 100%;
   }
 
 }
@@ -1678,6 +1689,10 @@ html {
 
   html {
     font-size: 10pt;
+  }
+
+  iframe {
+    width: 100%;
   }
 
 }
@@ -2010,6 +2025,10 @@ button.big,
     font-size: 1rem;
     height: 3.75rem;
     line-height: 3.75rem;
+  }
+
+  iframe {
+    width: 100%;
   }
 
 }
@@ -2473,7 +2492,7 @@ input[type="radio"]:focus + label:before {
 
 .image.main {
   display: block;
-  margin: 4rem 0;
+  margin: 2rem 0;
   width: 100%;
 }
 
@@ -2734,7 +2753,7 @@ header > .date {
   display: block;
   font-size: 0.8rem;
   height: 1;
-  margin: 0 0 1rem 0;
+  margin: 0;
   position: relative;
 }
 
@@ -3625,7 +3644,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 }
 
 #main > .post header.major > h1, #main > .post header.major h2 {
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 1.1;
   margin: 0 0 2rem 0;
 }
@@ -3654,7 +3673,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   }
 
   #main > .post header.major > h1, #main > .post header.major h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     margin: 0 0 1.5rem 0;
   }
@@ -4722,4 +4741,56 @@ pre.cap {
 /* required for markdown scrolling table. See the blog post train a basic wild mushroom classifier on 2017-12-13*/
 .table-wrapper {
   overflow-x: scroll;
+}
+
+.author-avatar-box {
+  width: 70px;
+  min-width: 70px;
+  max-width: 70px;
+}
+
+.author-avatar {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.author-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 2rem 0;
+  min-height: 70px;
+}
+
+.author-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 2rem 0 2rem;
+}
+.author-desc ul {
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans","Geneva","Arial","sans-serif";
+  color: gray;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+.author-desc li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 2px 0;
+}
+
+.author-desc a {
+  text-decoration: none;
+  border-bottom: none;
+  color: gray;
+}
+
+.author-name {
+  color: #222931;
 }
