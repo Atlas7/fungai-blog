@@ -6,6 +6,8 @@ sitemap:
     priority: 0.7
     lastmod: 2017-11-02
     changefreq: weekly
+image: "/images/blog/fungi-barbarian-concept-v2.png"
+url: "/concept"
 ---
 
 ## Concept overview
