@@ -2,7 +2,7 @@
 layout: post
 title:  "Train a basic wild mushroom classifier"
 date:   2017-12-13 14:30:00
-excerpt: "(draft mode) Train a basic image classification model to identify 5 types of wild mushrooms, with Transfer Learning, Tensorflow, Tensorboard, MobileNet, and ImageNet images."
+excerpt: "Train a basic image classification model to identify 5 types of wild mushrooms, with Transfer Learning, Tensorflow, Tensorboard, MobileNet, and ImageNet images. Inspired by the Tensorflow for Poets Google Lab."
 image: "/images/blog/mushroom-classifier-poc.png"
 ---
 
@@ -31,40 +31,38 @@ Let's review quickly the Google's [7 Steps of Machine Learning](https://www.yout
 Expand these 7 steps to suit our Wild Mushroom Classifier Project:
 
 1. Gathering Data
-  - Download reasonable amount of labelled images per wild mushroom type from ImageNet.
-  - We'll need at least 250 labelled images per category: 200 for retraining (80% train, 10% validation, 10% test), and 50 for demo predictions later.
+  - Download reasonable amount of labelled images per wild mushroom type from ImageNet. We'll need at least 250 labelled images per category: 200 for retraining (80% train, 10% validation, 10% test), and 50 for demo predictions later.
   - In other words, we will have at least 1250 labelled images for retraining (5 categories x 200 per category), and 250 labelled images for demo predictions (5 categories x 50 per category).
   - In total we will have 1500 images (1250 for retraining, and 250 for demo).
-  - We'll use [ImageNet_Utils](https://github.com/tzutalin/ImageNet_Utils) to help us download labelled images from ImageNet easily. Note that we'll likely download more than we need to begin with. But this is ok, as we'll only pick what we need in the data preparation phase in step 2 (250 labelled images per category).
-  - We'll now have 5 new folders containing our 5 categories of images.
+  - We'll use [ImageNet_Utils](https://github.com/tzutalin/ImageNet_Utils) to help us download labelled images from ImageNet easily. Note that we'll likely download more than we need to begin with. But that is ok, as we'll only pick what we need in the data preparation phase in step 2 (250 labelled images per category).
 2. Preparing that Data
   - Now that we've downloaded many images from ImageNet, we'll manually pick 250 images per category and copy into a new directory structure (say, to a folder called `shrooms_250_clean`). This will also help us avoid data imbalances, as we'll have equal amount of images per category.
-  - Do the image cleansing in our newly created `shrooms_250_clean`. e.g. `.jpg` format, non corrupted, correct category, non flickr dummy image, reasonable file size, etc. Delete as appripriate.
-  - As we do the image delete we may fall short on the 250 images per category target. Just copy any unused images from the raw directories (at end of step 1 as needed)
+  - Do the image cleansing in our newly created `shrooms_250_clean`. e.g. `.jpg` format, non corrupted, must be in correct category, non flickr dummy image, reasonable file size, etc. Delete as appripriate.
+  - As we do the image delete we may fall short on the 250 images per category target. Just copy more over any unused images (obtained from end of step 1.)
 3. Choosing a Model
-  - We will use [Tensorflow for poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) as our starting point baseline
-  - We have two obvious choices: Inception v3 and MobileNet.
+  - We will use [Tensorflow for poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) as our starting point baseline guide.
+  - We Tensorflow for poets scripts are compatible with two models: Inception v3 and MobileNet.
   - Inception v3 is more accurate but heavier.
   - MobileNet is slightly less accurate but lighter and more suitable for low-power embedded devices.
-  - Since this is our first attempt, let's go for something light. We will use the MobileNet model.
-  - (optional) at some later point, once we become more familiar with the process, we can try out other open source models out there on the internet.
+  - Since this is our first attempt, let's go for something light. We will use the MobileNet model. (plus, at some point in future we may consider running our trained model on an embedded device offline, with Raspberry Pi and Intel Movidius Neural Compute Stick).
 4. Training
   - Run the [Tensorflow for poets retrain script](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3) `retrain.py` with the appropriate options.
-  - Use tensorboard to monitor training progress and performance (mainly accuracy and cross entropy charts)
+  - Use tensorboard to monitor training progress and performance. We will focus mainly the accuracy and cross entropy charts for now.
 5. Evaluation 
   - Again, use tensorboard to monitor training progress and performance (mainly accuracy and cross entropy charts)
 6. Hyperparameter Tuning
   - Can we improve our training accuracy (higher the better) and Cross Entropy Error (lower the better)?
   - Again, use Tensorboard.
+  - Note: we will likely do this tuning under a separate article / tutorial.
 7. Prediction
   - Remember our set-aside 50 demo images (per category) that were not used for training? Let's use our now trained model to perform prediction (aka inference) with the help of [Tensorflow for poets prediction script](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3)  `label_image.py`, with appropriate options.
   - Of the 250 demo images (5 category x 50 images per category), how many did the model predict it correctly?
-  - For the ones that the model predicted wrong, what do the images look like? This will give us an idea of whether the error is reasonable. For instance, if even a human would have a hard time classifying the image, maybe the model is not doing that bad.
-  - (optional) create a program that automatically display images one by one (or in small batches), and perform prediction (and compute overall accuracy and error rate) in the same time? This may be good for showing off / demo purpose?
+  - For the ones that the model predicted wrong, what do the images look like? This will give us an idea of whether the error is reasonable. For instance, if even a human would have a hard time classifying the image, maybe the model is not doing that bad?
+  - (optional) create a program that automatically display images one by one (or in small batches), and perform prediction (and compute overall accuracy and error rate) in the same time? This may be good for showing off / demo purpose? (This will be covered under a separate article / tutorial instead)
 
 ### KISS - Keep it Simple, Stupid
 
-Our aim is to get things working as quickly as possible - understanding just enough about the high level process and implementing the workflow and get to the end. By walking through the process we will gain an appreciation on how we may potentially improve the process a bit. But that will be another job for another day. For now, let's [keep it simple and stupid](https://en.wikipedia.org/wiki/KISS_principle): we will complete an iteration loop as quickly as possible, from start to finish, and see some end results. (and we will, I promise!)
+Our aim is to get things working as quickly as possible - understanding just enough about the high level process and implementing the workflow and get to the end. By walking through the process we will gain an appreciation on how we may potentially improve the process a bit. But that will be another job for another day. For now, let's [keep it simple and stupid](https://en.wikipedia.org/wiki/KISS_principle): we will complete an iteration loop as quickly as possible, from start to finish, and see some end results.
 
 OK, buckle up. Here we go.
 
@@ -97,8 +95,7 @@ We will need two repositories in our `repos`:
 The two repositories above are actually from Github. You can download (and rename) these two repositories to your mac locally by doing this:
 
 ```
-$ cd ~
-$ cd repos
+$ cd ~/repos
 $ git clone https://github.com/tzutalin/ImageNet_Utils my-ImageNet_Utils
 $ git clone https://github.com/googlecodelabs/tensorflow-for-poets-2 my-tensorflow-for-poets
 ```
@@ -200,15 +197,13 @@ Notice that we will inevitably have more images in certain categories than the o
 
 ### Step 2: Preparing that Data
 
-(work in progress)
-
 #### Decision: Pick our subset and clean (or the other way round?)
 
 Now that we have the raw ImageNet images downloaded to `~/repos/ImageNet_Utils/`, we have a decision to make: we can either (1) clean all the raw images, then pick our random 250 images per category, or (2) the other way round - pick aound 250 images per category, then clean this smaller subset. Let's compare these two options.
 
-Option (1): clean everything up front once and then pick our 250 images per category. Advantage of this is that know our entire dataset will be clean at the end of the data cleansing. This allow flexibility in long run - for instance, we will be able to select our fixed subset of any size, be it 250 images per category, 300 per category, or even 500 per category, we will be able to do that easily. The only drawback of this option is the massive effort in cleaning more data than we actually need upfront, for our initial prototype. If you have already done the tensorflow for poets tutorial previously, you'll know that around 200 retrain images will be good enough to get started. If we look at fly agaric alone, we already have 850 ish images in this category - to clean all 850 fly agaric images when all we need is just 250 from that category, could slow down our first attempt to this exercise. Imagine we have 5 categories to clean! At the time of writing this, step 1 would have downloaded 842 Fly agaric images, 310 scarlet elf cup, 613 common stinkhorn, 643 giant puffball, and 572 earthstar. That's a total of 2980 images to clean (when all we need is 1250 images: 250 per category x 5 categories). This option will likely double the number of images to clean than actually required.
+Option (1): clean everything up front once and then pick our 250 images per category. Advantage of this is that know our entire dataset will be clean at the end of the data cleansing. This allows flexibility in long run - for instance, we will be able to select our fixed subset of any size, be it 250 images per category, 300 per category, or even 500 per category, we will be able to do that easily. The only drawback of this option is the massive effort in cleaning more data than we actually need upfront, for our initial prototype. If you have already done the tensorflow for poets tutorial previously, you'll know that around 200 retrain images will be good enough to get started. If we look at fly agaric alone, we already have 850 ish images in this category - to clean all 850 fly agaric images when all we need is just 250 from that category, could slow down our first attempt to this exercise. Imagine we have 5 categories to clean! At the time of writing this, step 1 would have downloaded 842 Fly agaric images, 310 scarlet elf cup, 613 common stinkhorn, 643 giant puffball, and 572 earthstar. That's a total of 2980 images to clean (when all we need is 1250 images: 250 per category x 5 categories). This option will likely double the number of images to clean than actually required.
 
-Option (2): pick our 250 images per category, and then clean these subsets. Advantage of this is **focus**. We know 250 clean images per category is good enough. We pick only 250 raw images and focus on getting them cleansed. This will ensure we are not distracted too much upfront, at such an early stage. The downside of this option is that (as you've probably have guessed), is that whenever we see invalid images, we delete them. So say we have started with 250 fly agaric images, and we've found 30 dirty ones and ended up deleting them and reduce our bucket size to 220 fly agaric images. We then copy and paste the additional 30 unused fly agaric images to this bucket (to make it up to 250). We do the cleaning on this 30 images, find 5 dirty ones, delete them, and ended up with 245 clean images in this bucket. We repeat the process until we obtain the entire set of 250 clean fly agaric images. The downside as you see is the additional manual work involved. But with a systematic approach, it is possible to reduce the likelihood of dirty images in our 250 buckets. This option is not perfect, but for a first attempt in building this wild mushroom classificaton app, it is good enough for getting things done and gaining relevant experience, and so we will choose this option in this tutorial.
+Option (2): pick our 250 images per category, and then clean these subsets. Advantage of this is **focus**. We know 250 clean images per category is good enough. We pick only 250 raw images and focus on getting them cleansed. This will ensure we are not distracted too much upfront, at such an early stage. The downside of this option is that (as you've probably have guessed), is that we may occasionally fall short on images and have to import more. So say we have started with 250 fly agaric images, and we've found 30 dirty ones and ended up deleting them and reduce our bucket size to 220 fly agaric images. We then copy and paste the additional 30 unused fly agaric images to this bucket (to make it up to 250). We do the cleaning on this 30 images, find 5 dirty ones, delete them, and ended up with 245 clean images in this bucket. We repeat the process until we obtain the entire set of 250 clean fly agaric images. The downside as you see is the additional manual work involved. But with a systematic approach, it is possible to reduce the likelihood of dirty images in our 250 buckets. This option is not perfect, but for a first attempt in building this wild mushroom classificaton app, it is good enough for getting things done and gaining relevant experience, and so we will choose this option in this tutorial.
 
 In this tutorial we will use option (2) - pick around 250 images per category, then clean this smaller subset.
 
@@ -290,6 +285,8 @@ For example, while I was checking through my Earthstar images, these are what I 
     <div class="col-sm-6"><img alt="imagenet-partial-downloaded-image.png" src="/images/blog/imagenet-partial-downloaded-image.png"/></div>
   </div>  
 </div>
+
+(Note: reason for deleting some mushroom images is that they are in the wrong category! Earth star should have star shape. This requires a bit domain knowledge / google-ing)
 
 Notice that as we delete images, our "250 per bucket" will start to fall short. In this case, just add more unused images and repeat the cleaning step (probably a few times). In the end of we should have 250 clean images per category, stored at `~/repos/my-ImageNet_Utils/shrooms-clean-250-each/`.
 
@@ -377,6 +374,8 @@ In Finder 1, sort the images by name. Copy the **last 50** clean images per cate
 
 </div>
 
+We won't need the terminal window anymore. Just close it.
+
 ### Step 3: Choosing a Model
 
 The tensorflow for poets retraining script can retrain either Inception V3 model or MobileNet.
@@ -388,9 +387,7 @@ Let's keep it simple. Use MobileNet - as suggested in Tensorflow for Poets. Once
 
 ### Step 4: Training
 
-(work in progress)
-
-This is probably one of the most important steps. We will follow [tensorflow for poets retraining guide](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3)
+This is probably one of the most important steps. We will follow the [tensorflow for poets retraining guide](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3).
 
 #### Setup Python 3.x Tensorflow environment
 
@@ -400,7 +397,7 @@ On Tensorflow version: At the time of writing this, tensorflow is on version 1.4
 
 We will be reusing the instructions from our previous article [Tensorflow for Poets]({% post_url 2017-12-11-tensorflow-for-poets %}).
 
-Create a conda environment with Anaconda (this may take a while). If you've already done this previously, feel free to skip this step.
+Create a conda environment with Anaconda (this may take a while). If you've already done this previously, feel free to skip this step. Open a brand new terminal window:
 
 ```
 $ cd ~
@@ -463,7 +460,7 @@ Note: at the time of writing this, `tensorflow v1.4.1` seems to work well with `
 
 #### Start TensorBoard in the background
 
-I just wanted to emphasize, Tensorflow is **awesome**. I've learnt a great deal on model training with Tensorboard. I would highly recommend using it for two main visualizations / charts: 
+I just wanted to emphasize, Tensorboard is **awesome**. I've learnt a great deal on model training with Tensorboard and would highly recommend using it for two main visualization charts: 
 
 - accuracy (higher the better)
 - cross entropy (lower the better)
@@ -483,29 +480,32 @@ If it works, navigate to [http://localhost:6006](http://localhost:6006) and see 
   </div>
 </div>
 
-Note: if we wish to re-run the above tensorboard command, make sure we kill the previously created tensorboard session (to avoid port collision), like this:
+Note: if we wish to re-run the above tensorboard command, make sure we kill the previously created tensorboard session (to avoid port collision). In fact, let's try it. Issue the following to kill Tensorboard:
 
 ```
 (py36-tf14) $ pkill -f "tensorboard"
 ```
 
-From experience, we will likely start and kill Tensorboard from time to time, as needed.
+Now that tensorboard is killed, [http://localhost:6006](http://localhost:6006) should now show nothing.
+
+To start Tensorboard again, just issue this again:
+
+```
+(py36-tf14) $ tensorboard --logdir tf_files/training_summaries --host=localhost &
+```
+
+Navigate back to [http://localhost:6006](http://localhost:6006), Tensorboard is back!
+
+OK you've got the idea. (side note: from experience, we will likely start and kill Tensorboard from time to time, as needed.)
 
 #### Configure our MobileNet
 
-The followings is a direct copy & paste from Tensorflow for poets:
+There are two main MobileNet configuration hyperparameters: Input image resolution (`TFP_IMAGE_SIZE`) and relative size (`TFP_RELATIVE_SIZE`). According to [the Tensorflow for Poets retraining guide](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#3), pick the following configuration options:
 
---- 
+- Input image resolution (`TFP_IMAGE_SIZE`): `128`, `160`, `192`, or `224` px. Unsurprisingly, feeding in a higher resolution image takes more processing time, but results in better classification accuracy. We recommend 224 as an initial setting.
+- The relative size (`TFP_RELATIVE_SIZE`) of the model as a fraction of the largest MobileNet: `1.0`, `0.75`, `0.50`, or `0.25`. We recommend `0.5` as an initial setting. The smaller models run significantly faster, at a cost of accuracy.
 
-Pick the following configuration options (which are also hyperparameters):
-
-Input image resolution (`TFP_IMAGE_SIZE`): `128`, `160`, `192`, or `224` px. Unsurprisingly, feeding in a higher resolution image takes more processing time, but results in better classification accuracy. We recommend 224 as an initial setting.
-
-The relative size (`TFP_RELATIVE_SIZE`) of the model as a fraction of the largest MobileNet: `1.0`, `0.75`, `0.50`, or `0.25`. We recommend `0.5` as an initial setting. The smaller models run significantly faster, at a cost of accuracy.
-
----
-
-Let's set these as shell environmental variables (copy the following block, paste it in terminal, and run it):
+Let's set these as shell environmental variables for the current terminal you are in. Just simply copy the following block, paste it in terminal, and run it:
 
 ```
 export TFP_IMAGE_SIZE="224"
@@ -533,9 +533,9 @@ Note: if we wish to try out other MobileNet configuration options, just edit the
 
 #### Configure Image Retrain Path
 
-We need to tell the retrain script where to find our training images (i.e. our 200 per category). By default the retrain script will use a split of 80% trainn / 10% validation / 10% test, but we can alter that in our retrain script later.
+We need to tell the retrain script where to find our training images (i.e. our 200 per category). By default the retrain script will use a split of 80% (160) train / 10% (20) validation / 10% (20) test, but we can alter that in our retrain script later.
 
-But first, we need to export one more environmental variable. i.e. the root directory of the training images - which if you recall from step 2 on data preparation, it is `shrooms-train-200-each`.
+But first, we need to export one more environmental variable. i.e. the root directory name of the training images - which if you recall from step 2 on data preparation, it is `shrooms-train-200-each`.
 
 Copy the following line, paste it in terminal, and run it:
 
@@ -545,6 +545,12 @@ export TFP_IMAGES_DIR="shrooms-train-200-each"
 
 #### How to use the retrain script
 
+Ensure we are in the correct location:
+
+```
+(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
+```
+
 To see what options are there:
 
 ```
@@ -553,13 +559,7 @@ To see what options are there:
 
 #### Do the training
 
-Ensure we are in the correct location:
-
-```
-(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
-```
-
-Copy the following block, paste it in terminal, and run it (this will start the re-training)
+Copy the following block, paste it in terminal, and run it (this will start the re-training). Notice we are using the environmental variables (`TFP_IMAGES_DIR` and `TFP_ARCHITECTURE`) that we exported earlier. That's the reason for setting up those environmental variables eariler.
 
 ```
 python -m scripts.retrain \
@@ -578,26 +578,28 @@ A bit of explanation (with the help of the official Tensorflow for Poets tutoria
 - `image_dir`: this is where we've stored our training images. The directory must exist already. Otherwise the script will fail.
 - `bottleneck_dir`: A bottleneck is an informal term we often use for the layer just before the final output layer that actually does the classification. Every image is reused multiple times during training. Calculating the layers behind the bottleneck for each image takes a significant amount of time. Since these lower layers of the network are not being modified their outputs can be cached and reused. The directory will be automatically created.
 - `model_dir`: The location where the "frozen" MobileNet models are downloaded. The directory will be automatically created. 
-- `summaries_dir`: the directory where tensorboard summaries will be saved to. Note our use of `${TFP_ARCHITECTURE}` - if we are to try out a different MobileNet configuration option, the script will create a tensorboard summary without overwriting our old ones. The benefit of this option is to enable us to name-space our summary - so we can do some comparisons in our tuning step before commiting to the model(s) we want to use in production environment later on.
-- `output_graph`: this is our new (re)trained graph file. The prediction phase later on will need this.
-- `output_labels`: this file shows our ground truth labels - extracted from our `image_dir` directory structure. The prediction phase later on will need this.
-- `how_many_training`: the script will run for 4000 epochs (steps) by default. This may take 30 minutes. By reducing this to 500 steps, the script may complete within around 5 minutes on a modern CPU laptop, while giving us reasonable good accuracy (of around 85-95%.). Handy for what we are trying to achieve - get from start to the end as quickly as possible, whilst producing an output that is reasonable good enough.
+- `summaries_dir`: the directory where tensorboard summaries will be saved to. Note our use of `${TFP_ARCHITECTURE}` - if we are to try out a different MobileNet configuration option, the script will create a tensorboard summary without overwriting our old ones. The benefit of this option is to enable us to name-space our summary - so we can do some comparisons in our tuning step before commiting to the model(s) we want to use in production environment later on. We will see our training and validation summary in Tensorboard under the namespace called `basic/${TFP_ARCHITECTURE}`. (as you will see shortly). One thing to mention now - later on if you want to perform hyperparameter tuning, you may wish to namespace the summary as `something-else/"${TFP_ARCHITECTURE}`.
+- `output_graph`: this is our new (re)trained graph file. The prediction phase later on will need this. If we are to deploy our prediction model on an embedded device, this will likely just save a copy of this file to the device.
+- `output_labels`: this file shows our ground truth labels - extracted from our `image_dir` directory structure. The prediction phase later on will need this. If we are to deploy our prediction model on an embedded device, this will likely just save a copy of this file to the device.
+- `how_many_training`: the script will run for 4000 steps (aka epochs) by default. This may take 30 minutes. By reducing this to 500 steps, the script may complete within around 5 minutes on a modern CPU laptop, while giving us reasonable good accuracy (of around 85-95%.). Handy for what we are trying to achieve, which is to get from start to the end as quickly as possible, while producing an output that is reasonable good enough.
 
-Note that most of these options have a default values - so we don't strictly need to specify all of them.
+Note that most of these options have a default value and we don't strictly need to specify all of them. I would highly recommend to take a good read of the retrain script, try and understand how it works and what it does, etc.
 
-One more thing to note, by default the script use this split: 80% train / 10% validation / 10% test. Given we have 200 images per category, we are actually using 160 for training, 20 for validation, and 20 for testing.
+One more thing to note, by default the script uses this split: 80% train / 10% validation / 10% test. Given we have 200 images per category, we will be using 160 for training, 20 for validation, and 20 for testing. We can however adjust this split accordingly by specifying options when running the script.
 
-We should get a final accuracy of somewhere between 85-95%.
+Wait for the script to run. Should all go well we should get a final validation accuracy of somewhere between 85-95%.
 
 ### Step 5: Evaluation
 
-Tensorboard is the place to go - to evaluate how good our retrained model is.
+Tensorboard is the place to go - to evaluate how good our retrained model is. The intuitions are:
 
-The intuitions are:
+- training accuracy graph should be **concave down and increasing** towards 100% as we perform more epochs (steps). See diagram below (bottom right).
+- training cross entropy should be **concave up and decreasing** towards 0 as we perform more epochs (steps). See diagram below. (top left)
+- validation trend should closely resemble training trend. If the two lines deviate too much, it implies the model is not generic enough.
 
-- training accuracy should increase as we perform more epochs (steps).
-- training cross entropy should decrease as we perform more epochs (steps).
-- validation trend (in blue) should closely resemble training trend (orange). If the two lines deviate too much, it implies the model is not generic enough.
+![shape-of-graph.gif](/images/blog/shape-of-graph.gif)
+
+The above image was kindly borrowed from [Paul's Online Math Notes](http://tutorial.math.lamar.edu/Classes/CalcI/ShapeofGraphPtII.aspx) - on the shape of a graph
 
 #### Visualize training summary on Tensorboard
 
@@ -639,38 +641,43 @@ We shall do more deep dive into tensorboard at a later time. For now, let's just
 
 I would suggest for the purpose of this article we skip hyperparameter tuning for now. It deserves an article on its on - so let's do this in a separate article.
 
-For now, take a look at the retrain script options and default values. This will give us some inspiration on some of the hyperparameters we may use for tuning.
+To see what options are there:
 
 ```
-| option                            | type  | default value              | description                                                                 |
-|-----------------------------------|-------|----------------------------|-----------------------------------------------------------------------------|
-| image_dir                         | str   | ""                         | Path to folders of labeled images.                                          |
-| output_graph                      | str   | "/tmp/output_graph.pb"     | Where to save the trained graph.                                            |
-| intermediate_output_graphs_dir    | str   | "/tmp/intermediate_graph/" | Where to save the intermediate graphs.                                      |
-| intermediate_store_frequency      | int   | 0                          | How many steps to store intermediate graph. If "0" then will not store.     |
-| output_labels                     | str   | "/tmp/output_labels.txt"   | Where to save the trained graph's labels.                                   |
-| summaries_dir                     | str   | "/tmp/retrain_logs"        | Where to save summary logs for TensorBoard.                                 |
-| how_many_training_steps           | float | 0.01                       | How large a learning rate to use when training.                             |
-| testing_percentage                | int   | 10                         | What percentage of images to use as a test set.                             |
-| validation_percentage             | int   | 10                         | What percentage of images to use as a validation set.                       |
-| eval_step_interval                | int   | 10                         | How often to evaluate the training results.                                 |
-| train_batch_size                  | int   | 100                        | How many images to train on at a time.                                      |
-| test_batch_size                   | int   | -1                         | How many images to test on. This test set is only used once, to evaluate    |
-|                                   |       |                            |  the final accuracy of the model after training completes.                  |
-|                                   |       |                            |  A value of -1 causes the entire test set to be used, which leads to more   |
-|                                   |       |                            |  stable results across runs.                                                |
-| validation_batch_size             | int   | 100                        | How many images to use in an evaluation batch. This validation set is       |
-|                                   |       |                            |  used much more often than the test set, and is an early indicator of how   |
-|                                   |       |                            |  accurate the model is during training.                                     |
-|                                   |       |                            |  A value of -1 causes the entire validation set to be used, which leads to  |
-|                                   |       |                            |  more stable results across training iterations, but may be slower on large |
-|                                   |       |                            |  training sets.                                                             |
-| print_misclassified_test_images   | bool  | False                      | Whether to print out a list of all misclassified test images.               |
-| model_dir                         | str   | "/tmp/imagenet"            | Path to classify_image_graph_def.pb, imagenet_synset_to_human_label_map.txt |
-|                                   |       |                            |  , and imagenet_2012_challenge_label_map_proto.pbtxt.                       |
-| bottleneck_dir                    | str   | "/tmp/bottleneck"          | Path to cache bottleneck layer values as files.                             |
-| final_tensor_name                 | str   | "final_result"             | The name of the output classification layer in the retrained graph.         |
+(py36-tf14) $ cd ~/repos/my-tensorflow-for-poets
+(py36-tf14) $ python -m scripts.retrain -h
 ```
+
+To see the default values take a look at the retrain script (`~repos/my-tensorflow-for-poets/scripts/retrain.py`) options and default values. This will give us some inspiration on some of the hyperparameters we may use for tuning. I've taken a look at the script myself and put my findings into the following table for ease of references (you may need to scroll right to see more).
+
+<div class="table-wrapper" markdown="block">
+
+| option | type | default value | description |
+|========|======|===============|=============|
+| `image_dir` | `str` | `""` | Path to folders of labeled images. |
+| `output_graph`| `str`| `"/tmp/output_graph.pb" `| Where to save the trained graph.|
+| `intermediate_output_graphs_dir` | `str`| `"/tmp/intermediate_graph/"` | Where to save the intermediate graphs. |
+| `intermediate_store_frequency`| `int`| `0` | How many steps to store intermediate graph. If "0" then will not store. |
+| `output_labels`| `str`| `"/tmp/output_labels.txt"`| Where to save the trained graph's labels.|
+| `summaries_dir`| `str`| `"/tmp/retrain_logs"`| Where to save summary logs for TensorBoard. |
+| `how_many_training_steps` | `float` | `0.01`| How large a learning rate to use when training. |
+| `testing_percentage` | `int`| `10` | What percentage of images to use as a test set. |
+| `validation_percentage`| `int`| `10` | What percentage of images to use as a validation set.|
+| `eval_step_interval` | `int`| `10` | How often to evaluate the training results. |
+| `train_batch_size`| `int`| `100`| How many images to train on at a time. |
+| `test_batch_size` | `int`| `-1` | How many images to test on. This test set is only used once, to evaluate the final accuracy of the model after training completes. A value of -1 causes the entire test set to be used, which leads to more stable results across runs.|
+| `validation_batch_size`| `int`| `100`| How many images to use in an evaluation batch. This validation set is used much more often than the test set, and is an early indicator of how accurate the model is during training. A value of -1 causes the entire validation set to be used, which leads to more stable results across training iterations, but may be slower on large training sets. |
+| `print_misclassified_test_images` | `bool` | `False` | Whether to print out a list of all misclassified test images.|
+| `model_dir`| `str`| `"/tmp/imagenet"`| Path to classify_image_graph_def.pb, imagenet_synset_to_human_label_map.txt, and `imagenet_2012_challenge_label_map_proto.pb`|
+| `bottleneck_dir` | `str`| `"/tmp/bottleneck"` | Path to cache bottleneck layer values as files. |
+| `final_tensor_name`| `str`| `"final_result"` | The name of the output classification layer in the retrained graph. |
+| `flip_left_right`| `bool`| `False` |  |
+| `random_crop`| `int`| `0` | A percentage determining how much of a margin to randomly crop off the training images. |
+| `random_scale`| `int`| `0` | A percentage determining how much to randomly scale up the size of the training images by |
+| `random_brightness`| `int`| `0` | `A percentage determining how much to randomly multiply the training image input pixels up or down by.` |
+| `architecture` | `str`| `"inception_v3"` | Which model architecture to use. 'inception_v3' is the most accurate, but also the slowest. For faster or smaller models, chose a MobileNet with the form 'mobilenet_<parameter size>_<input_size>[_quantized]'. For example, 'mobilenet_1.0_224' will pick a model that is 17 MB in size and takes 224 pixel input images, while 'mobilenet_0.25_128_quantized' will choose a much less accurate, but smaller and faster network that's 920 KB on disk and takes 128x128 images. See [this link](https://research.googleblog.com/2017/06/mobilenets-open-source-models-for.html) for more information on Mobilenet.|
+
+</div>
 
 ### Step 7: Prediction
 
@@ -704,11 +711,17 @@ n13030337 scarlet elf cup 1.16116e-08
 
 Yay! The image is a Fly Agaric, and the model predicted high confidence that it is a Fly Agaric (and low for other categories).
 
+Feel free also to take a look at what other options are out there:
+
+```
+(py36-tf14) $ python -m scripts.label_image -h
+```
+
 #### try out a handful of prediction manually
 
 Just to quickly see for ourself that our retrained model is what we would expect to see, let's try perform predictions on a few more handful demo images! For the purpose of this article, I'm going to manually run the predict script one by one, for (say) 3 demo images per categories (for the 5 categories) - so we get an idea of our application outputs.
 
-Instead of printing the boring texts, I will manually do some "artistic" editing with PowerPoint - just to get the idea across a bit more effectively (without doing any programming at such an early phase!)
+Instead of printing the boring texts, I will manually do some "artistic" editing with PowerPoint - just to get the idea across a bit more effectively (this is to avoid performing excessive programming at such an early phase)
 
 <div class="container">
   <div class="row">
@@ -740,6 +753,8 @@ Instead of printing the boring texts, I will manually do some "artistic" editing
 
 One thing I've learnt about deep learning is that the prediction performance depends heavily on the training data. The model is more likely to be able to classify correctly / with high confidence when the test image contains features that are similar to the corresponding training images. The prediction confidence is likely low when the test image deviates a lot from the training image.
 
+One more thing, as we train on more categories (say 1000 instead of just 5), the prediction confidence will be less concentrated. i.e. if you feed in an image that is not a mushroom, but a car, hopefully it will provide very low probabilities across a range of mushroom labels, instead of just wrongly predict it is a "fly agaric" with high confidence. Just a theory.
+
 #### create an automated prediction process
 
 It would be beneficial to have some kind of slide show type app that flash through the demo images one by one, or in batches, to show the prediction vs ground truth, along with the overall accuracy / errors. Sort of like [this ReactJS frontend demo](https://fungai-react-ui.herokuapp.com/fungpredict) but hopefully better! (This will be another project for another time.)
@@ -763,7 +778,7 @@ Some ideas to jot down:
 
 ### Summary
 
-In this article we've had a go creating a basic wild mushroom classification app that performs image classification on 5 types of mushroom with the help of Google's 7 steps to machine learning, and the Tensorflow for Poets Google lab. We've successfully perform a start-to-finish iteration on building our first app and gained some hands-on experiences. We've discussed some potential improvements and next steps that we may try out later on.
+In this article we've had a go creating a basic wild mushroom classification app that performs image classification on 5 types of mushroom with the help of Google's 7 steps to machine learning, and the Tensorflow for Poets Google lab. We've successfully performed a start-to-finish iteration on building our first app and gained some hands-on experiences. We've discussed some potential improvements and next steps that we may try out later on.
 
 Just to recall, here are the 7 steps to machine learning:
 
@@ -776,3 +791,5 @@ Just to recall, here are the 7 steps to machine learning:
 7. Prediction
 
 We will revisit Hyperparameter Tuning in a separate article. We will also try and improve our app further with automation and standardization etc.
+
+Congratulation. You've now gained some hands-on experience implementing transfer learning. I hope this will get you started on doing something even more exciting.
