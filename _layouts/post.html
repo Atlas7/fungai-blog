@@ -34,10 +34,36 @@
 
           <!-- Individual Blog Post -->
           <section class="post">
+
+              <!-- Look the author details up from the site config. -->
+              {% assign author = site.data.authors[page.author] %}
+              {% if author %}
+              <div class="author-container">
+                <div class="author-avatar-box">
+                  <img class="author-avatar" src="{{ author.avatar }}" alt="A photo of {{ author.name }}" />
+                </div>
+                <div class="author-desc">
+                  <ul>
+                    <li>
+                      <span class="author-name">{{ author.name }}</span>
+                      <a href="https://twitter.com/{{author.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                      <a href="https://github.com/{{ author.githubid }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                      <a href="https://linkedin.com/in/{{ author.linkedin }}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li>{{ author.desc }} </li>
+                    <li>{{page.date | date_to_string}}</li>
+                  </ul>
+                </div>
+              </div>
+
+              {% endif %}
+
             <header class="major">
-              <span class="date">{{page.date | date_to_string}}</span>
-              <h1>{{page.title}}</h1>
+              <!--<span class="date">{{page.date | date_to_string}}</span>-->
+              <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{ page.read_minutes }} min read</span>
+              <h2>{{page.title}}</h2>
               <p>{{page.excerpt}}</p>
+
             </header>
 
             {% if page.image %}
