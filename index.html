@@ -56,26 +56,8 @@ sitemap:
                 <a href="https://github.com/{{site.githubid}}" class="icon fa fa-github fa-3x" rel="nofollow" target="_blank"><span class="label">GitHub</span></a>
               </article>
 
-            <!-- Posts -->
-              <!--<h2 class="main featured">Blog Posts</h2>-->
-              <section class="posts">
-                {% for post in site.posts limit: site.posts_limits %}
-                  <article>
-                    <header>
-                      <span class="date">{{ post.date | date_to_string }}</span>
-                      <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
-                    </header>
-
-                    {% if post.image %}
-                    <a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="post.image" /></a>
-                    {% endif %}
-
-                    <p>{{ post.excerpt }}</p>
-                    {% include read-more.html %}
-                  </article>
-                {% endfor %}
-
-              </section>
+            <!-- Latest Posts -->
+            {% include latest-posts.html%}
 
             <!-- Our blog -->
             {% include our-blog.html text="Read our Blog" %}
