@@ -3636,7 +3636,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
 }
 
 #main > .post {
-  padding: 8rem 8rem 6rem 8rem ;
+  padding: 6rem 8rem 1rem 8rem ;
 }
 
 #main > .post header.major > .date {
@@ -4758,7 +4758,7 @@ pre.cap {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 0 0 2rem 0;
+  margin: 2rem 0;
   min-height: 70px;
 }
 
