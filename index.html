@@ -6,6 +6,8 @@ sitemap:
     priority: 1.0
     lastmod: 2017-11-26
     changefreq: weekly
+image: "/images/home-main.jpg"
+url: "/"
 ---
 <!DOCTYPE HTML>
 <!--
@@ -17,6 +19,9 @@ sitemap:
 <html>
   <head>
     {% include head.html %}
+    {% assign image_og = {{page.image | prepend:site.url}} %}
+    {% assign url_og = {{page.url | prepend:site.url}} %}
+    {% include head-og.html image=image_og description=page.description title=page.title type="website" fb_app_id=site.fb_app_id url=url_og %}
   </head>
 
   <body class="is-loading">
@@ -26,7 +31,7 @@ sitemap:
 
         <!-- Header -->
           <header id="header">
-            <a href="{{ "/" | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
+            <a href="{{ '/' | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
           </header>
 
         <!-- Nav -->
@@ -44,7 +49,7 @@ sitemap:
                 </p>
                 <h3>hey do you know what mushroom this is?</h3>
                 <div class="container">
-                  <div class="col-sm-12"><img src="{{ "/images/home-main.jpg" | prepend:site.baseurl }}" alt="home-main.jpg" /></div>
+                  <div class="col-sm-12"><img src="{{ page.image | prepend:site.baseurl }}" alt="home-main.jpg" /></div>
                 </div>
                 <p></p>
                 <p>
