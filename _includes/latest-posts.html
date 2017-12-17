@@ -2,16 +2,17 @@
 <section class="posts">
   {% for post in site.posts limit: site.posts_limits %}
   <article>
+
     <header>
-      <span class="date">{{ post.date | date_to_string }}</span>
       <h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</h2>
+      {% include post-author-mini.html %}
     </header>
 
     {% if post.image %}
     <a href="{{ post.url | prepend:site.baseurl }}" class="image fit"><img src="{{ post.image | prepend:site.baseurl }}" alt="post.image" /></a>
     {% endif %}
-
     <p>{{ post.excerpt }}</p>
+
     {% include read-more.html %}
   </article>
   {% endfor %}

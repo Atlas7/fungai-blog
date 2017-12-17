@@ -4794,3 +4794,57 @@ pre.cap {
 .author-name {
   color: #222931;
 }
+
+/* mini author avatar - used in post grid */
+
+.author-avatar-box-mini {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+}
+
+.author-avatar-mini {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.author-container-mini {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0rem 0;
+  min-height: 40px;
+}
+
+.author-desc-mini {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 2rem 0 2rem;
+}
+.author-desc-mini ul {
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans","Geneva","Arial","sans-serif";
+  color: gray;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+.author-desc-mini li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 2px 0;
+}
+
+.author-desc-mini a {
+  text-decoration: none;
+  border-bottom: none;
+  color: gray;
+}
+
+.author-name-mini {
+  color: #222931;
+}
