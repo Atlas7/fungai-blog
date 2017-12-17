@@ -10,7 +10,9 @@
   <!--head-->
   <head>
     {% include head.html %}
-    {% include head-og.html image=page.image description=page.excerpt title=page.title %}
+    {% assign image_og = {{page.image | prepend:site.url}} %}
+    {% assign url_og = {{page.url | prepend:site.url}} %}
+    {% include head-og.html image=image_og description=page.excerpt title=page.title type="website" fb_app_id=site.fb_app_id url=url_og %}
   </head>
 
   <!--body-->

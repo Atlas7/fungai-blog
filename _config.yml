@@ -33,7 +33,8 @@ github_repo_url: https://github.com/Atlas7/fungai-blog
 #url: "https://atlas7.github.io"
 #
 # Option 2 - use custom domain. e.g. http://fungai.org
-url: "/"
+#url: "/"
+url: "http://fungai.org"
 
 # Define how individual post URL looks.
 # e.g. a post with a name like this: 2016-11-28-placeholder-1.md
@@ -87,3 +88,5 @@ jekyll-mentions:
 
 # Exclude list. Comes with Massively Theme.
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+
+fb_app_id: "592818501079290"

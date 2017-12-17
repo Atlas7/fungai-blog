@@ -1,3 +1,7 @@
+{% if include.fb_app_id %}
+<meta property="og:app_id" content="{{ include.fb_app_id }}">
+{% endif %}
+
 {% if include.title %}
 <meta property="og:title" content="{{ include.title }}">
 {% endif %}
@@ -8,4 +12,12 @@
 
 {% if include.description %}
 <meta property="og:description" content="{{ include.description }}">
+{% endif %}
+
+{% if include.type %}
+<meta property="og:type" content="{{ include.type }}">
+{% endif %}
+
+{% if include.url %}
+<meta property="og:url" content="{{ include.url }}">
 {% endif %}
