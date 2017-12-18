@@ -17,6 +17,7 @@ Built with:
 - [formspree.io](https://formspree.io/): enable users to send email messages from the website.
 - pagination with jekyll-paginate gem
 - CSS: for styling
+- [Disqus](https://disqus.com/): commenting system
 
 Continuous Integration with:
 
