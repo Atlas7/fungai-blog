@@ -6,7 +6,6 @@ excerpt: "Build a Flower Image Recognition Model with Transfer Learning Techniqu
 image: "/images/blog/daisy-1.jpg"
 author: johnny_chan
 read_minutes: 10
-comments: true
 ---
 
 In this article we build a Flower Image Recognition Model with Transfer Learning Techniques, Python 3.6.3, Tensorflow 1.4.1 and tensorflow-tensorboard v0.4.0rc3. This article is inspired by the [Tensorflow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) transfer learning exercise.
