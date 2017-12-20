@@ -29,6 +29,9 @@ url: "/"
     <!-- Wrapper -->
       <div id="wrapper" class="fade-in">
 
+        <!--github-corner-->
+        {% include github-corner.html %}
+
         <!-- Header -->
           <header id="header">
             <a href="{{ '/' | prepend:site.baseurl }}" class="logo">{{site.title}}</a>
@@ -58,7 +61,7 @@ url: "/"
                 <p>
                   All project source codes are open sourced on GitHub. You may find <a href="{{ '/demos/' | prepend:site.baseurl }}" target="_blank">more Demos and Github repository links here</a>.
                 </p>
-                <a href="https://github.com/{{site.githubid}}" class="icon fa fa-github fa-3x" rel="nofollow" target="_blank"><span class="label">GitHub</span></a>
+                <a href="{{ site.github_repo_url }}" class="icon fa fa-github fa-3x" rel="nofollow" target="_blank"><span class="label">GitHub</span></a>
               </article>
 
             <!-- Latest Posts -->
