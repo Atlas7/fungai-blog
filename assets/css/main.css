@@ -4315,6 +4315,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  margin: 1rem 0;
 }
 
 #copyright ul li {
