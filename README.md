@@ -31,7 +31,7 @@ Some Handy References on Travis CI and Jekyll integration:
 
 ## Development Instruction
 
-Fork the repository on Github. Then git clone from your frok:
+Fork the repository on Github. Then git clone from your fork:
 
 ```
 git clone https://github.com/your-github-id/fungai-blog
@@ -53,10 +53,10 @@ Make sure git repository has the appropriate remote. This is what you should see
 
 ```
 $ git remote -v
-origin  https://github.com/Atlas7/fungai-blog (fetch)
-origin  https://github.com/Atlas7/fungai-blog (push)
-upstream  https://github.com/your-github-id/fungai-blog (fetch)
-upstream  https://github.com/your-github-id/fungai-blog (push)
+origin  https://github.com/your-github-id/fungai-blog (fetch)
+origin  https://github.com/your-github-id/fungai-blog (push)
+upstream  https://github.com/Atlas7/fungai-blog (fetch)
+upstream  https://github.com/Atlas7/fungai-blog (push)
 ```
 
 If you had followed the direct git clone method, you may find these dandy docs on setting up remotes (`origin` and `upstream`):
