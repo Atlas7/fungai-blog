@@ -6,7 +6,6 @@ excerpt: "Intel Developer Zone Interview"
 image: "/images/blog/avatar-jc.jpg"
 author: johnny_chan
 read_minutes: 5
-comments: true
 ---
 
 Update 12th Dec 2017: this post is now [published at Intel Developer Zone](https://software.intel.com/en-us/blogs/2017/12/11/intel-software-innovator-johnny-chan-programmer-educator-and-open-source-enthusiast)

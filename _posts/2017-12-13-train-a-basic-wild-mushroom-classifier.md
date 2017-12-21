@@ -6,7 +6,6 @@ excerpt: "Train a basic image classification model to identify 5 types of wild m
 image: "/images/blog/mushroom-classifier-poc.png"
 author: johnny_chan
 read_minutes: 20
-comments: true
 ---
 
 Earlier, we learnt about [transfer learning with Tensorflow for Poets retrain scripts](http://fungai.org/2017/12/11/tensorflow-for-poets/), and [how to download images from ImageNet](http://fungai.org/2017/12/11/tensorflow-for-poets/). In this article we will focus on combining these concepts and techniques and build a more specialized machine learning application.
