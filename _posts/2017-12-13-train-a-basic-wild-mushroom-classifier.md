@@ -534,6 +534,16 @@ mobilenet_0.5_224
 
 Note: if we wish to try out other MobileNet configuration options, just edit the environmental variable export scripts above and re-run.
 
+##### Wait, what if I want to use Inception V3?
+
+In case you would like to use the Inception V3 architecture (instead of MobileNet), just simply do the following instead:
+
+```
+export TFP_ARCHITECTURE="inception_v3"
+```
+
+The retrain script we run later on only cares about the environmental variable `TFP_ARCHITECTURE`.
+
 #### Configure Image Retrain Path
 
 We need to tell the retrain script where to find our training images (i.e. our 200 per category). By default the retrain script will use a split of 80% (160) train / 10% (20) validation / 10% (20) test, but we can alter that in our retrain script later.
