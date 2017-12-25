@@ -423,7 +423,7 @@ Our command prompt should now look like this:
 Install tensorflow with `pip`:
 
 ```
-(py36-tf14) $ pip install "tensorflow=1.4.1"
+(py36-tf14) $ pip install "tensorflow==1.4.1"
 ```
 
 Side note: why not use `conda install tensorflow` instead? My answer: at the time of writing this article, the Tensorflow on conda-forge channel was only up to 1.4.0. Tensorboard turned out to be a bit buggy with this version (from what I've seen). Install Tensorflow with `pip` with version `1.4.1` seems to have fixed it. (this version may be even higher as time goes by).
