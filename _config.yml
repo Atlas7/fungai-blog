@@ -71,13 +71,14 @@ twitter: jatlas7
 githubid: Atlas7
 location: Earth
 location_url: "https://en.wikipedia.org/wiki/Earth"
-CTO: Johnny Chan
-CTO_url: "https://atlas7.github.io"
-email: "fungai.org@gmail.com"
+CTO:
+  name: "Johnny Chan"
+  url: "https://twitter.com/jAtlas7"
+email: info@fungai.org
 
 # Messages sent via website message box will send to here (via formspree.io)
 # Reference: https://formspree.io/
-email2: "fungai.org@gmail.com"
+email2: "info@fungai.org"
 
 # Jekyll-paginate - how many blog posts displayed per page (used in blog section)
 paginate: 4
