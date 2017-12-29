@@ -594,7 +594,7 @@ A bit of explanation (with the help of the official Tensorflow for Poets tutoria
 - `summaries_dir`: the directory where tensorboard summaries will be saved to. Note our use of `${TFP_ARCHITECTURE}` - if we are to try out a different MobileNet configuration option, the script will create a tensorboard summary without overwriting our old ones. The benefit of this option is to enable us to name-space our summary - so we can do some comparisons in our tuning step before commiting to the model(s) we want to use in production environment later on. We will see our training and validation summary in Tensorboard under the namespace called `basic/${TFP_ARCHITECTURE}`. (as you will see shortly). One thing to mention now - later on if you want to perform hyperparameter tuning, you may wish to namespace the summary as `something-else/"${TFP_ARCHITECTURE}`.
 - `output_graph`: this is our new (re)trained graph file. The prediction phase later on will need this. If we are to deploy our prediction model on an embedded device, this will likely just save a copy of this file to the device.
 - `output_labels`: this file shows our ground truth labels - extracted from our `image_dir` directory structure. The prediction phase later on will need this. If we are to deploy our prediction model on an embedded device, this will likely just save a copy of this file to the device.
-- `how_many_training`: the script will run for 4000 steps (aka epochs) by default. This may take 30 minutes. By reducing this to 500 steps, the script may complete within around 5 minutes on a modern CPU laptop, while giving us reasonable good accuracy (of around 85-95%.). Handy for what we are trying to achieve, which is to get from start to the end as quickly as possible, while producing an output that is reasonable good enough.
+- `how_many_training_steps`: the script will run for 4000 steps (aka epochs) by default. This may take 30 minutes. By reducing this to 500 steps, the script may complete within around 5 minutes on a modern CPU laptop, while giving us reasonable good accuracy (of around 85-95%.). Handy for what we are trying to achieve, which is to get from start to the end as quickly as possible, while producing an output that is reasonable good enough.
 
 Note that most of these options have a default value and we don't strictly need to specify all of them. I would highly recommend to take a good read of the retrain script, try and understand how it works and what it does, etc.
 
@@ -673,7 +673,8 @@ To see the default values take a look at the retrain script (`~repos/my-tensorfl
 | `intermediate_store_frequency`| `int`| `0` | How many steps to store intermediate graph. If "0" then will not store. |
 | `output_labels`| `str`| `"/tmp/output_labels.txt"`| Where to save the trained graph's labels.|
 | `summaries_dir`| `str`| `"/tmp/retrain_logs"`| Where to save summary logs for TensorBoard. |
-| `how_many_training_steps` | `float` | `0.01`| How large a learning rate to use when training. |
+| `how_many_training_steps` | `int` | `4000`| How many training steps to run before ending. |
+| `learning_rate` | `float` | `0.01`| How large a learning rate to use when training. |
 | `testing_percentage` | `int`| `10` | What percentage of images to use as a test set. |
 | `validation_percentage`| `int`| `10` | What percentage of images to use as a validation set.|
 | `eval_step_interval` | `int`| `10` | How often to evaluate the training results. |
